@@ -1,0 +1,23 @@
+.header-area {
+	background-color: #F6AF5F;
+	.menu-col {
+		ul {
+			background-color: #F6AF5F;
+			border-bottom: 1px solid #F6AF5F;
+			li {
+				color: #fff;
+				font-size: 14px;
+			}
+		}
+	}
+	img {
+		margin-top: 10px;
+		margin-left: 20px;
+	}
+	.user-login {
+		margin-top: 12px;
+		color: #fff;
+		cursor: pointer;
+		font-size: 14px;
+	}
+}

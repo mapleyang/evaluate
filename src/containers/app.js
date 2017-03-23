@@ -1,12 +1,15 @@
 import React, { Component } from 'react'
-import { Spin, message, Form, Icon, Input, Button, Row, Col } from 'antd'
-
+import Header from './header/index';
+import Footer from './Footer/index';
+import '../styles/index.scss'
 export default class App extends Component {
-  render() {
-    return (
-      <div className="main">
-	      {this.props.children}
-      </div>
-    );
-  }
+	render() {
+		return (
+			<div className="main">
+				<Header />
+				<div>{this.props.children}</div>
+        <div className="footer"><Footer /></div>
+			</div>
+		);
+	}
 }
