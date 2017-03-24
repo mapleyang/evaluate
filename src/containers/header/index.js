@@ -18,6 +18,11 @@ class Header extends Component {
     this.setState({
       current: e.key,
     });
+    location.hash = "/" + e.key;
+  }
+
+  loginClick () {
+    location.hash = "/login";
   }
 
   render() {
@@ -64,14 +69,14 @@ class Header extends Component {
                 <Menu.Item key="setting:2">戒烟-神话和真相</Menu.Item>
                 <Menu.Item key="setting:3">戒烟-知识竞赛</Menu.Item>
               </SubMenu>
-              <SubMenu title={<span>更多</span>}>
+              <SubMenu title={<span>更多</span>}> 
                 <Menu.Item key="setting:1">吸烟危害</Menu.Item>
                 <Menu.Item key="setting:2">二手烟危害</Menu.Item>
               </SubMenu>
             </Menu>
           </Col>
           <Col span={2}>
-            <div className="user-login"><Icon type="user" />登陆/注册</div>
+            <div className="user-login" onClick={this.loginClick.bind(this)}><Icon type="user" />登陆/注册</div>
           </Col>
         </Row>
       </div>

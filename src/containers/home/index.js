@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Spin, message, Form, Icon, Input, Button, Row, Col, Radio, Carousel  } from 'antd'
 import './index.scss'
+import Footer from '../footer/index';
 const FormItem = Form.Item
 const RadioGroup = Radio.Group;
 const formItemLayout = {
@@ -58,7 +59,6 @@ class Home extends Component {
           <div><img src="./test01.png" /></div>
           <div><img src="./test02.png" /></div>
           <div><img src="./test03.png" /></div>
-          <div><h3>4</h3></div>
         </Carousel>
         <div className="activity-desc">
           <div className="activity-desc-name">活动主题</div>
@@ -67,6 +67,7 @@ class Home extends Component {
         <div className="activity-rules">
           <img src="./contents.png" />
         </div>
+        <div className="footer"><Footer /></div>
       </div>
     );
   }

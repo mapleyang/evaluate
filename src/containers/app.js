@@ -8,8 +8,8 @@ export default class App extends Component {
 			<div className="main">
 				<Header />
 				<div>{this.props.children}</div>
-        <div className="footer"><Footer /></div>
-			</div>
-		);
-	}
+      </div>
+    );
+  }
 }
+        // <div className="footer"><Footer /></div>
