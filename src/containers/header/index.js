@@ -24,7 +24,10 @@ class Header extends Component {
     return (
       <div className="header-area">
         <Row>
-          <Col span={4}><img src="./viewfile.png" /></Col>
+          <Col span={4}>
+            <img src="./viewfile.png" />
+            <div className="header-name"><span>戒烟-健康之路</span></div>
+          </Col>
           <Col span={16} className="menu-col">
               <Menu
               onClick={this.handleClick}
@@ -37,20 +40,33 @@ class Header extends Component {
               <Menu.Item key="compony">
                 公司介绍
               </Menu.Item>
-              <Menu.Item key="active">
-                戒烟活动
-              </Menu.Item>
-              <Menu.Item key="expert">
-                健康专家
-              </Menu.Item>
+              <SubMenu title={<span>戒烟活动</span>}>
+                <Menu.Item key="setting:1">戒烟健康分析</Menu.Item>
+                <Menu.Item key="setting:2">戒烟活动1</Menu.Item>
+                <Menu.Item key="setting:3">戒烟活动2</Menu.Item>
+              </SubMenu>
+              <SubMenu title={<span>戒烟方案</span>}>
+                <Menu.Item key=":1">自助戒烟</Menu.Item>
+                <Menu.Item key="setting:2">短信戒烟</Menu.Item>
+                <Menu.Item key="setting:3">心理治疗戒烟</Menu.Item>
+                <Menu.Item key="setting:4">药物戒烟</Menu.Item>
+              </SubMenu>
               <Menu.Item key="card">
                 戒烟打卡
               </Menu.Item>
+              <SubMenu title={<span>我的健康之路</span>}>
+                <Menu.Item key="setting:1">戒烟日记</Menu.Item>
+                <Menu.Item key="setting:2">戒烟成果</Menu.Item>
+                <Menu.Item key="setting:3">我的健康</Menu.Item>
+              </SubMenu>
+              <SubMenu title={<span>烟草知识</span>}>
+                <Menu.Item key="setting:1">烟草-癌症和健康</Menu.Item>
+                <Menu.Item key="setting:2">戒烟-神话和真相</Menu.Item>
+                <Menu.Item key="setting:3">戒烟-知识竞赛</Menu.Item>
+              </SubMenu>
               <SubMenu title={<span>更多</span>}>
-                <Menu.Item key="setting:1">Option 1</Menu.Item>
-                <Menu.Item key="setting:2">Option 2</Menu.Item>
-                <Menu.Item key="setting:3">Option 3</Menu.Item>
-                <Menu.Item key="setting:4">Option 4</Menu.Item>
+                <Menu.Item key="setting:1">吸烟危害</Menu.Item>
+                <Menu.Item key="setting:2">二手烟危害</Menu.Item>
               </SubMenu>
             </Menu>
           </Col>
