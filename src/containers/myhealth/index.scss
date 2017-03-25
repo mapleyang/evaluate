@@ -1,0 +1,13 @@
+.diary {
+	.diary-content {
+		position: relative;
+		left: 50%;
+		top: 40px;
+		.timeline-left {
+			.ant-timeline-item-content {
+				position: relative;
+		    left: -7%;
+			}
+		}
+	}
+}

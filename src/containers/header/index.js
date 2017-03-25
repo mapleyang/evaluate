@@ -46,32 +46,33 @@ class Header extends Component {
                 公司介绍
               </Menu.Item>
               <SubMenu title={<span>戒烟活动</span>}>
-                <Menu.Item key="setting:1">戒烟健康分析</Menu.Item>
-                <Menu.Item key="setting:2">戒烟活动1</Menu.Item>
-                <Menu.Item key="setting:3">戒烟活动2</Menu.Item>
+                <Menu.Item key="analysis">戒烟健康分析</Menu.Item>
+                <Menu.Item key="activity1">戒烟活动1</Menu.Item>
+                <Menu.Item key="activity2">戒烟活动2</Menu.Item>
               </SubMenu>
               <SubMenu title={<span>戒烟方案</span>}>
-                <Menu.Item key=":1">自助戒烟</Menu.Item>
-                <Menu.Item key="setting:2">短信戒烟</Menu.Item>
-                <Menu.Item key="setting:3">心理治疗戒烟</Menu.Item>
-                <Menu.Item key="setting:4">药物戒烟</Menu.Item>
+                <Menu.Item key="self">自助戒烟</Menu.Item>
+                <Menu.Item key="msg">短信戒烟</Menu.Item>
+                <Menu.Item key="mind">心理治疗戒烟</Menu.Item>
+                <Menu.Item key="medicine">药物戒烟</Menu.Item>
               </SubMenu>
-              <Menu.Item key="card">
+              <Menu.Item key="mark">
                 戒烟打卡
               </Menu.Item>
               <SubMenu title={<span>我的健康之路</span>}>
-                <Menu.Item key="setting:1">戒烟日记</Menu.Item>
-                <Menu.Item key="setting:2">戒烟成果</Menu.Item>
-                <Menu.Item key="setting:3">我的健康</Menu.Item>
+                <Menu.Item key="diary">戒烟日记</Menu.Item>
+                <Menu.Item key="result">戒烟成果</Menu.Item>
+                <Menu.Item key="health">我的健康</Menu.Item>
+                <Menu.Item key="health">戒烟公益</Menu.Item>
               </SubMenu>
               <SubMenu title={<span>烟草知识</span>}>
-                <Menu.Item key="setting:1">烟草-癌症和健康</Menu.Item>
-                <Menu.Item key="setting:2">戒烟-神话和真相</Menu.Item>
-                <Menu.Item key="setting:3">戒烟-知识竞赛</Menu.Item>
+                <Menu.Item key="disease">烟草-癌症和健康</Menu.Item>
+                <Menu.Item key="truth">戒烟-神话和真相</Menu.Item>
+                <Menu.Item key="knowledge">戒烟-知识竞赛</Menu.Item>
               </SubMenu>
               <SubMenu title={<span>更多</span>}> 
-                <Menu.Item key="setting:1">吸烟危害</Menu.Item>
-                <Menu.Item key="setting:2">二手烟危害</Menu.Item>
+                <Menu.Item key="harm">吸烟危害</Menu.Item>
+                <Menu.Item key="twiceHarm">二手烟危害</Menu.Item>
               </SubMenu>
             </Menu>
           </Col>

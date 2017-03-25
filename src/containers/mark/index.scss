@@ -1,0 +1,42 @@
+.mark {
+	.mark-area {
+		height: 550px;
+		width: 80%;
+		position: relative;
+		left: 10%;
+		top: 20px;
+		background: #eee;
+		border-radius: 5px;
+		text-align: center;
+		.mark-button {
+			width: 150px;
+			height: 150px;
+			border-radius: 150px;
+			background: #f6af5f;
+			margin: 0 auto;
+	    position: relative;
+	    top: 30px;
+      cursor: pointer;
+	    .mark-button-name {
+  	    display: table-cell;
+		    vertical-align: middle;
+        height: inherit;
+		    width: inherit;
+		    font-size: 24px;
+		    color: #fff;
+	    }
+		}
+		.mark-rule {
+			position: relative;
+			top: 100px;
+			height: 200px;
+		}
+	}
+	form {
+		width: 60%;
+    position: relative;
+    left: 20%;
+    top: 20px;
+    text-align: center;
+	}
+}
