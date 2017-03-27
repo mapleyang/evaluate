@@ -61,8 +61,13 @@ class Home extends Component {
           <div><img src="./test03.png" /></div>
         </Carousel>
         <div className="activity-desc">
-          <div className="activity-desc-name">活动主题</div>
-          <div className="activity-desc-content">activity description</div>
+          <div className="activity-desc-name">GH戒烟-健康之路</div>
+          <div className="activity-desc-content">
+            <div>是面对所有吸烟或者可能受吸烟影响者的一整套戒烟解决方案。
+根据不同吸烟者的情况，’GH戒烟’能智能地给出个体化戒烟方案，帮助患者成功完成戒烟之旅。
+  </div>
+  <div>此方案建立于国际循证医学的基础上，所有使用或推荐的戒烟方法或技术，均已经大量严格科学研究检验。这些方法和技术已帮助全球，包括中国在内成千上万的吸烟者成功戒烟。    </div>
+</div>
         </div>
         <div className="activity-rules">
           <img src="./contents.png" />

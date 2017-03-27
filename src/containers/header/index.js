@@ -51,10 +51,10 @@ class Header extends Component {
                 <Menu.Item key="activity2">戒烟活动2</Menu.Item>
               </SubMenu>
               <SubMenu title={<span>戒烟方案</span>}>
-                <Menu.Item key="self">自助戒烟</Menu.Item>
-                <Menu.Item key="msg">短信戒烟</Menu.Item>
-                <Menu.Item key="mind">心理治疗戒烟</Menu.Item>
-                <Menu.Item key="medicine">药物戒烟</Menu.Item>
+                <Menu.Item key="selfcure">自助戒烟</Menu.Item>
+                <Menu.Item key="msgcure">短信戒烟</Menu.Item>
+                <Menu.Item key="mindcure">心理治疗戒烟</Menu.Item>
+                <Menu.Item key="medicinecure">药物戒烟</Menu.Item>
               </SubMenu>
               <Menu.Item key="mark">
                 戒烟打卡
@@ -63,7 +63,7 @@ class Header extends Component {
                 <Menu.Item key="diary">戒烟日记</Menu.Item>
                 <Menu.Item key="result">戒烟成果</Menu.Item>
                 <Menu.Item key="health">我的健康</Menu.Item>
-                <Menu.Item key="health">戒烟公益</Menu.Item>
+                <Menu.Item key="commonweal">戒烟公益</Menu.Item>
               </SubMenu>
               <SubMenu title={<span>烟草知识</span>}>
                 <Menu.Item key="disease">烟草-癌症和健康</Menu.Item>

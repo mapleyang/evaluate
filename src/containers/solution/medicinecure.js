@@ -12,7 +12,7 @@ const formItemLayout = {
   wrapperCol: { span: 14 },
 };
 
-class Mark extends Component {
+class MedicineCure extends Component {
 	constructor(props, context) {
     super(props)
     this.state = {
@@ -96,40 +96,38 @@ class Mark extends Component {
   render() {
     const { getFieldDecorator } = this.props.form;
     return (
-      <div className="mark">
-        <Row>
-          <Col span={14}>
-            <Form onSubmit={this.handleSubmit} >
-              <FormItem>
-                <span>今天抽烟的根数</span>
-              </FormItem>
-              <FormItem>
-                {getFieldDecorator('slider')(
-                  <Slider onChange={this.sliderChange.bind(this)} marks={{ 0: 'A', 20: 'B', 40: 'C', 60: 'D', 80: 'E', 100: 'F' }} />
-                )}
-              </FormItem>
-              {this.getScenes()}
-              {this.getAddScene()}
-            </Form>
+      <div className="solution selfcure">
+        <Row className="cure-main">
+          <Col span={14} className="cure-image">
+            image
           </Col>
           <Col span={10}>
-            <div className="mark-area">
-              <div className="mark-button">
-                <div className="mark-button-name">打卡</div>
-              </div>
-              <div className="mark-rule">
-                <div>打卡规则</div>
-                <div>短信通知监督人</div>
-                <div>分享朋友圈</div>
-                <div>戒烟日记记录</div>
-              </div>
+            <div className="cure-main-desc">
+              <div className="cure-main-name">药物戒烟</div>
+              <div className="cure-main-content">xxxxxxxxxxx</div>
+              <Button className="cure-join" type="primary">立即戒烟</Button>
             </div>
           </Col>
+        </Row>
+        <Row className="cure-detail">
+          <div className="cure-detail-content">
+            <Tabs defaultActiveKey="2">
+              <TabPane tab={<span><Icon type="exception" />治疗说明</span>} key="1">
+                Tab 1
+              </TabPane>
+              <TabPane tab={<span><Icon type="solution" />套餐说明</span>} key="2">
+                Tab 2
+              </TabPane>
+              <TabPane tab={<span><Icon type="medicine-box" />服务说明</span>} key="3">
+                Tab 2
+              </TabPane>
+            </Tabs>
+          </div>
         </Row>
       </div>
     );
   }
 }
 
-export default Mark = Form.create({
-})(Mark);
+export default MedicineCure = Form.create({
+})(MedicineCure);

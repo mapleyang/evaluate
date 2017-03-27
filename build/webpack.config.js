@@ -169,6 +169,7 @@ webpackConfig.module.loaders.push(
   { test: /\.(png|jpg|gif)$/,loader: 'url?limit=1000000' }
 )
 
+
 if (!__DEV__) {
   debug('Apply ExtractTextPlugin to CSS loaders.')
   webpackConfig.module.loaders.filter((loader) =>

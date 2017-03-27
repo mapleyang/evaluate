@@ -9,7 +9,13 @@ import Register from "./containers/login/register"
 import Analysis from "./containers/activities/analysis"
 import Diary from "./containers/myhealth/diary"
 import Mark from "./containers/mark/index"
+import SelfCure from "./containers/solution/selfcure"
+import MsgCure from "./containers/solution/msgcure"
+import Mindcure from "./containers/solution/mindcure"
+import MedicineCure from "./containers/solution/medicinecure"
+import Flow from "./containers/solution/flow"
 
+import MHome from "./containers/MHome/index"  
 
 ReactDOM.render(
   <Router history={hashHistory}>
@@ -21,6 +27,12 @@ ReactDOM.render(
       <Route path="/diary" component={Diary}></Route>
       <Route path="/analysis" component={Analysis}></Route>
       <Route path="/mark" component={Mark}></Route>
+      <Route path="/selfcure" component={SelfCure}></Route>
+      <Route path="/msgcure" component={MsgCure}></Route>
+      <Route path="/mindcure" component={Mindcure}></Route>
+      <Route path="/medicinecure" component={MedicineCure}></Route>
+      <Route path="/flow" component={Flow}></Route>
+      <Route path="/mobilehome" component={MHome}></Route>
     </Route>
   </Router>,
   document.getElementById('root')
