@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Spin, message, Form, Icon, Input, Button, Row, Col, Radio, Carousel, Slider, Select  } from 'antd'
-import Echarts from 'echarts'
 import './index.scss'
 import Footer from '../footer/index';
 const FormItem = Form.Item;

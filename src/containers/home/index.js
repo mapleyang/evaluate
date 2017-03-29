@@ -51,27 +51,53 @@ class Home extends Component {
     console.log(a, b, c);
   }
 
+  getStartClick () {
+    location.hash = "/analysis";
+    // location.hash = "/test";
+  }
+
 
   render() {
     return (
       <div className="home">
-        <Carousel afterChange={this.onChange.bind(this)} autoplay={true}>
-          <div><img src="./test01.png" /></div>
-          <div><img src="./test02.png" /></div>
-          <div><img src="./test03.png" /></div>
-        </Carousel>
-        <div className="activity-desc">
-          <div className="activity-desc-name">GH戒烟-健康之路</div>
-          <div className="activity-desc-content">
-            <div>是面对所有吸烟或者可能受吸烟影响者的一整套戒烟解决方案。
-根据不同吸烟者的情况，’GH戒烟’能智能地给出个体化戒烟方案，帮助患者成功完成戒烟之旅。
-  </div>
-  <div>此方案建立于国际循证医学的基础上，所有使用或推荐的戒烟方法或技术，均已经大量严格科学研究检验。这些方法和技术已帮助全球，包括中国在内成千上万的吸烟者成功戒烟。    </div>
-</div>
-        </div>
-        <div className="activity-rules">
-          <img src="./contents.png" />
-        </div>
+        <Row className="home-desc">
+          <Col span={12} className="home-desc-item">
+            <Carousel afterChange={this.onChange.bind(this)} autoplay={true}>
+              <div><img src="./test01.png" /></div>
+              <div><img src="./test02.png" /></div>
+              <div><img src="./test03.png" /></div>
+            </Carousel>
+          </Col>
+          <Col span={12} className="home-desc-item">
+            <div className="activity-desc">
+              <div className="activity-desc-name">GH戒烟-健康之路</div>
+              <div className="activity-desc-content">
+                <div><span>&nbsp;&nbsp;&nbsp;是面对所有吸烟或者可能受吸烟影响者的一整套戒烟解决方案。
+    根据不同吸烟者的情况，’GH戒烟’能智能地给出个体化戒烟方案，帮助患者成功完成戒烟之旅。此方案建立于国际循证医学的基础上，所有使用或推荐的戒烟方法或技术，均已经大量严格科学研究检验。这些方法和技术已帮助全球，包括中国在内成千上万的吸烟者成功戒烟。</span></div>
+              </div>
+              <div className="home-start">
+                <Button type="primary" ghost size="large" className="home-start-button" onClick={this.getStartClick.bind(this)}>开始健康之路>></Button>
+              </div>
+            </div>
+          </Col>
+        </Row>
+        <Row className="home-row-fucs">
+          <div className="home-fucs-area">
+            <div className="home-fucs-block">
+              <div className="home-fucs-q"><span>Q</span></div>
+            </div>
+            <div className="home-fucs-block">
+              <div className="home-fucs-u">U</div>
+            </div>
+            <div className="home-fucs-block">
+              <div className="home-fucs-i">I</div>
+            </div>
+            <div className="home-fucs-block">
+              <div className="home-fucs-t">T</div>
+            </div>
+          </div>
+        </Row>
+        <div className="home-content"></div>
         <div className="footer"><Footer /></div>
       </div>
     );
@@ -79,3 +105,7 @@ class Home extends Component {
 }
 
 export default Home;
+
+        // <div className="activity-rules">
+        //   <img src="./contents.png" />
+        // </div>

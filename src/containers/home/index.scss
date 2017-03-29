@@ -1,4 +1,56 @@
 .home {
+  .home-desc {
+    margin: 20px 20px;
+    height: 300px;
+    .home-desc-item {
+      height: 100%;
+      .activity-desc {
+        height: 100%;
+      }
+    }
+  }
+  .home-row-fucs {
+    height: 200px;
+    .home-fucs-area {
+      width: 80%;
+      height: 100%;
+      margin: 0 auto;
+      .home-fucs-block {
+        width: 25%;
+        float: left;
+        height: 80%;
+        font-size: 80px;
+        text-align: center;
+        margin-top: 20px;
+      }
+      .home-fucs-q {
+        width: 90%;
+        height: 80%;
+        background: #877E8C;
+      }
+      .home-fucs-q:hover {
+        background-color: rgba(135,126,140,.6);  
+        span {
+          display: none;
+        }
+      }
+      .home-fucs-u {
+        width: 90%;
+        height: 80%;
+        background: #8B5F5C;
+      }
+      .home-fucs-i {
+        width: 90%;
+        height: 80%;
+        background: #52625E;
+      }
+      .home-fucs-t {
+        width: 90%;
+        height: 80%;
+        background: #464646;
+      }
+    }
+  }
   .ant-carousel {
   	.slick-slide {
   	  text-align: center;
@@ -26,10 +78,19 @@
   		padding-top: 20px;
   	}
   	.activity-desc-content {
-  		height: 80px;
-  		text-align: center;
+      width: 80%;
+      margin: 0 auto;
   		padding-top: 25px;
+      color: #999999;
   	}
+    .home-start {
+      text-align: center;
+      .home-start-button {
+        text-align: center;
+        position: relative;
+        top: 45px;
+      }
+    }
   }
   .activity-rules {
     height: 500px;
@@ -37,5 +98,10 @@
     img {
       margin-top: 60px;
     }
+  }
+  .home-content {
+    border-top: 1px #AEACAE solid;
+    background: #eee;
+    height: 500px;
   }
 }

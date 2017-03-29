@@ -34,4 +34,26 @@
       font-size: 12px!important;
     }
   } 
+  .am-tab-bar-bar {
+    height: 60px!important;
+  }
+  .am-tab-bar-bar {
+    font-size: 16px!important;
+  }
+}
+#tab-bar.demo {
+  display: flex;
+  flex-direction: column;
+}
+#tab-bar .demoName {
+  height: 0.8rem;
+}
+#tab-bar .demo-preview-item,
+#tab-bar .demo-preview-item .am-tab-bar {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+#tab-bar .demo-preview-item .am-tab-bar {
+  background-color: white;
 }

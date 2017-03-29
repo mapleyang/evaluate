@@ -1,9 +1,14 @@
 .header-area {
-	background-color: #F6AF5F;
+	background-color: #0C5B79;
+	height: 80px;
+	.header-row-menu {
+    position: relative;
+    top: 15px;
+	}
 	.menu-col {
 		ul {
-			background-color: #F6AF5F;
-			border-bottom: 1px solid #F6AF5F;
+			background-color: #0C5B79;
+			border-bottom: 1px solid #0C5B79;
 			li {
 				color: #fff;
 				font-size: 14px;

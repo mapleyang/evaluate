@@ -28,7 +28,7 @@ class Header extends Component {
   render() {
     return (
       <div className="header-area">
-        <Row>
+        <Row className="header-row-menu">
           <Col span={4}>
             <img src="./viewfile.png" />
             <div className="header-name"><span>戒烟-健康之路</span></div>
@@ -41,9 +41,6 @@ class Header extends Component {
             >
               <Menu.Item key="home">
                 <span>主页</span>
-              </Menu.Item>
-              <Menu.Item key="compony">
-                公司介绍
               </Menu.Item>
               <SubMenu title={<span>戒烟活动</span>}>
                 <Menu.Item key="analysis">戒烟健康分析</Menu.Item>
