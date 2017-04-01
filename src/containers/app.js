@@ -14,7 +14,6 @@ export default class App extends Component {
   getHeader () {
     let header = "";
     let flag = location.hash.indexOf("#/mobile");
-    console.log(location)
     let pathname = "";
     if(flag === 0) {
       pathname = "mobile";

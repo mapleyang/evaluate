@@ -127,6 +127,9 @@ class Plan extends Component {
                 </div>
                 <div className="add-phone"><Icon type="plus-circle-o" /></div>
               </div>
+              <div className="plan-steps-item plan-step-8">
+                <Button ghost size="large">完成我的计划>></Button>
+              </div>
             </div>
           </Col>
           <Col span={4}>

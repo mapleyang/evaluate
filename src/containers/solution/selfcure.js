@@ -109,7 +109,7 @@ class SelfCure extends Component {
             <div className="cure-main-desc">
               <div className="cure-main-name">自助戒烟</div>
               <div className="cure-main-content">xxxxxxxxxxx</div>
-              <Button className="cure-join" type="primary" onClick={this.startClick.bind(this)}>立即戒烟</Button>
+              <Button className="cure-join" type="primary" onClick={this.startClick.bind(this)}>加入我的戒烟计划>></Button>
             </div>
           </Col>
         </Row>
