@@ -47,4 +47,9 @@
     line-height: 20px;
     border-radius: 2px;
 	}
+  .ant-menu:not(.ant-menu-horizontal) {
+    .ant-menu-item-selected {
+      background-color: rgba(55,55,55,.6)!important;
+    }
+  }
 }

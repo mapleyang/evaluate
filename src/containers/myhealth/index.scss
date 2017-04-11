@@ -78,7 +78,73 @@
 		top: 20px;
 	  border-radius: 2px;
 		.result-list-name {
+			width: 100%;
+			text-align: center;
 			color: #fff;
 		}
 	}
+	.result-content {
+		height: 500px;
+		line-height: 500px;
+		text-align: center;
+		font-size: 24px;
+	}
+}
+.myplan {
+  .plan-title {
+    height: 150px;
+    text-align: center; 
+    .plan-title-name {
+      color: #5B595B;
+      height: 60px;
+      line-height: 60px;
+      font-size: 24px;
+    }
+    .plan-title-desc {
+      width: 50%;
+      position: relative;
+      left: 25%;
+      font-size: 18px;
+    }
+  }
+  .myplan-list {
+    width: 60%;
+    margin: 0 auto;
+    .myplan-item {
+      margin-bottom: 30px;
+    }
+    .myplan-name {
+      cursor: pointer;
+      width: 80px;
+      height: 30px;
+      line-height: 30px;
+      text-align: center;
+      color: #fff;
+    }
+    .myplan-name-basic {
+      background: #e5a755;
+    }
+    .myplan-item-basic {
+      border: 2px #e5a755 solid;
+      li {
+        padding-left: 30px;
+      }
+      .myplan-basic-li {
+        color: #e5a755;
+        margin-right: 10px;
+      }
+    }
+    .myplan-item-top {
+      height: 20px;
+    }
+    .myplan-item-medicine {
+      border: 2px #49b491 solid;
+    }
+    .myplan-name-medicine {
+       background: #49b491; 
+    }
+  }
+}
+.modle-add-task {
+  margin-bottom: 20px;
 }

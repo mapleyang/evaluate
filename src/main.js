@@ -21,6 +21,8 @@ import Analysis from "./containers/activities/analysis"
 import Plan from "./containers/activities/plan"
 import Diary from "./containers/myhealth/diary"
 import Result from "./containers/myhealth/result"
+import Health from "./containers/myhealth/health"
+import MyPlan from "./containers/myhealth/myplan"
 import Mark from "./containers/mark/index"
 import SelfCure from "./containers/solution/selfcure"
 import MsgCure from "./containers/solution/msgcure"
@@ -28,13 +30,13 @@ import Mindcure from "./containers/solution/mindcure"
 import MedicineCure from "./containers/solution/medicinecure"
 import Flow from "./containers/solution/flow"
 //mobile
-import MHome from "./containers/MHome/index"  
-import MTab from "./containers/MHome/tab" 
-
+// import MHome from "./containers/MHome/index"  
+// import MTab from "./containers/MHome/tab" 
 
 import Test from "./containers/home/test"
 
 const param = location.hash.slice(2, 4) === "en" ? "en" : undefined;
+
 
 const locale = param || 'zh';
 
@@ -78,8 +80,12 @@ const ready = () => {
             <Route path="/en/register" component={Register}></Route>
             <Route path="/diary" component={Diary}></Route>
             <Route path="/en/diary" component={Diary}></Route>
+            <Route path="/myplan" component={MyPlan}></Route>
+            <Route path="/en/myplan" component={MyPlan}></Route>
             <Route path="/result" component={Result}></Route>
             <Route path="/en/result" component={Result}></Route>
+            <Route path="/health" component={Health}></Route>
+            <Route path="/en/health" component={Health}></Route>
             <Route path="/analysis" component={Analysis}></Route>
             <Route path="/en/analysis" component={Analysis}></Route>
             <Route path="/plan" component={Plan}></Route>
@@ -96,10 +102,6 @@ const ready = () => {
             <Route path="/en/medicinecure" component={MedicineCure}></Route>
             <Route path="/flow" component={Flow}></Route>
             <Route path="/en/flow" component={Flow}></Route>
-            <Route path="/mobilehome" component={MHome}></Route>
-            <Route path="/en/mobilehome" component={MHome}></Route>
-            <Route path="/mobiletab" component={MTab}></Route>
-            <Route path="/en/mobiletab" component={MTab}></Route>
           </Route>
         </Router>
       </IntlProvider>
@@ -113,3 +115,7 @@ if (scripts.length) {
 } else {
   ready();
 }
+            // <Route path="/mobilehome" component={MHome}></Route>
+            // <Route path="/en/mobilehome" component={MHome}></Route>
+            // <Route path="/mobiletab" component={MTab}></Route>
+            // <Route path="/en/mobiletab" component={MTab}></Route>

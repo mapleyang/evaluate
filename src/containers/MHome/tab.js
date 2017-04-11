@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Carousel, WhiteSpace, WingBlank, Grid, TabBar, Icon } from 'antd-mobile';
-import './index.scss'
+import './index.scss';
+import Main from "./main";
 
 class Home extends Component {
   constructor(props, context) {
@@ -8,6 +9,7 @@ class Home extends Component {
     this.state = {
       dselectedTab: 'redTab',
       hidden: false,
+      tab: "main"
     }
   }
 
@@ -15,20 +17,16 @@ class Home extends Component {
   }
 
   renderContent(pageText) {
-    return (
-      <div style={{ backgroundColor: 'white', height: '100%', textAlign: 'center' }}>
-        <div style={{ paddingTop: 60 }}>你已点击“{pageText}” tab， 当前展示“{pageText}”信息</div>
-        <a style={{ display: 'block', marginTop: 40, marginBottom: 600, color: '#108ee9' }} onClick={(e) => {
-          e.preventDefault();
-          this.setState({
-            hidden: !this.state.hidden,
-          });
-        }}
-        >
-          点击切换 tab-bar 显示/隐藏
-        </a>
-      </div>
-    );
+    let page;
+    switch(pageText) {
+      case "main":
+        page = <Main />
+        break;
+      case "find":
+        page = <div>test</div>
+        break;
+    }
+    return page;
   }
 
   render() {
@@ -42,63 +40,49 @@ class Home extends Component {
           hidden={this.state.hidden}
         >
           <TabBar.Item
-            title="Q"
-            key="Q"
-            icon={<div />}
-            selectedIcon={<div />}
-            selected={this.state.selectedTab === 'blueTab'}
+            title="首页"
+            key="index"
+            icon={<Icon type="home" />}
+            selectedIcon={<Icon type="home" />}
+            selected={this.state.tab === 'main'}
             onPress={() => {
               this.setState({
-                selectedTab: 'blueTab',
+                tab: 'main',
               });
             }}
             data-seed="logId"
           >
-            {this.renderContent('Q')}
+            {this.renderContent("main")}
           </TabBar.Item>
           <TabBar.Item
-            icon={<div />}
-            selectedIcon={<div />}
-            title="U"
-            key="U"
-            selected={this.state.selectedTab === 'redTab'}
+            title="发现"
+            icon={<Icon type="compass" />}
+            selectedIcon={<Icon type="compass" />}
+            key="find"
+            selected={this.state.tab === 'find'}
             onPress={() => {
               this.setState({
-                selectedTab: 'redTab',
+                tab: 'find',
               });
             }}
             data-seed="logId1"
           >
-            {this.renderContent('U')}
+            {this.renderContent('find')}
           </TabBar.Item>
           <TabBar.Item
-            icon={<div />}
-            selectedIcon={<div />}
-            title="I"
-            key="I"
+            title="我的"
+            icon={<Icon type="user" />}
+            selectedIcon={<Icon type="user" />}
+            key="mine"
             dot
-            selected={this.state.selectedTab === 'greenTab'}
+            selected={this.state.tab === 'mine'}
             onPress={() => {
               this.setState({
-                selectedTab: 'greenTab',
+                tab: 'mine',
               });
             }}
           >
-            {this.renderContent('I')}
-          </TabBar.Item>
-          <TabBar.Item
-            icon={<div />}
-            selectedIcon={<div />}
-            title="T"
-            key="T"
-            selected={this.state.selectedTab === 'yellowTab'}
-            onPress={() => {
-              this.setState({
-                selectedTab: 'yellowTab',
-              });
-            }}
-          >
-            {this.renderContent('T')}
+            {this.renderContent('mine')}
           </TabBar.Item>
         </TabBar>
       </div>

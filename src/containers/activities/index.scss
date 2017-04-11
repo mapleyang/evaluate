@@ -8,9 +8,6 @@
 	form {
 		height: 560px;
 	  border-right: 1px #eee solid;
-	  .ant-row {
-	  	margin-left: 20%;
-	  }
 	}
 	.analysis-chartarea {
     height: 300px;
@@ -42,6 +39,49 @@
       }
     }
 	}
+  .ant-card {
+    margin: 0 auto;
+    position: relative;
+    top: 100px;
+    .ant-radio-wrapper {
+      display: -webkit-box;
+      margin-bottom: 6px;
+    }
+  }
+  .ant-tabs-tabpane {
+    height: 500px;
+  }
+  .analysis-left-arrow {
+    .analysis-left-area {
+      width: 100%;
+      position: relative;
+      top: 200px;
+      text-align: center;
+      i {
+        font-size: 42px;
+      }
+    }
+  }
+  .analysis-right-arrow {
+    .analysis-right-area {
+      width: 100%;
+      position: relative;
+      top: 200px;
+      text-align: center;
+      i {
+        font-size: 42px;
+      }
+    }
+  }
+  .ant-tabs-tab-next-icon {
+    display: none;
+  }
+  .ant-tabs-bar {
+    display: none;
+  }
+  .highcharts-credits {
+    display: none;
+  }
 }
 /*plan*/
 .plan {

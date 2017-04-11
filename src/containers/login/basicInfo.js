@@ -1,24 +1,19 @@
 import React, { Component } from 'react'
-import { Spin, message, Form, Icon, Input, Button, Row, Col, Radio, Carousel, Checkbox, Select, DatePicker  } from 'antd'
+import { Spin, message, Form, Icon, Input, Button, Row, Col, Radio, Carousel, Checkbox  } from 'antd'
 import './index.scss'
 import Footer from '../footer/index';
 const FormItem = Form.Item
 const RadioGroup = Radio.Group;
-const Option = Select.Option;
 const formItemLayout = {
   labelCol: { span: 8 },
   wrapperCol: { span: 14 },
 };
 
 class Register extends Component {
-	constructor(props, context) {
+  constructor(props, context) {
     super(props)
     this.state = {
     }
-  }
-
-  componentDidMount () {
-    this.props.form.setFieldsValue({sex: "male"})
   }
 
   handleSubmit = (e) => {
@@ -29,6 +24,7 @@ class Register extends Component {
       }
       else {
         //注册接口调用
+        
       }
     });
   }
@@ -72,30 +68,6 @@ class Register extends Component {
                   }],
                 })(
                   <Input prefix={<Icon type="lock" style={{ fontSize: 13 }} />} type="password" placeholder="Password Again" />
-                )}
-              </FormItem>
-              <FormItem>
-                {getFieldDecorator('sex')(
-                  <RadioGroup>
-                    <Radio value="male">male</Radio>
-                    <Radio value="fmale">fmale</Radio>
-                  </RadioGroup>
-                )}
-              </FormItem>
-              <FormItem>
-                {getFieldDecorator('birthDay')(
-                  <DatePicker />
-                )}
-              </FormItem>
-              <FormItem>
-                {getFieldDecorator('occupation')(
-                  <Select placeholder="请选择您的职业">
-                    <Option value="jack">Jack</Option>
-                    <Option value="lucy">Lucy</Option>
-                    <Option value="disabled">Disabled</Option>
-                    <Option value="Yiminghe">yiminghe</Option>
-                    <Option value="other">其他</Option>
-                  </Select>
                 )}
               </FormItem>
               <FormItem>

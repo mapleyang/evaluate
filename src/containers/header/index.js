@@ -60,7 +60,7 @@ class Header extends Component {
   }
 
   render() {
-    const defaultZH_EN = window.ZH_EN['en'];
+    const defaultZH_EN = window.ZH_EN['zh'];
     let param = location.hash.slice(2, 4) === "en" ? "en" : "zh";
     if(this.state.param !== "" && this.state.param !== param ) {
       location.reload();
@@ -99,6 +99,7 @@ class Header extends Component {
               </Menu.Item>
               <SubMenu title={<span><FormattedMessage id="header.menu.mine" defaultMessage={defaultZH_EN['header.menu.mine']}/></span>}>
                 <Menu.Item key="diary">戒烟日记</Menu.Item>
+                <Menu.Item key="myplan">戒烟计划</Menu.Item>
                 <Menu.Item key="result">戒烟成果</Menu.Item>
                 <Menu.Item key="health">我的健康</Menu.Item>
                 <Menu.Item key="commonweal">戒烟公益</Menu.Item>

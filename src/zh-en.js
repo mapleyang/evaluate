@@ -1,3 +1,4 @@
+import Questions from "./contents/questions"
 const ZH_EN = {
   "zh": {
     "header.menu.home": "主页",
@@ -7,6 +8,7 @@ const ZH_EN = {
     "header.menu.mine": "我的健康之路",
     "header.menu.konwledge": "烟草知识",
     "header.menu.more": "更多",
+    "analysis.questions": Questions.zh
   },
   "en": {
     "header.menu.home": "Home",
@@ -16,6 +18,7 @@ const ZH_EN = {
     "header.menu.mine": "my health road",
     "header.menu.konwledge": "konwledge",
     "header.menu.more": "more",
+    "analysis.questions": Questions.en
   }
 }
 
