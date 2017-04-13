@@ -102,7 +102,7 @@ class MyPlan extends Component {
           </div>
           <div className="myplan-item myplan-medicine">
             <div className="myplan-name myplan-name-medicine">
-              <span>药物任务</span><Icon type="edit" />
+              <span>协助任务</span><Icon type="edit" />
             </div>
             <div className="myplan-item-medicine myplan-item-area">
               <div className="myplan-item-top"></div>
@@ -111,14 +111,6 @@ class MyPlan extends Component {
           <div className="myplan-item myplan-medicine">
             <div className="myplan-name myplan-name-medicine">
               <span>分享任务</span><Icon type="edit" />
-            </div>
-            <div className="myplan-item-basic myplan-item-area">
-              <div className="myplan-item-top"></div>
-            </div>
-          </div>
-          <div className="myplan-item myplan-medicine">
-            <div className="myplan-name myplan-name-medicine">
-              <span>协助任务</span><Icon type="edit" />
             </div>
             <div className="myplan-item-basic myplan-item-area">
               <div className="myplan-item-top"></div>

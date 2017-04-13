@@ -129,3 +129,7 @@ exports.city = (req, res) => {
 exports.cinema_detail = (req, res) => {
     sendDataFn(req, res, 'cinema_detail.json', false);
 }
+
+exports.register = (req, res) => {
+   sendDataFn(req, res, 'city.json', false);
+}

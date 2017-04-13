@@ -25,10 +25,15 @@ class Register extends Component {
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
       if (!err) {
-        console.log('Received values of form: ', values);
+        //注册接口调用
+        fetch("/register?userName=" + values.userName)
+        .then(response => response.json())
+        .then(json => { 
+          console.log(json)
+        })
       }
       else {
-        //注册接口调用
+        console.log(err);
       }
     });
   }
@@ -90,10 +95,10 @@ class Register extends Component {
               <FormItem>
                 {getFieldDecorator('occupation')(
                   <Select placeholder="请选择您的职业">
-                    <Option value="jack">Jack</Option>
-                    <Option value="lucy">Lucy</Option>
-                    <Option value="disabled">Disabled</Option>
-                    <Option value="Yiminghe">yiminghe</Option>
+                    <Option value="jack">IT</Option>
+                    <Option value="lucy">医疗</Option>
+                    <Option value="disabled">金融</Option>
+                    <Option value="Yiminghe">财务</Option>
                     <Option value="other">其他</Option>
                   </Select>
                 )}

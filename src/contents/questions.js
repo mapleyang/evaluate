@@ -131,53 +131,95 @@ const questions = {
         value: "0"
       },{
         label: "已戒烟，<6个月",
-        value: "6"
+        value: "1"
       },{
         label: "已戒烟，≧6个月",
-        value: "10"
+        value: "2"
       },{
         label: "目前吸烟",
-        value: "1"
+        value: "3"
       }]
     }],
     smokingOne: [{
       name: "",
       category: "",
       type: "",
-      question: "和你同住的其他人中有几位吸烟者？",
+      question: "家中与你同住人的年龄组?",
       options: [{
-        label: "丈夫/妻子",
-        value: "10",
+        label: "无人同住",
+        value: "0",
       },{
-        label: "父亲/母亲",
-        value: "40"
+        label: "<4岁",
+        value: "2"
       },{
-        label: "儿子/女儿",
-        value: "25"
+        label: "4-12岁",
+        value: "4"
       },{
-        label: "其他",
-        value: "25"
+        label: "13-17",
+        value: "6"
+      },{
+        label: "≧18岁",
+        value: "8"
       }]
     },{
       name: "",
       category: "",
       type: "",
-      question: "你是否长期暴露于 2 手烟",
+      question: "和你同住的其他人中有几位吸烟者？",
+      options: [{
+        label: "无人吸烟",
+        value: "0",
+      },{
+        label: "1人吸烟",
+        value: "1"
+      },{
+        label: "2人吸烟",
+        value: "2"
+      },{
+        label: "3人吸烟",
+        value: "3"
+      },{
+        label: "4人吸烟",
+        value: "4"
+      }]
+    },{
+      name: "",
+      category: "",
+      type: "",
+      question: "不与你同住的家属中有几位吸烟者？",
+      options: [{
+        label: "无人吸烟",
+        value: "0",
+      },{
+        label: "1人吸烟",
+        value: "1"
+      },{
+        label: "2人吸烟",
+        value: "2"
+      },{
+        label: "3人吸烟",
+        value: "3"
+      },{
+        label: "4人吸烟",
+        value: "4"
+      }]
+    },{
+      name: "",
+      category: "",
+      type: "",
+      question: " 你是否长期暴露于2手烟?",
       options: [{
         label: "无",
         value: "0",
       },{
-        label: "有，家庭",
+        label: "有,家庭",
         value: "1"
       },{
-        label: "有，公共场所",
-        value: "1"
-      },{
-        label: "有, 家庭和公共场所",
-        value: "1"
+        label: "有, 工作场所",
+        value: "2"
       },{
         label: "有, 其他",
-        value: "1"
+        value: "3"
       }]
     }],
     smokingTow: [{
@@ -187,16 +229,16 @@ const questions = {
       question: "你戒烟多久了？",
       options: [{
         label: "6 ~ 12 月",
-        value: "1"
-      },{
-        label: "13 ~ 24 月",
         value: "2"
       },{
+        label: "13 ~ 24 月",
+        value: "4"
+      },{
         label: "3 ~ 14 年",
-        value: "14"
+        value: "6"
       },{
         label: "≧15年",
-        value: "15"
+        value: "8"
       }]
     },{
       name: "quitDifficulty",
@@ -205,34 +247,34 @@ const questions = {
       question: "你是否觉得继续戒烟有困难？",
       options: [{
         label: "否，继续戒烟没有困难；",
-        value: false
+        value: 0
       },{
         label: "是，继续戒烟有困难",
-        value: true
+        value: 10
       }]
     },{
       name: "smokingLength",
       category: "",   
       type: "",       
-      question: "你戒烟前吸烟多少年?",
+      question: "吸烟多少年?",
       options: [{
         label: "刚戒烟",
         value: "0"
       },{
         label: "一年",
-        value: "0"
+        value: "2"
       },{
         label: "三年",
-        value: "3"
+        value: "4"
       },{
         label: "5年",
-        value: "5"
+        value: "6"
       },{
         label: "10年",
-        value: "10"
+        value: "8"
       },{
         label: "≧10年",
-        value: "20"
+        value: "10"
       }]
     },{
       name: "cigarette",
@@ -241,16 +283,16 @@ const questions = {
       question: "每天平均吸烟量?",
       options: [{
         label: "≤10 支/日",
-        value: "10"
+        value: "2"
       },{
         label: "11-20 支/日",
-        value: "20"
+        value: "4"
       },{
         label: "21-30 支/日",
-        value: "30"
+        value: "6"
       },{
         label: "≧31 支/日",
-        value: "40"
+        value: "8"
       }]
     }],
     smokingThree: [{
@@ -260,49 +302,52 @@ const questions = {
       question: "你戒烟多久了？",
       options: [{
         label: "≤2周",
-        value: "0.02"
+        value: "2"
       },{
         label: "3-5周",
-        value: "0.05"
+        value: "4"
       },{
         label: "6-12周",
-        value: "0.25"
+        value: "6"
       },{
         label: "13-26周",
-        value: "0.5"
+        value: "8"
       }]
     },{
-      name: "quitWay",
+      name: "quitWay",      
       category: "",  
       type: "",      
       question: "你采用的戒烟方法(可多选)",
       options: [{
         label: "自助戒烟",
-        value: "1"
+        value: "0"
       },{
         label: "尼古丁贴片",
-        value: "30"
+        value: "1"
       },{
         label: "尼古丁咀嚼胶（口香糖）",
-        value: "200"
+        value: "2"
+      },{
+        label: "尼古丁舌下片（含片）",
+        value: "3"
       },{
         label: "安非他酮",
-        value: "360"
+        value: "4"
       },{
         label: "伐尼克兰(畅沛)",
-        value: "400"
+        value: "5"
       },{
         label: "心理咨询",
-        value: "400"
+        value: "6"
       },{
         label: "戒烟热线",
-        value: "400"
+        value: "7"
       },{
         label: "戒烟门诊",
-        value: "400"
+        value: "8"
       },{
         label: "其他",
-        value: "400"
+        value: "9"
       }]
     },{
       name: "quitDifficulty",
@@ -311,34 +356,34 @@ const questions = {
       question: "你是否觉得继续戒烟有困难？",
       options: [{
         label: "否，继续戒烟没有困难；",
-        value: false
+        value: 0
       },{
         label: "是，继续戒烟有困难",
-        value: true
+        value: 10
       }]
     },{
       name: "smokingLength",
       category: "",   
       type: "",       
-      question: "你戒烟前吸烟多少年?",
+      question: "你戒烟前吸烟多少年?",    
       options: [{
         label: "刚戒烟",
         value: "0"
       },{
         label: "一年",
-        value: "1"
+        value: "2"
       },{
         label: "三年",
-        value: "3"
+        value: "4"
       },{
         label: "5年",
-        value: "5"
+        value: "6"
       },{
         label: "10年",
-        value: "10"
+        value: "8"
       },{
         label: "≧10年",
-        value: "20"
+        value: "10"
       }]
     },{
       name: "cigarette",
@@ -347,16 +392,16 @@ const questions = {
       question: "每天平均吸烟量?",
       options: [{
         label: "≤10 支/日",
-        value: "10"
+        value: "2"
       },{
         label: "11-20 支/日",
-        value: "20"
+        value: "4"
       },{
         label: "21-30 支/日",
-        value: "30"
+        value: "6"
       },{
         label: "≧31 支/日",
-        value: "40"
+        value: "8"
       }]
     },{
       name: "morning",
@@ -365,41 +410,38 @@ const questions = {
       question: "你早晨醒来后多长时间吸第一支烟？",
       options: [{
         label: " ≤5分钟",
-        value: "5"
+        value: "2"
       },{
         label: "6-30分钟",
-        value: "30"
+        value: "4"
       },{
         label: "31-60分钟",
-        value: "60"
+        value: "6"
       },{
         label: ">60分钟",
-        value: "100"
+        value: "8"
       }]
     }],
     smokingFour: [{
       name: "smokingLength",
       category: "",   
       type: "",       
-      question: "你戒烟前吸烟多少年?",
+      question: "吸烟多少年?",
       options: [{
-        label: "刚戒烟",
-        value: "0"
-      },{
         label: "一年",
         value: "1"
       },{
         label: "三年",
-        value: "3"
+        value: "2"
       },{
         label: "5年",
-        value: "5"
+        value: "3"
       },{
-        label: "10年",
-        value: "10"
+        label: "8年",
+        value: "4"
       },{
         label: "≧10年",
-        value: "20"
+        value: "5"
       }]
     },{
       name: "cigarette",
@@ -408,16 +450,16 @@ const questions = {
       question: "每天平均吸烟量?",
       options: [{
         label: "≤10 支/日",
-        value: "10"
+        value: "2"
       },{
         label: "11-20 支/日",
-        value: "20"
+        value: "4"
       },{
         label: "21-30 支/日",
-        value: "30"
+        value: "6"
       },{
         label: "≧31 支/日",
-        value: "40"
+        value: "8"
       }]
     },{
       name: "quitNumber",
@@ -432,13 +474,13 @@ const questions = {
         value: "1"
       },{
         label: "2-4次",
-        value: "3"
+        value: "2"
       },{
         label: "5-9次",
-        value: "7"
+        value: "3"
       },{
         label: "≧10次",
-        value: "10"
+        value: "4"
       }]
     }],
     smokingFourChild: [{
@@ -448,19 +490,19 @@ const questions = {
       question: "你最近一次认真戒烟是什么时候?",
       options: [{
         label: "最近7天",
-        value: "7"
+        value: "1"
       },{
         label: "最近8-30天",
-        value: "30"
+        value: "2"
       },{
         label: "1-6月前",
-        value: "180"
+        value: "3"
       },{
         label: "7-12月前",
-        value: "360"
+        value: "4"
       },{
         label: "1年前",
-        value: "400"
+        value: "5"
       }]
     },{
       name: "recentDayQuit",
@@ -469,19 +511,19 @@ const questions = {
       question: "你最近一次认真戒烟, 维持了多久不吸烟?",
       options: [{
         label: "≤7天",
-        value: "7"
+        value: "1"
       },{
         label: "8-30天",
-        value: "30"
+        value: "2"
       },{
         label: "1-6月",
-        value: "180"
+        value: "3"
       },{
         label: "7-12月",
-        value: "360"
+        value: "4"
       },{
         label: "≧1年",
-        value: "400"
+        value: "5"
       }]
     },{
       name: "quitWay",
@@ -493,28 +535,28 @@ const questions = {
         value: "1"
       },{
         label: "尼古丁贴片",
-        value: "30"
+        value: "2"
       },{
         label: "尼古丁咀嚼胶（口香糖）",
-        value: "200"
+        value: "3"
       },{
         label: "安非他酮",
-        value: "360"
+        value: "4"
       },{
         label: "伐尼克兰(畅沛)",
-        value: "400"
+        value: "5"
       },{
         label: "心理咨询",
-        value: "400"
+        value: "6"
       },{
         label: "戒烟热线",
-        value: "400"
+        value: "7"
       },{
         label: "戒烟门诊",
-        value: "400"
+        value: "8"
       },{
         label: "其他",
-        value: "400"
+        value: "9"
       }]
     },{
       name: "quitImportanceDegree",
@@ -625,40 +667,126 @@ const questions = {
         value: "10"
       }]
     },{
-      name: "cigaretteMoney",
+      name: "spanDay",
       category: "",   
       type: "",       
       question: "过去一个月内,你平均每天花多少钱买烟?",
       options: [{
         label: "≤10/元",
-        value: "10"
+        value: "1"
       },{
         label: "20-40/元",
-        value: "30"
+        value: "2"
       },{
         label: "40-60/元",
-        value: "50"
+        value: "4"
+      }]
+    },{
+      name: "cureSpand",
+      category: "",   
+      type: "",       
+      question: "如果有方法使你停止吸烟, 你最多愿意化多少钱(人民币,元)使用这种方法?",
+      options: [{
+        label: "<500",
+        value: "1"
       },{
-        label: "",
+        label: "500-999",
+        value: "2"
+      },{
+        label: "1000-1999",
+        value: "3"
+      },{
+        label: "2000-3999",
         value: "4"
       },{
-        label: "5",
+        label: "4000-6000",
         value: "5"
       },{
-        label: "6",
+        label: ">6000",
+        value: "6"
+      }]
+    },{
+      name: "quitChoose",
+      category: "",   
+      type: "",       
+      question: "你是否想戒烟?",
+      options: [{
+        label: "想戒烟",
+        value: "1"
+      },{
+        label: "还不想戒烟",
+        value: "2"
+      }]
+    }],
+    wantQuit: [{
+      name: "quitDay",
+      category: "",   
+      type: "",       
+      question: "你计划什么时候开始戒烟?",
+      options: [{
+        label: "7天内",
+        value: "1"
+      },{
+        label: "30天内",
+        value: "2"
+      },{
+        label: "3个月内",
+        value: "3"
+      },{
+        label: "6个月内",
+        value: "4"
+      },{
+        label: "未决定时间",
+        value: "5"
+      }]
+    }],
+    notQuit: [{
+      name: "notQuit",
+      category: "",   
+      type: "",       
+      question: "你不想戒烟的主要原因是?",
+      options: [{
+        label: "觉得不会成功",
+        value: "1"
+      },{
+        label: "以往戒烟失败",
+        value: "2"
+      },{
+        label: "不知道是否有有效的戒烟方法",
+        value: "3"
+      },{
+        label: "担心戒断症状",
+        value: "4"
+      },{
+        label: "担心体重增加",
+        value: "5"
+      },{
+        label: "缺乏支持",
         value: "6"
       },{
-        label: "7",
+        label: "缺乏专业戒烟指导",
         value: "7"
       },{
-        label: "8",
+        label: "享受吸烟",
         value: "8"
       },{
-        label: "9",
+        label: "应酬需要",
         value: "9"
       },{
-        label: "10",
+        label: "工作压力",
         value: "10"
+      },{
+        label: "周围人大都吸烟",
+        value: "11"
+      },{
+        label: "太晚戒烟",
+        value: "12"
+      },{
+        label: "不觉得对健康有多大危害",
+        value: "13"
+      },{
+        label: "其他",
+        value: "14"
       }]
     }]
   },
@@ -809,38 +937,80 @@ const questions = {
       type: "",
       question: "和你同住的其他人中有几位吸烟者？",
       options: [{
-        label: "丈夫/妻子",
-        value: "10",
+        label: "无人同住",
+        value: "0",
       },{
-        label: "父亲/母亲",
-        value: "40"
+        label: "<4岁",
+        value: "2"
       },{
-        label: "儿子/女儿",
-        value: "25"
+        label: "4-12岁",
+        value: "4"
       },{
-        label: "其他",
-        value: "25"
+        label: "13-17岁",
+        value: "6"
+      },{
+        label: "≧18岁",
+        value: "8"
       }]
     },{
       name: "",
       category: "",
       type: "",
-      question: "你是否长期暴露于 2 手烟",
+      question: "和你同住的其他人中有几位吸烟者？",
+      options: [{
+        label: "无人吸烟",
+        value: "0",
+      },{
+        label: "1人吸烟",
+        value: "1"
+      },{
+        label: "2人吸烟",
+        value: "2"
+      },{
+        label: "3人吸烟",
+        value: "3"
+      },{
+        label: "4人吸烟",
+        value: "4"
+      }]
+    },{
+      name: "",
+      category: "",
+      type: "",
+      question: "不与你同住的家属中有几位吸烟者？",
+      options: [{
+        label: "无人吸烟",
+        value: "0",
+      },{
+        label: "1人吸烟",
+        value: "1"
+      },{
+        label: "2人吸烟",
+        value: "2"
+      },{
+        label: "3人吸烟",
+        value: "3"
+      },{
+        label: "4人吸烟",
+        value: "4"
+      }]
+    },{
+      name: "",
+      category: "",
+      type: "",
+      question: " 你是否长期暴露于2手烟?",
       options: [{
         label: "无",
         value: "0",
       },{
-        label: "有，家庭",
+        label: "有,家庭",
         value: "1"
       },{
-        label: "有，公共场所",
-        value: "1"
-      },{
-        label: "有, 家庭和公共场所",
-        value: "1"
+        label: "有, 工作场所",
+        value: "2"
       },{
         label: "有, 其他",
-        value: "1"
+        value: "3"
       }]
     }],
     smokingTow: [{
@@ -850,16 +1020,16 @@ const questions = {
       question: "How long has it been since you quit?",
       options: [{
         label: "6 ~ 12 months",
-        value: "1"
-      },{
-        label: "13 ~ 24 months",
         value: "2"
       },{
+        label: "13 ~ 24 months",
+        value: "4"
+      },{
         label: "3 ~ 14 years",
-        value: "14"
+        value: "6"
       },{
         label: "After 15 years",
-        value: "15"
+        value: "8"
       }]
     },{
       name: "",
@@ -904,16 +1074,16 @@ const questions = {
       question: "How many cigarettes per day do you smoke?",
       options: [{
         label: "≤10 cigarette(s)/day",
-        value: "10"
+        value: "2"
       },{
         label: "11-20 cigarette(s)/day",
-        value: "20"
+        value: "4"
       },{
         label: "21-30 cigarette(s)/day",
-        value: "30"
+        value: "6"
       },{
         label: "≧31 cigarette(s)/day",
-        value: "40"
+        value: "8"
       }]
     }],
     smokingThree: [{
@@ -926,13 +1096,13 @@ const questions = {
         value: "2"
       },{
         label: "3-4 weeks",
-        value: "5"
+        value: "4"
       },{
         label: "5-12 weeks",
-        value: "12"
+        value: "6"
       },{
         label: "13-26 weeks",
-        value: "26"
+        value: "8"
       }]
     },{
       name: "",
@@ -941,34 +1111,34 @@ const questions = {
       question: "What method do you choose?(Multiple choices)",
       options: [{
         label: "Quit by yourself",
-        value: "self"
+        value: "0"
       },{
         label: "Nicotine Patch",
-        value: "nicotinePatch"
+        value: "1"
       },{
         label: "nicotineGym",
-        value: "nicotineGym"
+        value: "2"
       },{
         label: "nicotineLozenge",
-        value: "nicotineLozenge"
+        value: "3"
       },{
         label: "Bupropion",
-        value: "bupropion"
+        value: "4"
       },{
         label: "Varenicline",
-        value: "varenicline"
+        value: "5"
       },{
         label: "Counseling",
-        value: "counseling"
+        value: "6"
       },{
         label: "Quit tobacco helpline",
-        value: "quitTobaccoHelpline"
+        value: "7"
       },{
         label: "Smoking cessation clinic",
-        value: "smokingCessationClinic"
+        value: "8"
       },{
         label: "Others",
-        value: "others"
+        value: "9"
       }]
     },{
       name: "",
@@ -1123,6 +1293,113 @@ const questions = {
       },{
         label: "After 10 times",
         value: "10"
+      }]
+    },{
+      name: "cureSpand",
+      category: "",   
+      type: "",       
+      question: "如果有方法使你停止吸烟, 你最多愿意化多少钱(人民币,元)使用这种方法?",
+      options: [{
+        label: "<500",
+        value: "1"
+      },{
+        label: "500-999",
+        value: "2"
+      },{
+        label: "1000-1999",
+        value: "3"
+      },{
+        label: "2000-3999",
+        value: "4"
+      },{
+        label: "4000-6000",
+        value: "5"
+      },{
+        label: ">6000",
+        value: "6"
+      }]
+    },{
+      name: "quitChoose",
+      category: "",   
+      type: "",       
+      question: "你是否想戒烟?",
+      options: [{
+        label: "想戒烟",
+        value: "1"
+      },{
+        label: "还不想戒烟",
+        value: "0"
+      }]
+    }],
+    wantQuit: [{
+      name: "quitDay",
+      category: "",   
+      type: "",       
+      question: "你计划什么时候开始戒烟?",
+      options: [{
+        label: "7天内",
+        value: "1"
+      },{
+        label: "30天内",
+        value: "2"
+      },{
+        label: "3个月内",
+        value: "3"
+      },{
+        label: "6个月内",
+        value: "4"
+      },{
+        label: "未决定时间",
+        value: "5"
+      }]
+    }],
+    notQuit: [{
+      name: "notQuit",
+      category: "",   
+      type: "",       
+      question: "你不想戒烟的主要原因是?",
+      options: [{
+        label: "觉得不会成功",
+        value: "1"
+      },{
+        label: "以往戒烟失败",
+        value: "2"
+      },{
+        label: "不知道是否有有效的戒烟方法",
+        value: "3"
+      },{
+        label: "担心戒断症状",
+        value: "4"
+      },{
+        label: "担心体重增加",
+        value: "5"
+      },{
+        label: "缺乏支持",
+        value: "6"
+      },{
+        label: "缺乏专业戒烟指导",
+        value: "7"
+      },{
+        label: "享受吸烟",
+        value: "8"
+      },{
+        label: "应酬需要",
+        value: "9"
+      },{
+        label: "工作压力",
+        value: "10"
+      },{
+        label: "周围人大都吸烟",
+        value: "11"
+      },{
+        label: "太晚戒烟",
+        value: "12"
+      },{
+        label: "不觉得对健康有多大危害",
+        value: "13"
+      },{
+        label: "其他",
+        value: "14"
       }]
     }]
   }

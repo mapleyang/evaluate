@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Spin, message, Form, Icon, Input, Button, Row, Col, Radio, Carousel, Slider, Select ,Card ,Tabs  } from 'antd'
+import { Popover, Spin, message, Form, Icon, Input, Button, Row, Col, Radio, Carousel, Slider, Select ,Card ,Tabs, Modal  } from 'antd'
 import Highcharts from 'highcharts'
 import './index.scss'
 import Footer from '../footer/index';
@@ -20,10 +20,22 @@ class Analysis extends Component {
 	constructor(props, context) {
     super(props)
     this.state = {
-      projectValue: 'a',
+      planValue: '0',
       activeKey: "1",
       questions: [],
       analysis: [],
+      questionsTemp: [],
+      series: [{
+        name: '良好',
+        data: [0, 0, 0, 0, 0, 0, 0]
+      }, {
+          name: '轻度',
+          data: [0, 0, 0, 0, 0, 0, 0]
+      }, {
+          name: '重度',
+          data: [0, 0, 0, 0, 0, 0, 0]
+      }],
+      userValue: ""
     }
   }
 
@@ -56,53 +68,44 @@ class Analysis extends Component {
             stacking: 'normal'
         }
     },
-    series: [{
-        name: '良好',
-        data: [1, 0, 0, 0, 0, 0, 0]
-    }, {
-        name: '轻度',
-        data: [0, 0, 0, 0, 0, 0, 0]
-    }, {
-        name: '重度',
-        data: [0, 4, 4, 2, 5, 0, 0]
-    }]
+    series: this.state.series
     });
   }
 
   onChange = (e) => {
     this.setState({
-      projectValue: e.target.value,
+      planValue: e.target.value,
     });
   }
 
   createPlanClick () {
-    if(this.state.projectValue === "d") {
-      location.hash = "/plan";
+    if(this.state.planValue === "0") {
+      location.hash = "/myplan";
     }
     else {
-      location.hash = "/myplan";
+      location.hash = "/plan";
     }
   }
 
-  radioChange = (e) => {
+  radioChange = (index, e) => {
     const defaultZH_EN = window.ZH_EN[language.getLanguage()];
     let activeKey = parseInt(this.state.activeKey);
     let commons = defaultZH_EN["analysis.questions"].basic.concat(defaultZH_EN["analysis.questions"].smoking);
     let tempQuestions = [];
-    console.log(activeKey)
-    if((activeKey - 1) === 6) {
+    let quitNum = 6;
+    if((activeKey - 1) === quitNum) {
       switch(parseInt(e.target.value)) {
-        case 6:
+        case 1:
           defaultZH_EN["analysis.questions"].smokingTow.forEach(el => {
             commons.push(el)
           })
           break;
-        case 10:
+        case 2:
           defaultZH_EN["analysis.questions"].smokingThree.forEach(el => {
             commons.push(el)
           })
           break;
-        case 1:
+        case 3:
           defaultZH_EN["analysis.questions"].smokingFour.forEach(el => {
             commons.push(el)
           })
@@ -117,6 +120,41 @@ class Analysis extends Component {
         questions: commons
       })
     }
+    if((activeKey -1) > quitNum && this.state.questions.length !== 0) {
+      defaultZH_EN["analysis.questions"].smokingFour.forEach(el => {
+        commons.push(el)
+      })
+      if(this.state.questions[index].name === "quitNumber" && e.target.value !== "0") {
+        defaultZH_EN["analysis.questions"].smokingFourChild.forEach(sel => {
+          commons.push(sel)
+        })
+        this.setState({
+          questions: commons
+        })
+      }
+      if(this.state.questions[index].name === "quitChoose" && e.target.value === "1") {
+        defaultZH_EN["analysis.questions"].smokingFourChild.forEach(sel => {
+          commons.push(sel)
+        })
+        defaultZH_EN["analysis.questions"].wantQuit.forEach(sel => {
+          commons.push(sel)
+        })
+        this.setState({
+          questions: commons
+        })
+      }
+      if(this.state.questions[index].name === "quitChoose" && e.target.value === "2") {
+        defaultZH_EN["analysis.questions"].smokingFourChild.forEach(sel => {
+          commons.push(sel)
+        })
+        defaultZH_EN["analysis.questions"].notQuit.forEach(sel => {
+          commons.push(sel)
+        })
+        this.setState({
+          questions: commons
+        })
+      }
+    }
     let length = commons.length;
     if(this.state.questions.length !== 0) {
       length = this.state.questions.length;
@@ -126,7 +164,7 @@ class Analysis extends Component {
         activeKey: (activeKey + 1 ).toString()
       })
     }
-    if((activeKey - 1) >= 6) {
+    if((activeKey - 1) >= quitNum) {
       this.getAnalysisValue(activeKey, e.target.value, commons);
     }
   }
@@ -138,19 +176,63 @@ class Analysis extends Component {
       value: value
     }
     let analysis = this.state.analysis;
+    let userValue = this.state.userValue;
     if((activeKey - 1) === 6) {
       analysis = [];
+      userValue = "";
     }
     analysis.push(ele);
     this.setState({
-      analysis: analysis
+      analysis: analysis,
+      userValue: userValue + value
     })
     this.getAnalysisResult(analysis)
   }
 
 
-  getAnalysisResult () {
-
+  getAnalysisResult (analysis) {
+    let series = this.state.series;
+    analysis.forEach(el => {
+      switch(el.name) {
+        case "smokingFlag":
+          
+          break;
+        case "":
+          var value = parseInt(el.value)
+          if(value < 5) {
+            series[0].data[0] = value;
+            series[1].data[0] = 0;
+          }
+          else if(value >= 5 && value <= 10) {
+            series[0].data[0] = 0;
+            series[1].data[0] = value;
+            series[2].data[0] = 0;
+          }
+          else {
+            series[0].data[0] = 0;
+            series[1].data[0] = 0;
+            series[2].data[0] = value;
+          }
+          break;
+        case "cigarette":
+          var value = parseInt(el.value)
+          if(value <= 10) {
+            series[0].data[0] = value;
+          }
+          else if(value = 20) {
+            series[1].data[0] = value;
+          }
+          else {
+            series[2].data[0] = value;
+          }
+          break;
+      }
+    })
+    this.setState({
+      series: series
+    })
+    this.drawChart()
+    console.log(series)
   }
 
   getQuestions (value) {
@@ -163,11 +245,10 @@ class Analysis extends Component {
     else {
     }
     item = array.map((el,index) => {
-    // item = this.state.questions.map((el,index) => {
       let key = (index + 1).toString()
       return <TabPane tab="" key={key}>
         <Card title={el.question} style={{ width: 350 }}>
-          <RadioGroup onChange={this.radioChange}>
+          <RadioGroup onChange={this.radioChange.bind(this, index)}>
             {el.options.map((sel, sindex) => {
               return <Radio value={sel.value}>{sel.label}</Radio>
             })}
@@ -176,7 +257,6 @@ class Analysis extends Component {
       </TabPane>
     })
     if(item.length !== 0) {
-      console.log(this.state.analysis)
       let finishCard = <TabPane tab="" key={item.length + 1}>
         <Card title="恭喜你完成了你的健康分析，请查看右边你的健康图" style={{ width: 350 }}>
         </Card>
@@ -213,6 +293,70 @@ class Analysis extends Component {
     }
   }
 
+  showAnalysis () {
+    console.log(this.state.userValue)
+  }
+
+  onPlanChange = (e) => {
+    this.setState({
+      planValue: e.target.value,
+    });
+  }
+
+  getPlanItem () {
+    const defaultZH_EN = window.ZH_EN[language.getLanguage()];
+    let array = [];
+    let radioValue = this.state.planValue;
+    if(parseInt(this.state.activeKey) === this.state.questions.length + 1 && this.state.questions.length !== 0) {
+      defaultZH_EN["analysis.plan"].forEach((el,index) => {
+        if(el.flag === this.state.userValue) {
+          array = this.getRadio(index)
+        }
+        if(this.state.userValue.slice(0,1) === "1" && el.flag.slice(0,1) === "1") {
+          if(el.flag.slice(2,3) === "1") {
+            array = this.getRadio(index)
+          }
+        }
+        if(this.state.userValue.slice(0,1) === "2" && el.flag.slice(0,1) === "2") {
+          if(el.flag.slice(1,3) === "11") {
+            array = this.getRadio(index)
+          }
+        }
+        if(this.state.userValue.slice(0,1) === "3" && el.flag.slice(0,1) === "3") {
+          let userValue = this.state.userValue;
+          if(el.flag.slice(el.flag.length - 2, el.flag.length - 1) === "1" && userValue.slice(userValue.length - 2, userValue.length - 1) === "1") {
+            array = this.getRadio(index)
+          }
+          if(el.flag.slice(el.flag.length - 2, el.flag.length - 1) === "2" && userValue.slice(userValue.length - 2, userValue.length - 1) === "2") {
+            array = this.getRadio(index)
+          }
+        }
+      })
+    }
+    let radioItem = <RadioGroup value={radioValue} onChange={this.onPlanChange}>
+      {array.length !== 0 ? array : ''}
+      <Radio value="0">自定义方案</Radio>
+    </RadioGroup>
+    return radioItem;
+  }
+
+  getRadio (index) {
+    const defaultZH_EN = window.ZH_EN[language.getLanguage()];
+    let array = [];
+    let content = <div>
+      {defaultZH_EN["analysis.plan"][index].content.map(sel => {
+        return <p>{sel}</p>
+      })}
+    </div>
+    let ele = <Radio value={defaultZH_EN["analysis.plan"][index].value}>
+        <Popover content={content} title={defaultZH_EN["analysis.plan"][index].name} trigger="hover">{defaultZH_EN["analysis.plan"][index].name + "（推荐）"}</Popover>
+      </Radio> 
+    array.push(ele);
+    return array;
+  }
+
+  handleOk () {}
+
   render() {
     const defaultZH_EN = window.ZH_EN[language.getLanguage()];
     const { getFieldDecorator } = this.props.form;
@@ -247,15 +391,10 @@ class Analysis extends Component {
             <div className="analysis-name">方案推荐</div>
             <div className="analysis-project">
               <div className="analysis-project-items">
-                <RadioGroup value={this.state.projectValue} onChange={this.onChange}>
-                  <Radio value="a">方案 1（推荐）</Radio> 
-                  <Radio value="b">方案 2</Radio>
-                  <Radio value="c">方案 3</Radio>
-                  <Radio value="d">自定义方案</Radio>
-                </RadioGroup>
+                {this.getPlanItem()}
               </div>
               <div className="analysis-project-create">
-                <Button type="primary" ghost onClick={this.createPlanClick.bind(this)}>创建我的戒烟计划>></Button>
+                <Button type="primary" ghost onClick={this.createPlanClick.bind(this)}>创建无烟世界计划>></Button>
               </div>
             </div>
           </Col>
