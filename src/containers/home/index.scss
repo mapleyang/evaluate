@@ -19,9 +19,17 @@
         width: 25%;
         float: left;
         height: 80%;
-        font-size: 80px;
         text-align: center;
         margin-top: 20px;
+      }
+      .home-block-mouseout {
+        font-size: 80px;
+        cursor: pointer;
+      }
+      .home-block-mouseover {
+        line-height: 130px;
+        font-size: 30px;
+        cursor: pointer;
       }
       .home-fucs-q {
         width: 90%;
@@ -30,9 +38,6 @@
       }
       .home-fucs-q:hover {
         background-color: rgba(135,126,140,.6);  
-        span {
-          display: none;
-        }
       }
       .home-fucs-u {
         width: 90%;

@@ -19,7 +19,17 @@ class Login extends Component {
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
       if (!err) {
-        console.log('Received values of form: ', values);
+        fetch("/login?userName=" + values.userName + "&password=" + values.password)
+        .then(response => response.json())
+        .then(json => { 
+          if(json.success) {
+            json.user.forEach(el => {
+              if(el.userName === values.userName && el.password === values.password) {
+                console.log("login success")
+              }
+            })
+          }
+        })
       }
     });
   }

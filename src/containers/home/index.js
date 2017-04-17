@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Spin, message, Form, Icon, Input, Button, Row, Col, Radio, Carousel  } from 'antd'
 import './index.scss'
 import Footer from '../footer/index';
+import classnames from "classnames";
 const FormItem = Form.Item
 const RadioGroup = Radio.Group;
 const formItemLayout = {
@@ -16,6 +17,10 @@ class Home extends Component {
       loading: false,
       url: "",
       current: 'mail',
+      qLabel: "Q",
+      uLabel: "U",
+      iLabel: "I",
+      tLabel: "T"
     }
   }
 
@@ -56,6 +61,72 @@ class Home extends Component {
     // location.hash = "/test";
   }
 
+  qBlockHover () {
+    this.setState({
+      qLabel: "i want quit"
+    })
+  }
+
+  qBlockClick () {
+    location.hash = "/analysis";
+  }
+
+  qBlockOut () {
+    this.setState({
+      qLabel: "Q"
+    })
+  }
+
+  uBlockHover () {
+    this.setState({
+      uLabel: "Recently quit"
+    })
+  }
+
+  uBlockClick () {
+    location.hash = "/analysis";
+  }
+
+  uBlockOut () {
+    this.setState({
+      uLabel: "U"
+    })
+  }
+
+  iBlockHover () {
+    this.setState({
+      iLabel: "Stay quit"
+    })
+  }
+
+  iBlockClick () {
+    location.hash = "/analysis";
+  }
+
+  iBlockOut () {
+    this.setState({
+      iLabel: "I"
+    })
+  }
+
+  tBlockHover () {
+    this.setState({
+      tLabel: ""
+    })
+  }
+
+  tBlockClick () {
+    location.hash = "/analysis"
+  }
+
+  tBlockOut () {
+    this.setState({
+      tLabel: "T"
+    })
+  }
+
+
+
 
   render() {
     return (
@@ -84,16 +155,32 @@ class Home extends Component {
         <Row className="home-row-fucs">
           <div className="home-fucs-area">
             <div className="home-fucs-block">
-              <div className="home-fucs-q"><span>Q</span></div>
+              <div className={classnames({
+                "home-fucs-q": true,
+                "home-block-mouseout": this.state.qLabel === "Q",
+                "home-block-mouseover": this.state.qLabel !== "Q"
+              })} onMouseOver={this.qBlockHover.bind(this)} onMouseOut={this.qBlockOut.bind(this)} onClick={this.qBlockClick.bind(this)}>{this.state.qLabel}</div>
             </div>
             <div className="home-fucs-block">
-              <div className="home-fucs-u">U</div>
+              <div className={classnames({
+                "home-fucs-u": true,
+                "home-block-mouseout": this.state.uLabel === "U",
+                "home-block-mouseover": this.state.uLabel !== "U"
+              })} onMouseOver={this.uBlockHover.bind(this)} onMouseOut={this.uBlockOut.bind(this)} onClick={this.uBlockClick.bind(this)}>{this.state.uLabel}</div>
             </div>
             <div className="home-fucs-block">
-              <div className="home-fucs-i">I</div>
+              <div className={classnames({
+                "home-fucs-i": true,
+                "home-block-mouseout": this.state.iLabel === "I",
+                "home-block-mouseover": this.state.iLabel !== "I"
+              })} onMouseOver={this.iBlockHover.bind(this)} onMouseOut={this.iBlockOut.bind(this)} onClick={this.iBlockClick.bind(this)}>{this.state.iLabel}</div>
             </div>
             <div className="home-fucs-block">
-              <div className="home-fucs-t">T</div>
+              <div className={classnames({
+                "home-fucs-t": true,
+                "home-block-mouseout": this.state.tLabel === "T",
+                "home-block-mouseover": this.state.tLabel !== "T"
+              })}onMouseOver={this.tBlockHover.bind(this)} onMouseOut={this.tBlockOut.bind(this)} onClick={this.tBlockClick.bind(this)}>{this.state.tLabel}</div>
             </div>
           </div>
         </Row>

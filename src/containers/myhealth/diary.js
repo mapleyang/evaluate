@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Row, Col, Calendar , Timeline, Modal } from 'antd'
 import './index.scss'
 import Footer from '../footer/index';
+import moment from 'moment';
 const formItemLayout = {
   labelCol: { span: 8 },
   wrapperCol: { span: 14 },
@@ -14,6 +15,7 @@ class Diary extends Component {
       loading: false,
       url: "",
       current: 'mail',
+      value: moment('2017-07-22')
     }
   }
 
@@ -79,11 +81,14 @@ class Diary extends Component {
   }
 
   render() {
+    console.log(this.state.value + "haha")
       const getListData = (value) => {
       let dateInfo = {
         listData: [],
         date: value
       };
+      console.log(value.date())
+      console.log(value.year())
       switch (value.date()) {
         case 8:
           dateInfo.listData = [

@@ -23,6 +23,14 @@ const quitOptions = [
   { label: '爱人', value: 'lover' },
 ];
 
+const stylesOptions = [
+  { label: '自助戒烟', value: 'self' },
+  { label: '短信戒烟', value: 'message' },
+  { label: '行为干预', value: 'action' },
+  { label: '药物戒烟', value: 'medicine' },
+  { label: '诊所戒烟', value: 'clinic' },
+]
+
 class Plan extends Component {
   constructor(props, context) {
     super(props)
@@ -68,7 +76,20 @@ class Plan extends Component {
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
       if (!err) {
-        console.log('Received values of form: ', values);
+        console.log(values)
+        let plan = {userName: "test"};
+        for(let el in values) {
+          if(values[el]) {
+            plan[el] = values[el];
+          }
+        }
+        fetch("/readPlan?plan=" + plan)
+        .then(response => response.json())
+        .then(json => { 
+          if(json.success) {
+            location.hash = "/myplan";
+          }
+        })
       }
     });
   }
@@ -152,6 +173,18 @@ class Plan extends Component {
     },{
       name: "smokingSence",
       element: <FormItem>
+        <div className="plan-steps-item plan-step-styles">
+          <div className="plan-step-styles-content">你可以选择下列多种戒烟方式</div>
+          <div className="plan-step-styles-operate">
+            {getFieldDecorator('styles')(
+              <CheckboxGroup options={stylesOptions} onChange={this.stylesChange.bind(this)} />
+            )}
+          </div>
+        </div>
+      </FormItem>
+    },{
+      name: "smokingSence",
+      element: <FormItem>
         <div className="plan-steps-item plan-step-3">
           <div className="plan-step-3-content">我抽烟的场景</div>
           <div className="plan-step-trigger">
@@ -207,6 +240,10 @@ class Plan extends Component {
       </FormItem>
     }]
     return items;
+  }
+
+  stylesChange () {
+    
   }
 
   addPhoneClick () {

@@ -40,9 +40,6 @@ app.get('/movie/swiper', routes.swiper);
 app.get('/movie/city', routes.city);
 app.get('/movie/cinema_detail', routes.cinema_detail);
 
-app.get('/register', routes.register);
-app.get('/login', routes.login);
-
 
 app.get('/app', routes.index); 
 app.get('/', (req, res) => {
@@ -50,6 +47,11 @@ app.get('/', (req, res) => {
 }); 
 app.get(/\/movie\/detail\//, routes.index);  
 app.get(/\/cinema/, routes.index);  
+
+app.get('/register', routes.register);
+app.get('/login', routes.login);
+app.get('/createPlan', routes.createPlan);
+app.get('/readPlan', routes.readPlan);
 
 app.use(function(req, res, next) {
   var err = new Error('Not Found');

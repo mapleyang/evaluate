@@ -26,10 +26,12 @@ class Register extends Component {
     this.props.form.validateFields((err, values) => {
       if (!err) {
         //注册接口调用
-        fetch("/register?userName=" + values.userName)
+        fetch("/register?userName=" + values.userName + "&password=" + values.password + "&sex=" + values.sex + "&birthDay" + values.birthDay + "&occupation" + values.occupation)
         .then(response => response.json())
         .then(json => { 
-          console.log(json)
+          if(json.success) {
+            location.hash = "/login";
+          }
         })
       }
       else {

@@ -80,7 +80,7 @@ class Analysis extends Component {
 
   createPlanClick () {
     if(this.state.planValue === "0") {
-      location.hash = "/myplan";
+      location.hash = "/plan";
     }
     else {
       location.hash = "/plan";
