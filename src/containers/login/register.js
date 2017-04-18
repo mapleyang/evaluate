@@ -56,7 +56,7 @@ class Register extends Component {
       <div className="login">
         <div className="login-content">
           <img src="./quitsmoking.png" />
-          <div className="login-area">
+          <div className="register-area">
              <Form onSubmit={this.handleSubmit} className="login-form">
               <FormItem>
                 {getFieldDecorator('userName', {

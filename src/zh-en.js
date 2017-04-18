@@ -1,7 +1,8 @@
 import Questions from "./contents/questions"
 import Plan from "./contents/plan"
-import createPlan from "./contents/createPlan"
+import CreatePlan from "./contents/createPlan"
 import Knowledge from "./contents/knowledge"  
+import Medicine from "./contents/medicine"
 const ZH_EN = {
   "zh": {
     "header.menu.home": "主页",
@@ -13,8 +14,9 @@ const ZH_EN = {
     "header.menu.more": "更多",
     "analysis.questions": Questions.zh,
     "analysis.plan": Plan.zh,
-    "plan.createPlan": createPlan.zh,
+    "plan.createPlan": CreatePlan.zh,
     "knowledge": Knowledge.zh,
+    "plan.medicine": Medicine.zh,
   },
   "en": {
     "header.menu.home": "Home",
@@ -26,8 +28,9 @@ const ZH_EN = {
     "header.menu.more": "More",
     "analysis.questions": Questions.en,
     "analysis.plan": Plan.en,
-    "plan.createPlan": createPlan.en,
+    "plan.createPlan": CreatePlan.en,
     "knowledge": Knowledge.en,
+    "plan.medicine": Medicine.en,
   }
 }
 

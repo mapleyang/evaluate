@@ -18,6 +18,8 @@ import Home from "./containers/home/index"
 import Login from "./containers/login/index"
 import Register from "./containers/login/register"
 import Analysis from "./containers/activities/analysis"
+import Coach from "./containers/activities/coach"
+import Share from "./containers/activities/share"
 import Plan from "./containers/activities/plan"
 import Diary from "./containers/myhealth/diary"
 import Result from "./containers/myhealth/result"
@@ -31,6 +33,9 @@ import MedicineCure from "./containers/solution/medicinecure"
 import Flow from "./containers/solution/flow"
 import Truth from "./containers/knowledge/truth"
 import Compete from "./containers/knowledge/compete"
+import Disease from "./containers/knowledge/disease"
+import Harm from "./containers/more/harm"
+import TwiceHarm from "./containers/more/twiceharm"
 //mobile
 // import MHome from "./containers/MHome/index"  
 // import MTab from "./containers/MHome/tab" 
@@ -90,6 +95,10 @@ const ready = () => {
             <Route path="/en/health" component={Health}></Route>
             <Route path="/analysis" component={Analysis}></Route>
             <Route path="/en/analysis" component={Analysis}></Route>
+            <Route path="/coach" component={Coach}></Route>
+            <Route path="/en/coach" component={Coach}></Route>
+            <Route path="/share" component={Share}></Route>
+            <Route path="/en/share" component={Share}></Route>
             <Route path="/plan" component={Plan}></Route>
             <Route path="/en/plan" component={Plan}></Route>
             <Route path="/mark" component={Mark}></Route>
@@ -108,6 +117,12 @@ const ready = () => {
             <Route path="/en/truth" component={Truth}></Route>
             <Route path="/compete" component={Compete}></Route>
             <Route path="/en/compete" component={Compete}></Route>
+            <Route path="/disease" component={Disease}></Route>
+            <Route path="/en/disease" component={Disease}></Route>
+            <Route path="/harm" component={Harm}></Route>
+            <Route path="/en/harm" component={Harm}></Route>
+            <Route path="/twiceharm" component={TwiceHarm}></Route>
+            <Route path="/en/twiceharm" component={TwiceHarm}></Route>
           </Route>
         </Router>
       </IntlProvider>

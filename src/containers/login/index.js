@@ -19,6 +19,7 @@ class Login extends Component {
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
       if (!err) {
+        sessions.setItem("userInfo", values)
         fetch("/login?userName=" + values.userName + "&password=" + values.password)
         .then(response => response.json())
         .then(json => { 

@@ -13,6 +13,25 @@
 		float: right;
 		position: relative;
 		width: 50%;
+		top: 100px;
+		padding-left: 150px;
+		form {
+			width: 50%;
+			.login-form {
+			  max-width: 300px;
+			}
+			.login-form-forgot {
+			  float: right;
+			}
+			.login-form-button {
+			  width: 100%;
+			}
+		}
+	}
+	.register-area {
+		float: right;
+		position: relative;
+		width: 50%;
 		top: 30px;
 		padding-left: 150px;
 		form {

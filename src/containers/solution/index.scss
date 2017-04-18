@@ -1,13 +1,35 @@
 .solution {
+	width: 80%;
+	margin: 0 auto;
 	.cure-main {
     padding: 40px;
-		height: 400px;
+		height: 500px;
 		.cure-image {
-			height: 100%;
+			height: 300px;
+	    border: 1px #eee solid;
 			background: #F2F2F2;
+			img {
+				height: 300px;
+				width: 100%;
+			}
+			.cure-image-list {
+				height: 100px;
+				width: 100%;
+				.cure-image-list-item {
+					height: 100%;
+					width: 22%;
+					margin-left: 10px;
+					img {
+						width: 100%;
+						height: 100%;
+					}
+					img:hover {
+						border: 2px #f40 solid;
+					}
+				}
+			}
 		}
 		.cure-main-desc {
-			margin-top: 20px;
 			position: relative;
 			left: 10%;
 			width: 80%;
@@ -15,16 +37,26 @@
 			.cure-main-name {
 				font-size: 24px;
 			}
+			.cure-selected-descript {
+		    border: 1px #eee dashed;
+		    height: 90px;
+		    margin-bottom: 10px;
+		    margin-top: 10px;
+		    .cure-selected-descript-detail {
+		    	padding-left: 14px;
+		    }
+			}
 			.cure-join {
 		    position: absolute;
 				bottom: 0;
-				margin-bottom: 80px;
+				margin-bottom: 60px;
 			}
 		}
 		.cure-main-content {
 			height: 60px;
 		}
 		.cure-main-items {
+			margin-bottom: 10px;
 			.cure-main-item {
 				span {
 			    border: 1px solid #eee;
@@ -36,8 +68,8 @@
 	        cursor: pointer;
 				}
 				.cure-item-selected {
-					border: 1px #0c5b79 solid!important;
-					color: #0c5b79;
+					border: 1px #F40 solid!important;
+					color: #F40;
 				}
 			}
 		}
@@ -62,7 +94,7 @@
 	}
 	.cure-detail {
 		height: 300px;
-		padding: 40px;
+		padding: 0px 40px;
 		.cure-detail-content {
 			height: inherit;
 			width: inherit;

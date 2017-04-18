@@ -85,15 +85,16 @@ class Header extends Component {
               </Menu.Item>
               <SubMenu title={<span><FormattedMessage id="header.menu.active" defaultMessage={defaultZH_EN['header.menu.active']}/></span>}>
                 <Menu.Item key="analysis">戒烟健康分析</Menu.Item>
-                <Menu.Item key="activity1">分享&解答</Menu.Item>
-                <Menu.Item key="activity2">戒烟教练</Menu.Item>
-                <Menu.Item key="activity2">孩子-无烟</Menu.Item>
+                <Menu.Item key="share">分享&解答</Menu.Item>
+                <Menu.Item key="coach">戒烟教练</Menu.Item>
+                <Menu.Item key="child">孩子-无烟</Menu.Item>
               </SubMenu>
               <SubMenu title={<span><FormattedMessage id="header.menu.project" defaultMessage={defaultZH_EN['header.menu.project']}/></span>}>
                 <Menu.Item key="selfcure">自助戒烟</Menu.Item>
                 <Menu.Item key="msgcure">短信戒烟</Menu.Item>
                 <Menu.Item key="mindcure">心理戒烟</Menu.Item>
                 <Menu.Item key="medicinecure">药物戒烟</Menu.Item>
+                <Menu.Item key="medicinecure">诊所戒烟</Menu.Item>
               </SubMenu>
               <Menu.Item key="mark">
                 <FormattedMessage id="header.menu.mark" defaultMessage={defaultZH_EN['header.menu.mark']}/>
@@ -112,7 +113,7 @@ class Header extends Component {
               </SubMenu>
               <SubMenu title={<span><FormattedMessage id="header.menu.more" defaultMessage={defaultZH_EN['header.menu.more']}/></span>}> 
                 <Menu.Item key="harm">吸烟危害</Menu.Item>
-                <Menu.Item key="twiceHarm">二手烟危害</Menu.Item>
+                <Menu.Item key="twiceharm">二手烟危害</Menu.Item>
               </SubMenu>
             </Menu>
           </Col>

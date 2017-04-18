@@ -3,6 +3,7 @@ import { Tabs, Spin, message, Form, Icon, Input, Button, Row, Col, Radio, Carous
 import './index.scss'
 import Footer from '../footer/index';
 import classname from "classnames";
+import language from "../../utils/param";
 const FormItem = Form.Item;
 const Option = Select.Option;
 const RadioButton = Radio.Button;
@@ -13,23 +14,6 @@ const formItemLayout = {
   wrapperCol: { span: 14 },
 };
 
-const medicines = [{
-  label: "尼古丁咀嚼胶（口香糖）",
-  value: "1",
-  price: "100"
-},{
-  label: "尼古丁舌下片（含片）",
-  value: "2",
-  price: "200",
-},{
-  label: "安非他酮",
-  value: "3",
-  price: "400"
-},{
-  label: "伐尼克兰(畅沛)",
-  value: "4",
-  price: "400"
-}]
 
 class MedicineCure extends Component {
 	constructor(props, context) {
@@ -37,8 +21,8 @@ class MedicineCure extends Component {
     this.state = {
       scenes: [],
       sceneVisible: false,
-      medicines: medicines,
-      chooseSlections: []
+      chooseSlections: [],
+      imgSelected: "",
     }
   }
 
@@ -114,11 +98,13 @@ class MedicineCure extends Component {
   }
 
   getSelection () {
+    const defaultZH_EN = window.ZH_EN[language.getLanguage()];
     let item;
-    item = this.state.medicines.map(el => {
+    let array = defaultZH_EN["plan.medicine"].medicines;
+    item = array.map(el => {
       return <span className={classname({
         "cure-item-selected": this.getSelectFlag(el.value)
-      })} onClick={this.chooseSlections.bind(this, el)}>{el.label}</span>
+      })} onClick={this.chooseSlections.bind(this, el)}>{el.name}</span>
     })
     return item;
   }
@@ -135,20 +121,7 @@ class MedicineCure extends Component {
 
   chooseSlections (value) {
     let chooseSlections = [];
-    let flag = true;
-    if(this.state.chooseSlections.length !== 0) {
-      this.state.chooseSlections.forEach(el => {
-        if(value.value === el.value) {
-          flag = false;
-        }
-        else {
-          chooseSlections.push(el)
-        }
-      })
-    }
-    if(flag) {
-      chooseSlections.push(value)
-    }
+    chooseSlections.push(value)
     this.setState({
       chooseSlections: chooseSlections
     })
@@ -181,6 +154,65 @@ class MedicineCure extends Component {
     location.hash = "/flow";
   }
 
+  getDescript () {
+    let item;
+    if(this.state.chooseSlections.length !== 0) {
+      item = this.state.chooseSlections.map(el => {
+        return <div className="cure-selected-descript">
+          <div>{el.descript[0].name}</div>
+          <div>{el.descript[0].options.map(ssel => {
+            return <div className="cure-selected-descript-detail">{ssel}</div>
+          })}</div>
+        </div>
+      })
+    }
+    else {
+      item = <div className="cure-selected-descript">选择以下的药物方式，更加顺利戒烟</div>
+    }
+    return item;
+  }
+
+  imgSelected (value) {
+    this.setState({
+      imgSelected: value
+    })
+  }
+
+  getImage () {
+    let item;
+    const defaultZH_EN = window.ZH_EN[language.getLanguage()];
+    let medicine = defaultZH_EN["plan.medicine"];
+    if(this.state.chooseSlections.length !== 0) {
+      item = this.state.chooseSlections.map(el => {
+        let images = this.state.imgSelected === "" ? el.images[0] : this.state.imgSelected;
+        return <div>
+          <img src={images} />
+          <Row className="cure-image-list">
+            {el.images.map(sel => {
+              return <Col span={4} className="cure-image-list-item" onClick={this.imgSelected.bind(this, sel)}>
+                <img src={sel} />
+              </Col>
+            })}
+          </Row>
+        </div>
+      })
+    }
+    else {
+      item = <div>
+        <img src={medicine.defaultImage} />
+        <Row className="cure-image-list">
+          {medicine.defaultImages.map(sel => {
+            return <Col span={4} className="cure-image-list-item" onClick={this.imgSelected.bind(this, sel)}>
+              <img src={sel} />
+            </Col>
+          })}
+        </Row>
+      </div>
+    }
+    return item;
+  }
+
+
 
   render() {
     const { getFieldDecorator } = this.props.form;
@@ -188,12 +220,12 @@ class MedicineCure extends Component {
       <div className="solution selfcure medicine">
         <Row className="cure-main">
           <Col span={14} className="cure-image">
-            image
+            {this.getImage()}
           </Col>
           <Col span={10}>
             <div className="cure-main-desc">
               <div className="cure-main-name">药物戒烟</div>
-              <div className="cure-main-content medicine-main-content">xxxxxxxxxxx</div>
+              {this.getDescript()}
               {this.getPriceItem()}
               <div className="cure-main-items">
                 <div className="cure-main-item">
