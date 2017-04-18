@@ -184,7 +184,7 @@
         }
       }
       .plan-step-3 {
-        height: 400px;
+        height: 440px;
         background: #61737D;
         .plan-step-3-content {
           height: 60px;
@@ -285,6 +285,26 @@
       }
       .plan-step-styles {
         background: #357166;
+        height: 200px;
+        .plan-step-styles-content {
+          font-size: 24px;
+          color: #fff;
+          height: 50px;
+          line-height: 50px;
+          padding-left: 20px;
+        }
+        .plan-step-styles-operate {
+          .ant-checkbox-group {
+            width: 80%;
+            margin: 0 auto;
+            margin-top: 40px;
+            .ant-checkbox-group-item {
+              font-size: 20px;
+              color: #fff;
+              margin-right: 30px;
+            }
+          }
+        }
       }
     }
   }

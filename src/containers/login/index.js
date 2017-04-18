@@ -26,6 +26,7 @@ class Login extends Component {
             json.user.forEach(el => {
               if(el.userName === values.userName && el.password === values.password) {
                 console.log("login success")
+                sessions.setItem("userInfo", values)
               }
             })
           }

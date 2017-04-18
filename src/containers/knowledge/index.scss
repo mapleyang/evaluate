@@ -1,0 +1,63 @@
+.truth {
+  .truth-area {
+    height: 100%;
+    width: 80%;
+    margin: 0 auto;
+    position: relative;
+    top: 40px;
+    .truth-card {
+      float: left;
+      width: 30%;
+      text-align: center;
+      margin-right: 20px;
+      border-top: 1px #eee solid;
+      border-left: 1px #eee solid;
+      border-right: 1px #eee solid;
+      margin-bottom: 20px;
+      .truth-card-desc {
+        height: 100px;
+        span {
+          display: inline-block;
+          margin-top: 10px;
+        }
+      }
+      .truth-card-operate-button {
+        border: 1px #eee solid;
+        height: 30px;
+        line-height: 30px;
+        cursor: pointer;
+      }
+      .truth-card-operate-button:hover {
+        background: #0c5b79;
+        color: #fff;
+      }
+      .truth-card-operate-selected {
+        background: #0c5b79;
+        color: #fff;
+      }
+      .truth-card-operate-mistask {
+        background: #EB3941;
+        color: #fff;
+      }
+    }
+  }
+}
+.compete {
+  .compete-progress {
+    width: 80%;
+    height: 40px;
+    margin: 0 auto;
+    margin-top: 20px;
+    .ant-progress-bg {
+      background: #0c5b79!important;
+    }
+  }
+  .compete-questions {
+    width: 80%;
+    margin: 0 auto;
+    .ant-radio-wrapper {
+      display: block;
+      margin-top: 10px;
+    }
+  }
+}

@@ -51,7 +51,11 @@ class MyPlan extends Component {
   }
 
   componentDidMount () {
+    this.getPlan();
+  }
 
+  getPlan () {
+    
   }
 
   getBasicItem () {
@@ -80,6 +84,50 @@ class MyPlan extends Component {
     })
   }
 
+  quitStyle () {
+    let item;
+    let array = [];
+    if(array.length === 0) {
+      item = <div className="myplan-item-none">还没有选择戒烟方法</div>
+    }
+    else {
+      let liList = array.map(el => {
+        return <li><span className="myplan-basic-li">●</span><span>{el.label}</span></li>
+      })
+      item = <ul>{liList}</ul>
+    }
+    return item;
+  }
+  commonwealStyle () {
+    let item;
+    let array = [];
+    if(array.length === 0) {
+      item = <div className="myplan-item-none">还没有参与任何公益</div>
+    }
+    else {
+      let liList = array.map(el => {
+        return <li><span className="myplan-basic-li">●</span><span>{el.label}</span></li>
+      })
+      item = <ul>{liList}</ul>
+    }
+    return item;
+  }
+
+  shareStyle () {
+    let item;
+    let array = [];
+    if(array.length === 0) {
+      item = <div className="myplan-item-none">还没准备好分享哦~</div>
+    }
+    else {
+      let liList = array.map(el => {
+        return <li><span className="myplan-basic-li">●</span><span>{el.label}</span></li>
+      })
+      item = <ul>{liList}</ul>
+    }
+    return item;
+  }
+
 
   render() {
     const { getFieldDecorator } = this.props.form;
@@ -102,26 +150,26 @@ class MyPlan extends Component {
           </div>
           <div className="myplan-item myplan-medicine">
             <div className="myplan-name myplan-name-medicine">
-              <span>协助任务</span><Icon type="edit" />
+              <span>戒烟方法</span><Icon type="edit" />
             </div>
             <div className="myplan-item-medicine myplan-item-area">
-              <div className="myplan-item-top"></div>
+              {this.quitStyle()}
             </div>
           </div>
-          <div className="myplan-item myplan-medicine">
-            <div className="myplan-name myplan-name-medicine">
-              <span>分享任务</span><Icon type="edit" />
-            </div>
-            <div className="myplan-item-basic myplan-item-area">
-              <div className="myplan-item-top"></div>
-            </div>
-          </div>
-          <div className="myplan-item myplan-medicine">
-            <div className="myplan-name myplan-name-medicine">
+          <div className="myplan-item myplan-commonweal">
+            <div className="myplan-name myplan-name-commonweal">
               <span>公益任务</span><Icon type="edit" />
             </div>
-            <div className="myplan-item-basic myplan-item-area">
-              <div className="myplan-item-top"></div>
+            <div className="myplan-item-commonweal myplan-item-area">
+              {this.commonwealStyle()}
+            </div>
+          </div>
+          <div className="myplan-item myplan-share">
+            <div className="myplan-name myplan-name-share">
+              <span>分享任务</span><Icon type="edit" />
+            </div>
+            <div className="myplan-item-share myplan-item-area">
+              {this.shareStyle()}
             </div>
           </div>
         </div>

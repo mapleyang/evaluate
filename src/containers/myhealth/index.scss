@@ -107,6 +107,11 @@
       font-size: 18px;
     }
   }
+  .myplan-item-none {
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+  }
   .myplan-list {
     width: 60%;
     margin: 0 auto;
@@ -134,14 +139,23 @@
         margin-right: 10px;
       }
     }
-    .myplan-item-top {
-      height: 20px;
-    }
     .myplan-item-medicine {
       border: 2px #49b491 solid;
     }
     .myplan-name-medicine {
        background: #49b491; 
+    }
+    .myplan-item-share {
+      border: 2px #a8d4cc solid;
+    }
+    .myplan-name-share {
+       background: #a8d4cc; 
+    }
+    .myplan-item-commonweal {
+      border: 2px #9db4c6 solid;
+    }
+    .myplan-name-commonweal {
+       background: #9db4c6;
     }
   }
 }

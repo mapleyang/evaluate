@@ -1,22 +1,45 @@
 import React, { Component } from 'react'
-import { Spin, message, Form, Icon, Input, Button, Row, Col, Radio, Carousel, Slider, Select  } from 'antd'
+import { Tabs, Spin, message, Form, Icon, Input, Button, Row, Col, Radio, Carousel, Slider, Select  } from 'antd'
 import './index.scss'
 import Footer from '../footer/index';
+import classname from "classnames";
 const FormItem = Form.Item;
 const Option = Select.Option;
 const RadioButton = Radio.Button;
 const RadioGroup = Radio.Group;
+const TabPane = Tabs.TabPane;
 const formItemLayout = {
   labelCol: { span: 8 },
   wrapperCol: { span: 14 },
 };
+
+const taskOptions = [{
+  label: "短信套餐一",
+  value: "1",
+  price: "100"
+},{
+  label: "短信套餐二",
+  value: "2",
+  price: "200",
+},{
+  label: "短信套餐三",
+  value: "3",
+  price: "400"
+},{
+  label: "短信套餐四",
+  value: "4",
+  price: "400"
+}]
+
 
 class MsgCure extends Component {
 	constructor(props, context) {
     super(props)
     this.state = {
       scenes: [],
-      sceneVisible: false
+      sceneVisible: false,
+      taskOptions: taskOptions,
+      chooseSlections: []
     }
   }
 
@@ -91,6 +114,74 @@ class MsgCure extends Component {
     return add;
   }
 
+    getSelection () {
+    let item;
+    item = this.state.taskOptions.map(el => {
+      return <span className={classname({
+        "cure-item-selected": this.getSelectFlag(el.value)
+      })} onClick={this.chooseSlections.bind(this, el)}>{el.label}</span>
+    })
+    return item;
+  }
+
+  getSelectFlag (value) {
+    let flag = false;
+    this.state.chooseSlections.forEach(el => {
+      if(value === el.value) {
+        flag = true;
+      }
+    })
+    return flag;
+  }
+
+  chooseSlections (value) {
+    let chooseSlections = [];
+    let flag = true;
+    if(this.state.chooseSlections.length !== 0) {
+      this.state.chooseSlections.forEach(el => {
+        if(value.value === el.value) {
+          flag = false;
+        }
+        else {
+          chooseSlections.push(el)
+        }
+      })
+    }
+    if(flag) {
+      chooseSlections.push(value)
+    }
+    this.setState({
+      chooseSlections: chooseSlections
+    })
+  }
+
+  getPriceItem () {
+    let item = "";
+    let price = 0;
+    if(this.state.chooseSlections.length !== 0) {
+      this.state.chooseSlections.forEach(el => {
+        price += parseInt(el.price);
+      })
+      item = <div className="cure-main-price">
+        <span className="cure-main-price-title">价格合计：</span>
+        <span className="cure-main-price-mark">¥</span>
+        <span className="cure-main-price-value">{price}</span>
+      </div>
+    }
+    else {
+      item = <div className="cure-main-price">
+        <span className="cure-main-price-title">价格：</span>
+        <span className="cure-main-price-mark">¥</span>
+        <span className="cure-main-price-value">100 ~ 1000</span>
+      </div>
+    }
+    return item;
+  }
+
+  startClick () {
+    location.hash = "/flow";
+  }
+
 
   render() {
     const { getFieldDecorator } = this.props.form;
@@ -104,7 +195,13 @@ class MsgCure extends Component {
             <div className="cure-main-desc">
               <div className="cure-main-name">自助戒烟</div>
               <div className="cure-main-content">xxxxxxxxxxx</div>
-              <Button className="cure-join" type="primary">立即戒烟</Button>
+              {this.getPriceItem()}
+              <div className="cure-main-items">
+                <div className="cure-main-item">
+                  {this.getSelection()}
+                </div>
+              </div>
+              <Button className="cure-join" type="primary" onClick={this.startClick.bind(this)}>加入我的戒烟计划</Button>
             </div>
           </Col>
         </Row>

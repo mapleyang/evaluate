@@ -85,13 +85,14 @@ class Header extends Component {
               </Menu.Item>
               <SubMenu title={<span><FormattedMessage id="header.menu.active" defaultMessage={defaultZH_EN['header.menu.active']}/></span>}>
                 <Menu.Item key="analysis">戒烟健康分析</Menu.Item>
-                <Menu.Item key="activity1">戒烟活动1</Menu.Item>
-                <Menu.Item key="activity2">戒烟活动2</Menu.Item>
+                <Menu.Item key="activity1">分享&解答</Menu.Item>
+                <Menu.Item key="activity2">戒烟教练</Menu.Item>
+                <Menu.Item key="activity2">孩子-无烟</Menu.Item>
               </SubMenu>
               <SubMenu title={<span><FormattedMessage id="header.menu.project" defaultMessage={defaultZH_EN['header.menu.project']}/></span>}>
                 <Menu.Item key="selfcure">自助戒烟</Menu.Item>
                 <Menu.Item key="msgcure">短信戒烟</Menu.Item>
-                <Menu.Item key="mindcure">心理治疗戒烟</Menu.Item>
+                <Menu.Item key="mindcure">心理戒烟</Menu.Item>
                 <Menu.Item key="medicinecure">药物戒烟</Menu.Item>
               </SubMenu>
               <Menu.Item key="mark">
@@ -104,10 +105,10 @@ class Header extends Component {
                 <Menu.Item key="health">我的健康</Menu.Item>
                 <Menu.Item key="commonweal">戒烟公益</Menu.Item>
               </SubMenu>
-              <SubMenu title={<span><FormattedMessage id="header.menu.konwledge" defaultMessage={defaultZH_EN['header.menu.konwledge']}/></span>}>
+              <SubMenu title={<span><FormattedMessage id="header.menu.knowledge" defaultMessage={defaultZH_EN['header.menu.knowledge']}/></span>}>
                 <Menu.Item key="disease">烟草-癌症和健康</Menu.Item>
                 <Menu.Item key="truth">戒烟-神话和真相</Menu.Item>
-                <Menu.Item key="knowledge">戒烟-知识竞赛</Menu.Item>
+                <Menu.Item key="compete">戒烟-知识竞赛</Menu.Item>
               </SubMenu>
               <SubMenu title={<span><FormattedMessage id="header.menu.more" defaultMessage={defaultZH_EN['header.menu.more']}/></span>}> 
                 <Menu.Item key="harm">吸烟危害</Menu.Item>

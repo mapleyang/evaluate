@@ -16,7 +16,8 @@ class Mark extends Component {
     super(props)
     this.state = {
       scenes: [],
-      sceneVisible: false
+      sceneVisible: false,
+      markLabel: "label"
     }
   }
 
@@ -91,6 +92,69 @@ class Mark extends Component {
     return add;
   }
 
+  getMarkLabel () {
+    let label = "";
+    if(this.state.markLabel === "label") {
+      label = <span>打卡</span>;
+    }
+    else {
+      label = <Icon type="check" />
+    }
+    return label;
+  }
+
+  markClick () {
+    console.log("ads")
+    if(this.state.markLabel === "label") {
+      this.setState({
+        markLabel: "marked"
+      })
+    }
+  }
+
+  getTasks () {
+    let item;
+    let array = [{
+      name: "基础任务",
+      options: {
+        label: "",
+        value: ""
+      }
+    },{
+      name: "戒烟方法",
+      options: {
+        label: "",
+        value: ""
+      }
+    },{
+      name: "公益任务",
+      options: {
+        label: "",
+        value: ""
+      }
+    },{
+      name: "分享任务",
+      options: {
+        label: "",
+        value: ""
+      }
+    }]
+    item = array.map(el => {
+      return <div>
+          <Row className="mark-task-line">
+          <Col span={4} className="mark-task-title">
+            <span className="mark-task-name">{el.name}</span>
+          </Col>
+          <Col span={20}>
+            <div className="mark-task-hr"></div>
+          </Col>
+        </Row>
+        <div className="mark-task-area"></div>
+      </div>
+    })      
+    return item
+  }
+
 
   render() {
     const { getFieldDecorator } = this.props.form;
@@ -98,26 +162,15 @@ class Mark extends Component {
       <div className="mark">
         <Row>
           <Col span={14}>
-            <Form onSubmit={this.handleSubmit} >
-              <FormItem>
-                <span>今天抽烟的根数</span>
-              </FormItem>
-              <FormItem>
-                {getFieldDecorator('slider')(
-                  <Slider onChange={this.sliderChange.bind(this)} marks={{ 0: 'A', 20: 'B', 40: 'C', 60: 'D', 80: 'E', 100: 'F' }} />
-                )}
-              </FormItem>
-              {this.getScenes()}
-              {this.getAddScene()}
-            </Form>
+            {this.getTasks()}
           </Col>
           <Col span={10}>
             <div className="mark-area">
-              <div className="mark-button">
-                <div className="mark-button-name">打卡</div>
+              <div className="mark-button" onClick={this.markClick.bind(this)}>
+                {this.getMarkLabel()}
               </div>
               <div className="mark-rule">
-                <div>打卡规则</div>
+                <div>请查看今日的任务，然后进行打卡。</div>
                 <div>短信通知监督人</div>
                 <div>分享朋友圈</div>
                 <div>戒烟日记记录</div>
@@ -132,3 +185,17 @@ class Mark extends Component {
 
 export default Mark = Form.create({
 })(Mark);
+
+
+            // <Form onSubmit={this.handleSubmit} >
+            //   <FormItem>
+            //     <span>今天抽烟的根数</span>
+            //   </FormItem>
+            //   <FormItem>
+            //     {getFieldDecorator('slider')(
+            //       <Slider onChange={this.sliderChange.bind(this)} marks={{ 0: 'A', 20: 'B', 40: 'C', 60: 'D', 80: 'E', 100: 'F' }} />
+            //     )}
+            //   </FormItem>
+            //   {this.getScenes()}
+            //   {this.getAddScene()}
+            // </Form>

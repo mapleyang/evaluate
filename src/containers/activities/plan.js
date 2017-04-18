@@ -5,7 +5,7 @@ import moment from 'moment';
 const format = 'HH:mm';
 import './index.scss'
 import Footer from '../footer/index';
-import HighchartsMore from 'highcharts-more'
+import language from "../../utils/param";
 const FormItem = Form.Item;
 const RadioButton = Radio.Button;
 const RadioGroup = Radio.Group;
@@ -126,6 +126,8 @@ class Plan extends Component {
 
   getFormItems = () => {
     const { getFieldDecorator } = this.props.form;
+    const defaultZH_EN = window.ZH_EN[language.getLanguage()];
+    console.log(defaultZH_EN["plan.createPlan"])
     let hrClassName = "";
     if(this.state.quitValue.length === 0) {
       hrClassName = "hr-none";
@@ -174,7 +176,7 @@ class Plan extends Component {
       name: "smokingSence",
       element: <FormItem>
         <div className="plan-steps-item plan-step-styles">
-          <div className="plan-step-styles-content">你可以选择下列多种戒烟方式</div>
+          <div className="plan-step-styles-content">你可以选择下列多种戒烟方式:</div>
           <div className="plan-step-styles-operate">
             {getFieldDecorator('styles')(
               <CheckboxGroup options={stylesOptions} onChange={this.stylesChange.bind(this)} />
@@ -186,25 +188,25 @@ class Plan extends Component {
       name: "smokingSence",
       element: <FormItem>
         <div className="plan-steps-item plan-step-3">
-          <div className="plan-step-3-content">我抽烟的场景</div>
+          <div className="plan-step-3-content">{defaultZH_EN["plan.createPlan"].smokingSence.title}</div>
           <div className="plan-step-trigger">
             <Row className="plan-step-trigger-item">
               <Col span={8}>
-                <div className="trigger-item-name">心理</div>
+                <div className="trigger-item-name">{defaultZH_EN["plan.createPlan"].smokingSence.emotional.title}</div>
                 {getFieldDecorator('smokingEmotion')(
-                  <CheckboxGroup options={quitOptions} />
+                  <CheckboxGroup options={defaultZH_EN["plan.createPlan"].smokingSence.emotional.options} />
                 )}
               </Col>                  
               <Col span={8}>
-                <div className="trigger-item-name">习惯</div>
+                <div className="trigger-item-name">{defaultZH_EN["plan.createPlan"].smokingSence.habitual.title}</div>
                 {getFieldDecorator('smokingHabit')(
-                  <CheckboxGroup options={quitOptions} />
+                  <CheckboxGroup options={defaultZH_EN["plan.createPlan"].smokingSence.habitual.options} />
                 )}
               </Col>                  
               <Col span={8}>
-                <div className="trigger-item-name">社交</div>
+                <div className="trigger-item-name">{defaultZH_EN["plan.createPlan"].smokingSence.social.title}</div>
                 {getFieldDecorator('smokingGam')(
-                  <CheckboxGroup options={quitOptions} />
+                  <CheckboxGroup options={defaultZH_EN["plan.createPlan"].smokingSence.social.options} />
                 )}
               </Col>                  
             </Row>

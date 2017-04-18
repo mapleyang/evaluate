@@ -1,22 +1,44 @@
 import React, { Component } from 'react'
-import { Spin, message, Form, Icon, Input, Button, Row, Col, Radio, Carousel, Slider, Select  } from 'antd'
+import { Tabs, Spin, message, Form, Icon, Input, Button, Row, Col, Radio, Carousel, Slider, Select  } from 'antd'
 import './index.scss'
 import Footer from '../footer/index';
+import classname from "classnames";
 const FormItem = Form.Item;
 const Option = Select.Option;
 const RadioButton = Radio.Button;
 const RadioGroup = Radio.Group;
+const TabPane = Tabs.TabPane;
 const formItemLayout = {
   labelCol: { span: 8 },
   wrapperCol: { span: 14 },
 };
 
+const medicines = [{
+  label: "心理治疗方案一",
+  value: "1",
+  price: "100"
+},{
+  label: "心理治疗方案二",
+  value: "2",
+  price: "200",
+},{
+  label: "心理治疗方案三",
+  value: "3",
+  price: "400"
+},{
+  label: "心理治疗方案四",
+  value: "4",
+  price: "400"
+}]
+
 class MindCure extends Component {
-	constructor(props, context) {
+  constructor(props, context) {
     super(props)
     this.state = {
       scenes: [],
-      sceneVisible: false
+      sceneVisible: false,
+      medicines: medicines,
+      chooseSlections: []
     }
   }
 
@@ -91,20 +113,95 @@ class MindCure extends Component {
     return add;
   }
 
+  getSelection () {
+    let item;
+    item = this.state.medicines.map(el => {
+      return <span className={classname({
+        "cure-item-selected": this.getSelectFlag(el.value)
+      })} onClick={this.chooseSlections.bind(this, el)}>{el.label}</span>
+    })
+    return item;
+  }
+
+  getSelectFlag (value) {
+    let flag = false;
+    this.state.chooseSlections.forEach(el => {
+      if(value === el.value) {
+        flag = true;
+      }
+    })
+    return flag;
+  }
+
+  chooseSlections (value) {
+    let chooseSlections = [];
+    let flag = true;
+    if(this.state.chooseSlections.length !== 0) {
+      this.state.chooseSlections.forEach(el => {
+        if(value.value === el.value) {
+          flag = false;
+        }
+        else {
+          chooseSlections.push(el)
+        }
+      })
+    }
+    if(flag) {
+      chooseSlections.push(value)
+    }
+    this.setState({
+      chooseSlections: chooseSlections
+    })
+  }
+
+  getPriceItem () {
+    let item = "";
+    let price = 0;
+    if(this.state.chooseSlections.length !== 0) {
+      this.state.chooseSlections.forEach(el => {
+        price += parseInt(el.price);
+      })
+      item = <div className="cure-main-price">
+        <span className="cure-main-price-title">价格合计：</span>
+        <span className="cure-main-price-mark">¥</span>
+        <span className="cure-main-price-value">{price}</span>
+      </div>
+    }
+    else {
+      item = <div className="cure-main-price">
+        <span className="cure-main-price-title">价格：</span>
+        <span className="cure-main-price-mark">¥</span>
+        <span className="cure-main-price-value">100 ~ 1000</span>
+      </div>
+    }
+    return item;
+  }
+
+  startClick () {
+    location.hash = "/flow";
+  }
+
+
 
   render() {
     const { getFieldDecorator } = this.props.form;
     return (
-      <div className="solution MindCure">
+      <div className="solution selfcure medicine">
         <Row className="cure-main">
           <Col span={14} className="cure-image">
             image
           </Col>
           <Col span={10}>
             <div className="cure-main-desc">
-              <div className="cure-main-name">心理治疗戒烟</div>
-              <div className="cure-main-content">xxxxxxxxxxx</div>
-              <Button className="cure-join" type="primary">立即戒烟</Button>
+              <div className="cure-main-name">心理戒烟</div>
+              <div className="cure-main-content medicine-main-content">xxxxxxxxxxx</div>
+              {this.getPriceItem()}
+              <div className="cure-main-items">
+                <div className="cure-main-item">
+                  {this.getSelection()}
+                </div>
+              </div>
+              <Button className="cure-join" type="primary" onClick={this.startClick.bind(this)}>加入到我的戒烟计划</Button>
             </div>
           </Col>
         </Row>

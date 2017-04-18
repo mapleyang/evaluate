@@ -29,6 +29,8 @@ import MsgCure from "./containers/solution/msgcure"
 import Mindcure from "./containers/solution/mindcure"
 import MedicineCure from "./containers/solution/medicinecure"
 import Flow from "./containers/solution/flow"
+import Truth from "./containers/knowledge/truth"
+import Compete from "./containers/knowledge/compete"
 //mobile
 // import MHome from "./containers/MHome/index"  
 // import MTab from "./containers/MHome/tab" 
@@ -102,6 +104,10 @@ const ready = () => {
             <Route path="/en/medicinecure" component={MedicineCure}></Route>
             <Route path="/flow" component={Flow}></Route>
             <Route path="/en/flow" component={Flow}></Route>
+            <Route path="/truth" component={Truth}></Route>
+            <Route path="/en/truth" component={Truth}></Route>
+            <Route path="/compete" component={Compete}></Route>
+            <Route path="/en/compete" component={Compete}></Route>
           </Route>
         </Router>
       </IntlProvider>
