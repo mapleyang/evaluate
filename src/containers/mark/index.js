@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Spin, message, Form, Icon, Input, Button, Row, Col, Radio, Carousel, Slider, Select  } from 'antd'
+import { Spin, message, Form, Icon, Input, Button, Row, Col, Radio, Carousel, Slider, Select, Modal  } from 'antd'
 import './index.scss'
 import Footer from '../footer/index';
 const FormItem = Form.Item;
@@ -37,6 +37,21 @@ class Mark extends Component {
     this.setState({
       scenes: scenesInit
     })
+    this.getCurrentPlan()
+  }
+
+  getCurrentPlan () {
+    let array = [];
+    if(array.length === 0) {
+      Modal.info({
+        title: '你还有没有创建计划！！！请前往创建',
+        content: "",
+        okText: "前往",
+        onOk() {
+          location.hash = "/analysis";
+        },
+      });
+    }
   }
 
   sliderChange (value) {

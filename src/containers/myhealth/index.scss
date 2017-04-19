@@ -174,12 +174,15 @@
     margin-right: auto;
     border: 1px #eee solid;
     .record-table {
-      width: 80%;
+      width: 90%;
       margin: 20px auto;
+      .record-secen-add {
+        margin-top: 20px;
+      }
     }
     .record-list {
-      height: 400px;
-      background: #eee;
+      height: 500px;
+      background: #f7f7f7;
       border-radius: 5px;
       margin: 20px;
       .record-list-current {
@@ -187,6 +190,21 @@
         height: 100px;
         line-height: 100px;
         text-align: center;
+      }
+      .record-list-items {
+        height: 350px;
+        border: 1px #eee solid;
+        margin: 20px;
+        .record-list-item {
+          cursor: pointer;
+          height: 40px;
+          line-height: 40px;
+          text-align: center;
+          border-bottom: 1px #eee solid;
+        }
+        .record-list-item:hover {
+          background: #f2f6f9;
+        }
       }
     }
   }

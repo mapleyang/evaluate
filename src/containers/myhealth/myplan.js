@@ -55,14 +55,30 @@ class MyPlan extends Component {
   }
 
   getPlan () {
-    
+    let array = [];
+    if(array.length === 0) {
+      Modal.info({
+        title: '你还有没有创建计划！！！请前往创建',
+        content: "",
+        okText: "前往",
+        onOk() {
+          location.hash = "/analysis";
+        },
+      });
+    }
   }
 
   getBasicItem () {
     let item;
-    item = Tasks.basic.items.map(el => {
-      return <li><span className="myplan-basic-li">●</span><span>{el.label}</span></li>
-    })
+    let array = [];
+    if(array.length === 0) {
+      item = <div className="myplan-item-none">还没有创建戒烟任务</div>
+    }
+    else {
+      item = array.map(el => {
+        return <li><span className="myplan-basic-li">●</span><span>{el.label}</span></li>
+      })
+    }
     return item;
   }
 
