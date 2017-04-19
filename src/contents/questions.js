@@ -1,126 +1,129 @@
+// {
+//       name: "",
+//       category: "", 
+//       type: "",     
+//       question: "性别",
+//       options: [{
+//         label: "男",
+//         value: "1"
+//       },{
+//         label: "女",
+//         value: "0"
+//       }]
+//     },{
+//       name: "",
+//       category: "",  
+//       type: "",      
+//       question: "出生日期",
+//       options: [{
+//         label: "男",
+//         value: "1"
+//       },{
+//         label: "女",
+//         value: "0"
+//       }]
+//     },{
+//       name: "",
+//       category: "",   //问题类型
+//       type: "",       //问答类型
+//       question: "婚姻",
+//       options: [{
+//         label: "已婚",
+//         value: "married"
+//       },{
+//         label: "同居",
+//         value: "cohabitation"
+//       },{
+//         label: "离婚",
+//         value: "divorced"
+//       },{
+//         label: "分居",
+//         value: "separation"
+//       },{
+//         label: "丧偶",
+//         value: "widowed"
+//       },{
+//         label: "未婚",
+//         value: "single "
+//       },{
+//         label: "其他",
+//         value: "others "
+//       }]
+//     },{
+//       name: "",
+//       category: "",   //问题类型
+//       type: "",       //问答类型
+//       question: "职业",
+//       options: [{
+//         label: "职业A",
+//         value: "1"
+//       },{
+//         label: "职业B",
+//         value: "0"
+//       }]
+//     },{
+//       name: "",
+//       category: "",   //问题类型
+//       type: "",       //问答类型
+//       question: "家庭收入",
+//       options: [{
+//         label: "<1500",
+//         value: "1500"
+//       },{
+//         label: "1500-3000",
+//         value: "3000"
+//       },{
+//         label: "3001-6000",
+//         value: "6000"
+//       },{
+//         label: "6001-10000",
+//         value: "10000"
+//       },{
+//         label: "10001-20000",
+//         value: "20000"
+//       },{
+//         label: "20001-50000",
+//         value: "50000"
+//       },{
+//         label: ">50000",
+//         value: "50000"
+//       },{
+//         label: "其他",
+//         value: "100000"
+//       }]
+//     },{
+//       name: "",
+//       category: "",   //问题类型
+//       type: "",       //问答类型
+//       question: "文化程度",
+//       options: [{
+//         label: "小学",
+//         value: "1"
+//       },{
+//         label: "初中",
+//         value: "2"
+//       },{
+//         label: "高中",
+//         value: "3"
+//       },{
+//         label: "本科",
+//         value: "4"
+//       },{
+//         label: "硕士",
+//         value: "5"
+//       },{
+//         label: "博士",
+//         value: "6"
+//       },{
+//         label: "其他",
+//         value: "7"
+//       }]
+//     }
+
+
 const questions = {
   zh: {
-    basic: [{
-      name: "",
-      category: "", 
-      type: "",     
-      question: "性别",
-      options: [{
-        label: "男",
-        value: "1"
-      },{
-        label: "女",
-        value: "0"
-      }]
-    },{
-      name: "",
-      category: "",  
-      type: "",      
-      question: "出生日期",
-      options: [{
-        label: "男",
-        value: "1"
-      },{
-        label: "女",
-        value: "0"
-      }]
-    },{
-      name: "",
-      category: "",   //问题类型
-      type: "",       //问答类型
-      question: "婚姻",
-      options: [{
-        label: "已婚",
-        value: "married"
-      },{
-        label: "同居",
-        value: "cohabitation"
-      },{
-        label: "离婚",
-        value: "divorced"
-      },{
-        label: "分居",
-        value: "separation"
-      },{
-        label: "丧偶",
-        value: "widowed"
-      },{
-        label: "未婚",
-        value: "single "
-      },{
-        label: "其他",
-        value: "others "
-      }]
-    },{
-      name: "",
-      category: "",   //问题类型
-      type: "",       //问答类型
-      question: "职业",
-      options: [{
-        label: "职业A",
-        value: "1"
-      },{
-        label: "职业B",
-        value: "0"
-      }]
-    },{
-      name: "",
-      category: "",   //问题类型
-      type: "",       //问答类型
-      question: "家庭收入",
-      options: [{
-        label: "<1500",
-        value: "1500"
-      },{
-        label: "1500-3000",
-        value: "3000"
-      },{
-        label: "3001-6000",
-        value: "6000"
-      },{
-        label: "6001-10000",
-        value: "10000"
-      },{
-        label: "10001-20000",
-        value: "20000"
-      },{
-        label: "20001-50000",
-        value: "50000"
-      },{
-        label: ">50000",
-        value: "50000"
-      },{
-        label: "其他",
-        value: "100000"
-      }]
-    },{
-      name: "",
-      category: "",   //问题类型
-      type: "",       //问答类型
-      question: "文化程度",
-      options: [{
-        label: "小学",
-        value: "1"
-      },{
-        label: "初中",
-        value: "2"
-      },{
-        label: "高中",
-        value: "3"
-      },{
-        label: "本科",
-        value: "4"
-      },{
-        label: "硕士",
-        value: "5"
-      },{
-        label: "博士",
-        value: "6"
-      },{
-        label: "其他",
-        value: "7"
-      }]
-    }],
+    basic: [],
     smoking: [{
       name: "smokingFlag",
       category: "",   
