@@ -42,7 +42,6 @@ import TwiceHarm from "./containers/more/twiceharm"
 // import MHome from "./containers/MHome/index"  
 // import MTab from "./containers/MHome/tab" 
 
-import Test from "./containers/home/test"
 
 const param = location.hash.slice(2, 4) === "en" ? "en" : undefined;
 
@@ -80,7 +79,6 @@ const ready = () => {
           <Route path="/" component={App}>
             <IndexRoute component={Home}/>
             <IndexRedirect to="/home" />
-            <Route path="/test" component={Test}></Route>
             <Route path="/home" component={Home}></Route>
             <Route path="/en/home" component={Home}></Route>
             <Route path="/login" component={Login}></Route>

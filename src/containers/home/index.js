@@ -3,6 +3,7 @@ import { Spin, message, Form, Icon, Input, Button, Row, Col, Radio, Carousel  } 
 import './index.scss'
 import Footer from '../footer/index';
 import classnames from "classnames";
+import language from "../../utils/param";
 const FormItem = Form.Item
 const RadioGroup = Radio.Group;
 const formItemLayout = {
@@ -125,67 +126,66 @@ class Home extends Component {
     })
   }
 
+  mousehover (value) {
+    setTimeout(function () {
+      document.getElementById(value).style.display = "block";
+    }, 500)
+  }
 
-
+  mouseLeave (value) {
+    document.getElementById(value).style.display = "none";
+  }
 
   render() {
+    const defaultZH_EN = window.ZH_EN[language.getLanguage()];
     return (
       <div className="home">
-        <Row className="home-desc">
-          <Col span={12} className="home-desc-item">
-            <Carousel afterChange={this.onChange.bind(this)} autoplay={true}>
-              <div><img src="./test01.png" /></div>
-              <div><img src="./test02.png" /></div>
-              <div><img src="./test03.png" /></div>
-            </Carousel>
-          </Col>
-          <Col span={12} className="home-desc-item">
-            <div className="activity-desc">
-              <div className="activity-desc-name">GH戒烟-健康之路</div>
-              <div className="activity-desc-content">
-                <div><span>&nbsp;&nbsp;&nbsp;是面对所有吸烟或者可能受吸烟影响者的一整套戒烟解决方案。
-    根据不同吸烟者的情况，’GH戒烟’能智能地给出个体化戒烟方案，帮助患者成功完成戒烟之旅。此方案建立于国际循证医学的基础上，所有使用或推荐的戒烟方法或技术，均已经大量严格科学研究检验。这些方法和技术已帮助全球，包括中国在内成千上万的吸烟者成功戒烟。</span></div>
-              </div>
-              <div className="home-start">
-                <Button type="primary" ghost size="large" className="home-start-button" onClick={this.getStartClick.bind(this)}>开始健康之路>></Button>
-              </div>
-            </div>
-          </Col>
-        </Row>
-        <Row className="home-row-fucs">
-          <div className="home-fucs-area">
-            <div className="home-fucs-block">
-              <div className={classnames({
-                "home-fucs-q": true,
-                "home-block-mouseout": this.state.qLabel === "Q",
-                "home-block-mouseover": this.state.qLabel !== "Q"
-              })} onMouseOver={this.qBlockHover.bind(this)} onMouseOut={this.qBlockOut.bind(this)} onClick={this.qBlockClick.bind(this)}>{this.state.qLabel}</div>
-            </div>
-            <div className="home-fucs-block">
-              <div className={classnames({
-                "home-fucs-u": true,
-                "home-block-mouseout": this.state.uLabel === "U",
-                "home-block-mouseover": this.state.uLabel !== "U"
-              })} onMouseOver={this.uBlockHover.bind(this)} onMouseOut={this.uBlockOut.bind(this)} onClick={this.uBlockClick.bind(this)}>{this.state.uLabel}</div>
-            </div>
-            <div className="home-fucs-block">
-              <div className={classnames({
-                "home-fucs-i": true,
-                "home-block-mouseout": this.state.iLabel === "I",
-                "home-block-mouseover": this.state.iLabel !== "I"
-              })} onMouseOver={this.iBlockHover.bind(this)} onMouseOut={this.iBlockOut.bind(this)} onClick={this.iBlockClick.bind(this)}>{this.state.iLabel}</div>
-            </div>
-            <div className="home-fucs-block">
-              <div className={classnames({
-                "home-fucs-t": true,
-                "home-block-mouseout": this.state.tLabel === "T",
-                "home-block-mouseover": this.state.tLabel !== "T"
-              })}onMouseOver={this.tBlockHover.bind(this)} onMouseOut={this.tBlockOut.bind(this)} onClick={this.tBlockClick.bind(this)}>{this.state.tLabel}</div>
+        <div className="home-main-area" style={{background: "url(./home.jpg)", backgroundRepeat: "no-repeat", backgroundSize: "100% 100%"}}>
+          <div className="home-main-desc">
+            <div className="home-main-detail">
+              <div className="home-main-desc-content home-main-desc-title">{defaultZH_EN["home.index"].main.title}</div>
+              <div className="home-main-desc-content home-main-desc-desc">{defaultZH_EN["home.index"].main.descript}</div>
+              {defaultZH_EN["home.index"].main.feature.map(el => {
+                return <div className="home-main-desc-content home-main-desc-feature">{el}</div>
+              })}
             </div>
           </div>
-        </Row>
-        <div className="home-content"></div>
-        <div className="footer"><Footer /></div>
+          <div className="home-fuc-entry" onMouseOver={this.mousehover.bind(this, "q")} onMouseLeave={this.mouseLeave.bind(this, "q")}>
+            <Row>
+              <Col className="home-fuc-entry-flag" span={4}>Q</Col>
+              <Col id="q" className="home-fuc-entry-content" span={20}>
+                test
+              </Col>
+            </Row>
+          </div>
+          <div className="home-fuc-entry" onMouseOver={this.mousehover.bind(this, "u")} onMouseLeave={this.mouseLeave.bind(this, "u")}>
+            <Row>
+              <Col className="home-fuc-entry-flag" span={4}>U</Col>
+              <Col id="u" className="home-fuc-entry-content" span={20}>
+                test
+              </Col>
+            </Row>
+          </div>
+          <div className="home-fuc-entry" onMouseOver={this.mousehover.bind(this, "i")} onMouseLeave={this.mouseLeave.bind(this, "i")}>
+            <Row>
+              <Col className="home-fuc-entry-flag" span={4}>I</Col>
+              <Col id="i" className="home-fuc-entry-content" span={20}>
+                test
+              </Col>
+            </Row>
+          </div>
+          <div className="home-fuc-entry" onMouseOver={this.mousehover.bind(this, "t")} onMouseLeave={this.mouseLeave.bind(this, "t")}>
+            <Row>
+              <Col className="home-fuc-entry-flag" span={4}>T</Col>
+              <Col id="t" className="home-fuc-entry-content" span={20}>
+                test
+              </Col>
+            </Row>
+          </div>
+        </div>
+        <div className="home-main-extra" style={{background: "url(./home1.jpg)", backgroundRepeat: "no-repeat", backgroundSize: "100% 100%"}}>
+          
+        </div>
       </div>
     );
   }
@@ -196,3 +196,61 @@ export default Home;
         // <div className="activity-rules">
         //   <img src="./contents.png" />
         // </div>
+
+
+
+    //     <Row className="home-desc">
+    //       <Col span={12} className="home-desc-item">
+    //         <Carousel afterChange={this.onChange.bind(this)} autoplay={true}>
+    //           <div><img src="./test01.png" /></div>
+    //           <div><img src="./test02.png" /></div>
+    //           <div><img src="./test03.png" /></div>
+    //         </Carousel>
+    //       </Col>
+    //       <Col span={12} className="home-desc-item">
+    //         <div className="activity-desc">
+    //           <div className="activity-desc-name">GH戒烟-健康之路</div>
+    //           <div className="activity-desc-content">
+    //             <div><span>&nbsp;&nbsp;&nbsp;是面对所有吸烟或者可能受吸烟影响者的一整套戒烟解决方案。
+    // 根据不同吸烟者的情况，’GH戒烟’能智能地给出个体化戒烟方案，帮助患者成功完成戒烟之旅。此方案建立于国际循证医学的基础上，所有使用或推荐的戒烟方法或技术，均已经大量严格科学研究检验。这些方法和技术已帮助全球，包括中国在内成千上万的吸烟者成功戒烟。</span></div>
+    //           </div>
+    //           <div className="home-start">
+    //             <Button type="primary" ghost size="large" className="home-start-button" onClick={this.getStartClick.bind(this)}>开始健康之路>></Button>
+    //           </div>
+    //         </div>
+    //       </Col>
+    //     </Row>
+    //     <Row className="home-row-fucs">
+    //       <div className="home-fucs-area">
+    //         <div className="home-fucs-block">
+    //           <div className={classnames({
+    //             "home-fucs-q": true,
+    //             "home-block-mouseout": this.state.qLabel === "Q",
+    //             "home-block-mouseover": this.state.qLabel !== "Q"
+    //           })} onMouseOver={this.qBlockHover.bind(this)} onMouseOut={this.qBlockOut.bind(this)} onClick={this.qBlockClick.bind(this)}>{this.state.qLabel}</div>
+    //         </div>
+    //         <div className="home-fucs-block">
+    //           <div className={classnames({
+    //             "home-fucs-u": true,
+    //             "home-block-mouseout": this.state.uLabel === "U",
+    //             "home-block-mouseover": this.state.uLabel !== "U"
+    //           })} onMouseOver={this.uBlockHover.bind(this)} onMouseOut={this.uBlockOut.bind(this)} onClick={this.uBlockClick.bind(this)}>{this.state.uLabel}</div>
+    //         </div>
+    //         <div className="home-fucs-block">
+    //           <div className={classnames({
+    //             "home-fucs-i": true,
+    //             "home-block-mouseout": this.state.iLabel === "I",
+    //             "home-block-mouseover": this.state.iLabel !== "I"
+    //           })} onMouseOver={this.iBlockHover.bind(this)} onMouseOut={this.iBlockOut.bind(this)} onClick={this.iBlockClick.bind(this)}>{this.state.iLabel}</div>
+    //         </div>
+    //         <div className="home-fucs-block">
+    //           <div className={classnames({
+    //             "home-fucs-t": true,
+    //             "home-block-mouseout": this.state.tLabel === "T",
+    //             "home-block-mouseover": this.state.tLabel !== "T"
+    //           })}onMouseOver={this.tBlockHover.bind(this)} onMouseOut={this.tBlockOut.bind(this)} onClick={this.tBlockClick.bind(this)}>{this.state.tLabel}</div>
+    //         </div>
+    //       </div>
+    //     </Row>
+    //     <div className="home-content"></div>
+    //     <div className="footer"><Footer /></div>

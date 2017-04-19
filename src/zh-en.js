@@ -4,6 +4,7 @@ import CreatePlan from "./contents/createPlan"
 import Knowledge from "./contents/knowledge"  
 import Medicine from "./contents/medicine"
 import Disease from "./contents/disease"
+import Home from "./contents/home"
 const ZH_EN = {
   "zh": {
     "header.menu.home": "主页",
@@ -19,6 +20,7 @@ const ZH_EN = {
     "knowledge": Knowledge.zh,
     "plan.medicine": Medicine.zh,
     "knowledge.disease": Disease.zh,
+    "home.index": Home.zh,
   },
   "en": {
     "header.menu.home": "Home",
@@ -34,6 +36,7 @@ const ZH_EN = {
     "knowledge": Knowledge.en,
     "plan.medicine": Medicine.en,
     "knowledge.disease": Disease.en,
+    "home.index": Home.en,
   }
 }
 
