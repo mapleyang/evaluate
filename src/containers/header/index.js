@@ -59,16 +59,32 @@ class Header extends Component {
     })
   }
 
+  getUserItem () {
+    let item;
+    if(sessionStorage.getItem("userInfo") === undefined){
+      item = <div className="user-login" onClick={this.loginClick.bind(this)}><Icon type="user" />登陆/注册</div>
+    }
+    else {
+      item = <div className="user-image" onClick={this.userInfoClick.bind(this)}><img src="./user.jpg" /></div>
+    }
+    return item;
+  }
+
+  userInfoClick () {
+    location.hash = "/user";
+  }
+
   render() {
     const defaultZH_EN = window.ZH_EN['zh'];
     let param = location.hash.slice(2, 4) === "en" ? "en" : "zh";
     if(this.state.param !== "" && this.state.param !== param ) {
       location.reload();
     }
+    console.log("sessionStorage:" + sessionStorage.getItem("userInfo"))
     return (
       <div className="header-area">
         <Row className="header-row-menu">
-          <Col span={4}>
+          <Col span={4} className="header-logo">
             <img src="./viewfile.png" />
             <div className="header-name"><span>戒烟-健康之路</span></div>
           </Col>
@@ -118,7 +134,7 @@ class Header extends Component {
             </Menu>
           </Col>
           <Col span={2}>
-            <div className="user-login" onClick={this.loginClick.bind(this)}><Icon type="user" />登陆/注册</div>
+            {this.getUserItem()}
           </Col>
           <Col span={2}>
             <div className="language-setting" onClick={this.languageCovert.bind(this, this.state.language)}>{this.state.language}</div>

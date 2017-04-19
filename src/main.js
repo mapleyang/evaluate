@@ -16,6 +16,7 @@ import 'antd/dist/antd.less'
 import App from "./containers/app"
 import Home from "./containers/home/index"
 import Login from "./containers/login/index"
+import User from "./containers/login/user"
 import Register from "./containers/login/register"
 import Analysis from "./containers/activities/analysis"
 import Coach from "./containers/activities/coach"
@@ -83,6 +84,8 @@ const ready = () => {
             <Route path="/en/home" component={Home}></Route>
             <Route path="/login" component={Login}></Route>
             <Route path="/en/login" component={Login}></Route>
+            <Route path="/user" component={User}></Route>
+            <Route path="/en/user" component={User}></Route>
             <Route path="/register" component={Register}></Route>
             <Route path="/en/register" component={Register}></Route>
             <Route path="/diary" component={Diary}></Route>

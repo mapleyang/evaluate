@@ -52,3 +52,31 @@
 		bottom: 0;
 	}
 }
+.user {
+	background: #F2F6F9;
+	height: 100%;
+	.user-info {
+		width: 80%;
+		height: 90%;
+		position: relative;
+		border: 1px #eee solid;
+		top: 5%;
+		margin: 0 auto;
+		background: #fff;
+		.user-info-title {
+	    height: 50px;
+	    line-height: 50px;
+	    width: 90%;
+	    border-bottom: 1px #eee solid;
+	    margin: 0 auto;
+		}
+		.user-info-item {
+			width: 90%;
+			margin: 0 auto;
+			margin-top: 10px;
+			.user-info-label {
+				padding-right: 10px;
+			}
+		}
+	}
+}
