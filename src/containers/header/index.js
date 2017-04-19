@@ -116,8 +116,9 @@ class Header extends Component {
                 <FormattedMessage id="header.menu.mark" defaultMessage={defaultZH_EN['header.menu.mark']}/>
               </Menu.Item>
               <SubMenu title={<span><FormattedMessage id="header.menu.mine" defaultMessage={defaultZH_EN['header.menu.mine']}/></span>}>
-                <Menu.Item key="diary">戒烟日记</Menu.Item>
+                <Menu.Item key="calendar">戒烟日历</Menu.Item>
                 <Menu.Item key="myplan">戒烟计划</Menu.Item>
+                <Menu.Item key="diary">戒烟日记</Menu.Item>
                 <Menu.Item key="result">戒烟成果</Menu.Item>
                 <Menu.Item key="health">我的健康</Menu.Item>
                 <Menu.Item key="commonweal">戒烟公益</Menu.Item>

@@ -22,6 +22,7 @@ import Analysis from "./containers/activities/analysis"
 import Coach from "./containers/activities/coach"
 import Share from "./containers/activities/share"
 import Plan from "./containers/activities/plan"
+import Calendar from "./containers/myhealth/calendar"
 import Diary from "./containers/myhealth/diary"
 import Result from "./containers/myhealth/result"
 import Health from "./containers/myhealth/health"
@@ -88,6 +89,8 @@ const ready = () => {
             <Route path="/en/user" component={User}></Route>
             <Route path="/register" component={Register}></Route>
             <Route path="/en/register" component={Register}></Route>
+            <Route path="/calendar" component={Calendar}></Route>
+            <Route path="/en/calendar" component={Calendar}></Route>
             <Route path="/diary" component={Diary}></Route>
             <Route path="/en/diary" component={Diary}></Route>
             <Route path="/myplan" component={MyPlan}></Route>

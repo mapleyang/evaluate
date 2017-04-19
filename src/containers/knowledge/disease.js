@@ -21,12 +21,33 @@ class Disease extends Component {
     }
   }
 
+  getDescribe () {
+    const defaultZH_EN = window.ZH_EN[language.getLanguage()];
+    let item;
+    item = defaultZH_EN["knowledge.disease"].disease.describe.map(el => {
+      return <div>
+        <div className="disease-desc-title">{el.title}</div>
+        <div className="disease-desc-content">{el.desc}</div>
+        <div className="disease-desc-img">
+          <img src={el.img} />
+        </div>
+      </div>
+    })
+    return item;
+  }
+
   render() {
     const defaultZH_EN = window.ZH_EN[language.getLanguage()];
     const { getFieldDecorator } = this.props.form;
     return (
       <div className="disease">
-        戒烟与癌症
+        <div className="disease-area">
+          <div className="disease-title">{defaultZH_EN["knowledge.disease"].disease.title}</div>
+          <div className="disease-desc">
+            {this.getDescribe()}
+          </div>
+        </div>
+        <div className="disease-bottom"></div>
       </div>
     );
   }

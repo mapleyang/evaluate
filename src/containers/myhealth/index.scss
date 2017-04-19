@@ -162,3 +162,32 @@
 .modle-add-task {
   margin-bottom: 20px;
 }
+.record {
+  background: #f2f6f9;
+  height: 100%;
+  .record-area {
+    width: 80%;
+    background: #fff;
+    position: relative;
+    top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px #eee solid;
+    .record-table {
+      width: 80%;
+      margin: 20px auto;
+    }
+    .record-list {
+      height: 400px;
+      background: #eee;
+      border-radius: 5px;
+      margin: 20px;
+      .record-list-current {
+        font-size: 18px;
+        height: 100px;
+        line-height: 100px;
+        text-align: center;
+      }
+    }
+  }
+}

@@ -61,3 +61,40 @@
     }
   }
 }
+.disease {
+  width: 100%;
+  background: #F2F6F9;
+  .disease-area {
+    width: 80%;
+    position: relative;
+    top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    background: #fff;
+    border: 1px #eee solid;
+    .disease-title {
+      font-size: 20px;
+    }
+    .disease-desc {
+      .disease-desc-title {
+        height: 40px;
+        line-height: 40px;
+        padding-left: 20px;
+        font-weight: bold;
+      }
+      .disease-desc-content {
+        padding-left: 20px;
+        margin-bottom: 20px;
+      }
+      .disease-desc-img {
+        text-align: center;
+        img {
+          width: 60%;
+        }
+      }
+    }
+  }
+  .disease-bottom {
+    height: 20px;
+  }
+}
