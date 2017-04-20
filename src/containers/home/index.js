@@ -18,10 +18,7 @@ class Home extends Component {
       loading: false,
       url: "",
       current: 'mail',
-      qLabel: "Q",
-      uLabel: "U",
-      iLabel: "I",
-      tLabel: "T"
+      hoverFlag: "",
     }
   }
 
@@ -46,145 +43,178 @@ class Home extends Component {
     })
   }
 
-  handleClick (e) {
-    console.log('click ', e);
-    this.setState({
-      current: e.key,
-    });
-  }
-
-  onChange(a, b, c) {
-    console.log(a, b, c);
-  }
-
-  getStartClick () {
-    location.hash = "/analysis";
-    // location.hash = "/test";
-  }
-
-  qBlockHover () {
-    this.setState({
-      qLabel: "i want quit"
-    })
-  }
-
-  qBlockClick () {
-    location.hash = "/analysis";
-  }
-
-  qBlockOut () {
-    this.setState({
-      qLabel: "Q"
-    })
-  }
-
-  uBlockHover () {
-    this.setState({
-      uLabel: "Recently quit"
-    })
-  }
-
-  uBlockClick () {
-    location.hash = "/analysis";
-  }
-
-  uBlockOut () {
-    this.setState({
-      uLabel: "U"
-    })
-  }
-
-  iBlockHover () {
-    this.setState({
-      iLabel: "Stay quit"
-    })
-  }
-
-  iBlockClick () {
-    location.hash = "/analysis";
-  }
-
-  iBlockOut () {
-    this.setState({
-      iLabel: "I"
-    })
-  }
-
-  tBlockHover () {
-    this.setState({
-      tLabel: ""
-    })
-  }
-
-  tBlockClick () {
-    location.hash = "/analysis"
-  }
-
-  tBlockOut () {
-    this.setState({
-      tLabel: "T"
-    })
-  }
 
   mousehover (value) {
+    let _this = this;
+    $("#desc").css("z-index", 0)
     setTimeout(function () {
-      document.getElementById(value).style.display = "block";
+      _this.setState({
+        hoverFlag: value
+      })
     }, 500)
   }
 
-  mouseLeave (value) {
-    document.getElementById(value).style.display = "none";
+  getContent (value) {
+    let item = "";
+    const mainContent = [{
+      name: "q",
+      value: <Col className="home-fuc-entry-content" span={20}>
+        <Row>
+          <Col span={6}>
+            <div className="entry-content-title">i want quit</div>
+          </Col>
+          <Col span={14}>
+            <Row>
+              <Col span={6}>
+                <div className="entry-content-title" onClick={this.linkClick.bind(this, "analysis")}>健康分析</div>
+              </Col>
+              <Col span={6}>
+                <div className="entry-content-title" onClick={this.linkClick.bind(this, "myplan")}>戒烟计划</div>
+              </Col>
+              <Col span={6}>
+                <div className="entry-content-title" onClick={this.linkClick.bind(this, "mark")}>戒烟打卡</div>
+              </Col>
+              <Col span={6}>
+                <div className="entry-content-title" onClick={this.linkClick.bind(this, "diary")}>戒烟日记</div>
+              </Col>
+            </Row>
+          </Col>
+        </Row>
+      </Col>
+    },{
+      name: "u",
+      value: <Col className="home-fuc-entry-content" span={20}>
+        <Row>
+          <Col span={6}>
+            <div className="entry-content-title">Recently quit</div>
+          </Col>
+          <Col span={14}>
+            <Row>
+              <Col span={6}>
+                <div className="entry-content-title" onClick={this.linkClick.bind(this, "selfcure")}>自助戒烟</div>
+              </Col>
+              <Col span={6}>
+                <div className="entry-content-title" onClick={this.linkClick.bind(this, "msgcure")}>短信戒烟</div>
+              </Col>
+              <Col span={6}>
+                <div className="entry-content-title" onClick={this.linkClick.bind(this, "mindcure")}>心理戒烟</div>
+              </Col>
+              <Col span={6}>
+                <div className="entry-content-title" onClick={this.linkClick.bind(this, "medicinecure")}>药物戒烟</div>
+              </Col>
+            </Row>
+          </Col>
+        </Row>
+      </Col>
+    },{
+      name: "i",
+      value: <Col className="home-fuc-entry-content" span={20}>
+        <Row>
+          <Col span={6}>
+            <div className="entry-content-title">Stay quit</div>
+          </Col>
+          <Col span={14}>
+            <Row>
+              <Col span={6}>
+                <div className="entry-content-title" onClick={this.linkClick.bind(this, "truth")}>戒烟游戏</div>
+              </Col>
+              <Col span={6}>
+                <div className="entry-content-title" onClick={this.linkClick.bind(this, "compete")}>戒烟知识竞赛</div>
+              </Col>
+            </Row>
+          </Col>
+        </Row>
+      </Col>
+    },{
+      name: "t",
+      value: <Col className="home-fuc-entry-content" span={20}>
+        <Row>
+          <Col span={6}>
+            <div className="entry-content-title">Smoke-free World</div>
+          </Col>
+          <Col span={14}>
+            <Row>
+              <Col span={6}>
+                <div className="entry-content-title" onClick={this.linkClick.bind(this, "disease")}>戒烟知识</div>
+              </Col>
+              <Col span={6}>
+                <div className="entry-content-title" onClick={this.linkClick.bind(this, "commonweal")}>戒烟公益</div>
+              </Col>
+              <Col span={6}>
+                <div className="entry-content-title" onClick={this.linkClick.bind(this, "coach")}>戒烟教练</div>
+              </Col>
+              <Col span={6}>
+                <div className="entry-content-title" onClick={this.linkClick.bind(this, "child")}>孩子-无烟</div>
+              </Col>
+            </Row>
+          </Col>
+        </Row>
+      </Col>
+    }]
+    mainContent.forEach(el => {
+      if(el.name === this.state.hoverFlag && el.name === value) {
+        item = el.value;
+      }
+    })
+    return item;
+  }
+
+  mouseLeave () {
+    $("#desc").css("z-index", 1000)
+    this.setState({
+      hoverFlag: ""
+    })
+  }
+
+  linkClick (value) {
+    location.hash = "/" + value;
   }
 
   render() {
     const defaultZH_EN = window.ZH_EN[language.getLanguage()];
     return (
       <div className="home">
-        <div className="home-main-area" style={{background: "url(./home.jpg)", backgroundRepeat: "no-repeat", backgroundSize: "100% 100%"}}>
-          <div className="home-main-desc">
-            <div className="home-main-detail">
-              <div className="home-main-desc-content home-main-desc-title">{defaultZH_EN["home.index"].main.title}</div>
-              <div className="home-main-desc-content home-main-desc-desc">{defaultZH_EN["home.index"].main.descript}</div>
-              {defaultZH_EN["home.index"].main.feature.map(el => {
-                return <div className="home-main-desc-content home-main-desc-feature">{el}</div>
-              })}
+        <div id="desc" className="home-main-desc">
+          <div className="home-main-detail">
+            <div className="home-main-desc-content home-main-desc-title">{defaultZH_EN["home.index"].main.title}</div>
+            <div className="home-main-desc-content home-main-desc-desc">{defaultZH_EN["home.index"].main.descript}</div>
+            {defaultZH_EN["home.index"].main.feature.map(el => {
+              return <div className="home-main-desc-content home-main-desc-feature">{el}</div>
+            })}
+            <div className="home-create-health">
+              <span onClick={this.linkClick.bind(this, "analysis")}>{defaultZH_EN["home.index"].main.buttonContent}</span>
             </div>
           </div>
-          <div className="home-fuc-entry" onMouseOver={this.mousehover.bind(this, "q")} onMouseLeave={this.mouseLeave.bind(this, "q")}>
+        </div>
+        <div className="home-entry-list">
+          <div className="home-fuc-entry" onMouseOver={this.mousehover.bind(this, "q")} onMouseLeave={this.mouseLeave.bind(this)}>
             <Row>
               <Col className="home-fuc-entry-flag" span={4}>Q</Col>
-              <Col id="q" className="home-fuc-entry-content" span={20}>
-                test
-              </Col>
+              {this.getContent("q")}
             </Row>
           </div>
-          <div className="home-fuc-entry" onMouseOver={this.mousehover.bind(this, "u")} onMouseLeave={this.mouseLeave.bind(this, "u")}>
+          <div className="home-fuc-entry" onMouseOver={this.mousehover.bind(this, "u")} onMouseLeave={this.mouseLeave.bind(this)}>
             <Row>
               <Col className="home-fuc-entry-flag" span={4}>U</Col>
-              <Col id="u" className="home-fuc-entry-content" span={20}>
-                test
-              </Col>
+              {this.getContent("u")}
             </Row>
           </div>
-          <div className="home-fuc-entry" onMouseOver={this.mousehover.bind(this, "i")} onMouseLeave={this.mouseLeave.bind(this, "i")}>
+          <div className="home-fuc-entry" onMouseOver={this.mousehover.bind(this, "i")} onMouseLeave={this.mouseLeave.bind(this)}>
             <Row>
               <Col className="home-fuc-entry-flag" span={4}>I</Col>
-              <Col id="i" className="home-fuc-entry-content" span={20}>
-                test
-              </Col>
+              {this.getContent("i")}
             </Row>
           </div>
-          <div className="home-fuc-entry" onMouseOver={this.mousehover.bind(this, "t")} onMouseLeave={this.mouseLeave.bind(this, "t")}>
+          <div className="home-fuc-entry" onMouseOver={this.mousehover.bind(this, "t")} onMouseLeave={this.mouseLeave.bind(this)}>
             <Row>
               <Col className="home-fuc-entry-flag" span={4}>T</Col>
-              <Col id="t" className="home-fuc-entry-content" span={20}>
-                test
-              </Col>
+              {this.getContent("t")}
             </Row>
           </div>
         </div>
+        <div className="home-main-area" style={{background: "url(./home.jpg)", backgroundRepeat: "no-repeat", backgroundSize: "100% 100%"}}>
+        </div>
         <div className="home-main-extra" style={{background: "url(./home1.jpg)", backgroundRepeat: "no-repeat", backgroundSize: "100% 100%"}}>
-          
         </div>
       </div>
     );

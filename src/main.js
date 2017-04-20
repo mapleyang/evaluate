@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import ReactDOM from 'react-dom'
+import $ from "jquery"
 
 import { addLocaleData, IntlProvider, FormattedMessage } from 'react-intl';
 import scriptjs from 'scriptjs';
@@ -41,6 +42,8 @@ import TwiceHarm from "./containers/more/twiceharm"
 //mobile
 // import MHome from "./containers/MHome/index"  
 // import MTab from "./containers/MHome/tab" 
+
+window.$ = $;
 
 
 const param = location.hash.slice(2, 4) === "en" ? "en" : undefined;
