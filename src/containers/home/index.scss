@@ -1,4 +1,3 @@
-
 .home {
   .home-main-desc {
     height: 350px;
@@ -38,6 +37,7 @@
   }
   .home-entry-list {
     position: fixed;
+    z-index: 100;
     width: 100%;
     top: 240px;
     .home-fuc-entry {
@@ -71,8 +71,41 @@
     height: 550px;
     width: 100%;
   }
-  .home-main-extra {
-    height: 500px;
+  .home-main-data {
+    height: 550px;
     width: 100%;
+    .home-main-data-desc {
+      height: 350px;
+      .data-desc-content {
+        height: 150px;
+        position: relative;
+        background: #0c5b79;
+        position: relative;
+        top: 200px;
+        text-align: center;
+        line-height: 150px;
+        color: #fff;
+        font-size: 20px;
+      }
+    }
+    .home-main-data-list {
+      height: 140px;
+      background-color: rgba(195,191,185,.5);
+      .data-list-img {
+        width: 100%;
+        height: 100px;
+        text-align: center;
+        img {
+          height: 80px;
+          margin-top: 10px;
+        }
+      }
+      .data-list-img-desc {
+        text-align: center;
+        height: 40px;
+        line-height: 40px;
+        font-weight: bold;
+      }
+    }
   }
 }

@@ -214,8 +214,40 @@ class Home extends Component {
         </div>
         <div className="home-main-area" style={{background: "url(./home.jpg)", backgroundRepeat: "no-repeat", backgroundSize: "100% 100%"}}>
         </div>
-        <div className="home-main-extra" style={{background: "url(./home1.jpg)", backgroundRepeat: "no-repeat", backgroundSize: "100% 100%"}}>
+        <div className="home-main-data" style={{background: "url(./home1.jpg)", backgroundRepeat: "no-repeat", backgroundSize: "100% 100%"}}>
+          <div className="home-main-data-desc">
+            <div className="data-desc-content">纸烟包含多种化学物质，烟品燃烧后会产生超过7,000种化学物质，其中至少有250种已知有害物质以及超过70种已知可致癌物质。</div>
+          </div>
+          <div className="home-main-data-list">
+            <Row>
+              <Col span={6}>
+                <div className="data-list-img">
+                  <img src="./data1.png" />
+                </div>
+                <div className="data-list-img-desc">全球每年600万人死于烟害</div>
+              </Col>
+              <Col span={6}>
+                <div className="data-list-img">
+                  <img src="./data2.png" />
+                </div>
+                <div className="data-list-img-desc">中国1/3男性将死于烟草危害</div>
+              </Col>
+              <Col span={6}>
+                <div className="data-list-img">
+                  <img src="./data3.png" />
+                </div>
+                <div className="data-list-img-desc">中国超7亿人暴露在二手烟危害</div>
+              </Col>
+              <Col span={6}>
+                <div className="data-list-img">
+                  <img src="./data4.png" />
+                </div>
+                <div className="data-list-img-desc">吸菸導致長期的損害并罹癌</div>
+              </Col>
+            </Row>
+          </div>
         </div>
+        <div className="footer"><Footer /></div>
       </div>
     );
   }
