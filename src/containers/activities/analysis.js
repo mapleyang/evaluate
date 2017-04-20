@@ -92,7 +92,7 @@ class Analysis extends Component {
     let activeKey = parseInt(this.state.activeKey);
     let commons = defaultZH_EN["analysis.questions"].basic.concat(defaultZH_EN["analysis.questions"].smoking);
     let tempQuestions = [];
-    let quitNum = 6;
+    let quitNum = 0;
     if((activeKey - 1) === quitNum) {
       switch(parseInt(e.target.value)) {
         case 1:
