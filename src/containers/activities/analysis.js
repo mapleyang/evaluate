@@ -364,8 +364,8 @@ class Analysis extends Component {
       <div className="analysis">
         <Row>
           <Col span={14}>
-            <div className="analysis-name">健康分析</div>
             <Form onSubmit={this.handleSubmit}>
+              <div className="analysis-form-name">戒烟问卷可以评估你的吸烟和相关健康状况，智能地给出个体化戒烟方案</div>
               <Row>
                 <Col span={4} className="analysis-left-arrow">
                   <div className="analysis-left-area" onClick={this.leftClick.bind(this)}>
@@ -388,7 +388,6 @@ class Analysis extends Component {
           <Col span={10}>
             <div className="analysis-name"></div>
             <div className="analysis-chartarea" id="analysis"></div>
-            <div className="analysis-name">方案推荐</div>
             <div className="analysis-project">
               <div className="analysis-project-items">
                 {this.getPlanItem()}

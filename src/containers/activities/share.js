@@ -26,7 +26,7 @@ class Share extends Component {
     const { getFieldDecorator } = this.props.form;
     return (
       <div className="coach">
-        我要分享
+        <div className="coach-sign">我要分享</div>
       </div>
     );
   }

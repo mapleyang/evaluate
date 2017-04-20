@@ -47,14 +47,16 @@ class Complete extends Component {
     const { getFieldDecorator } = this.props.form;
     return (
       <div className="compete">
-        <div className="compete-progress">
-          <Progress percent={50} status="active" showInfo={false} />
-        </div>
-        <div className="compete-questions">
-          <div>1. 2008 年，全球因烟草所造成的死亡人数达： </div>
-          <RadioGroup>
-            {this.getQuestions()}
-          </RadioGroup>
+        <div className="compete-area">
+          <div className="compete-progress">
+            <Progress percent={2} status="active" showInfo={false} />
+          </div>
+          <div className="compete-questions">
+            <div>1. 2008 年，全球因烟草所造成的死亡人数达： </div>
+            <RadioGroup>
+              {this.getQuestions()}
+            </RadioGroup>
+          </div>
         </div>
       </div>
     );

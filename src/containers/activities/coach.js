@@ -26,7 +26,7 @@ class Coach extends Component {
     const { getFieldDecorator } = this.props.form;
     return (
       <div className="coach">
-        我要报名
+        <div className="coach-sign">我要报名</div>
       </div>
     );
   }
