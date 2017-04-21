@@ -189,7 +189,7 @@ class MsgCure extends Component {
       <div className="solution selfcure">
         <Row className="cure-main">
           <Col span={14} className="cure-image">
-            image
+            <img src="./msg1.jpg" />
           </Col>
           <Col span={10}>
             <div className="cure-main-desc">

@@ -189,7 +189,7 @@ class MindCure extends Component {
       <div className="solution selfcure medicine">
         <Row className="cure-main">
           <Col span={14} className="cure-image">
-            image
+            <img src="mind1.jpg"/>
           </Col>
           <Col span={10}>
             <div className="cure-main-desc">
