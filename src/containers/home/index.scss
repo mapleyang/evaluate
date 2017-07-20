@@ -1,7 +1,7 @@
 .home {
   height: 100%;
   .home-main {
-    height: 100%;
+    height: 70%;
     .header {
       height: 120px;
       .header-row {
@@ -30,6 +30,21 @@
             color: #fff;
           }
         }
+      }
+    }
+  }
+  .project {
+    height: 550px;
+    margin-top: -150px;
+    .project-content {
+      height: 280px;
+      width: 60%;
+      position: relative;
+      left: 20%;
+      border: 7px #CDFFCC solid;
+      img {
+        height: 330px;
+        margin-top: -50px;
       }
     }
   }

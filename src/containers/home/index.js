@@ -35,7 +35,7 @@ class Home extends Component {
   render() {
     return (
       <div className="home">
-        <div className="home-main" style={{background: "url('./main.jpg')", backgroundSize: "100%"}}>
+        <div className="home-main" style={{background: "url('./main.jpg')", backgroundSize: "100% 100%"}}>
           <div className="header">
             <Row className="header-row">
               <Col span={4} className="header-row-logo">
@@ -51,6 +51,11 @@ class Home extends Component {
                 </div>
               </Col>
             </Row>
+          </div>
+        </div>
+        <div className="project">
+          <div className="project-content">
+            <img src="project.png"/>
           </div>
         </div>
       </div>
