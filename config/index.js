@@ -16,6 +16,7 @@ const config = {
   dir_test   : 'tests',
 
   server_host : ip.address(), // use string 'localhost' to prevent exposure on local network
+  // server_port : 8080,
   server_port : process.env.PORT || 3000,
 
   compiler_babel : {

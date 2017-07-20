@@ -186,39 +186,41 @@ class SelfCure extends Component {
     const { getFieldDecorator } = this.props.form;
     return (
       <div className="solution selfcure medicine">
-        <Row className="cure-main">
-          <Col span={14} className="cure-image">
-            <img src="self1.jpg" />
-          </Col>
-          <Col span={10}>
-            <div className="cure-main-desc">
-              <div className="cure-main-name">自助戒烟</div>
-              <div className="cure-main-content medicine-main-content">xxxxxxxxxxx</div>
-              {this.getPriceItem()}
-              <div className="cure-main-items">
-                <div className="cure-main-item">
-                  {this.getSelection()}
+        <div className="solution-content">
+          <Row className="cure-main">
+            <Col span={14} className="cure-image">
+              <img src="self1.jpg" />
+            </Col>
+            <Col span={10}>
+              <div className="cure-main-desc">
+                <div className="cure-main-name">自助戒烟</div>
+                <div className="cure-main-content medicine-main-content">xxxxxxxxxxx</div>
+                {this.getPriceItem()}
+                <div className="cure-main-items">
+                  <div className="cure-main-item">
+                    {this.getSelection()}
+                  </div>
                 </div>
+                <Button className="cure-join" type="primary" onClick={this.startClick.bind(this)}>加入到我的戒烟计划</Button>
               </div>
-              <Button className="cure-join" type="primary" onClick={this.startClick.bind(this)}>加入到我的戒烟计划</Button>
+            </Col>
+          </Row>
+          <Row className="cure-detail">
+            <div className="cure-detail-content">
+              <Tabs defaultActiveKey="2">
+                <TabPane tab={<span><Icon type="exception" />治疗说明</span>} key="1">
+                  Tab 1
+                </TabPane>
+                <TabPane tab={<span><Icon type="solution" />套餐说明</span>} key="2">
+                  Tab 2
+                </TabPane>
+                <TabPane tab={<span><Icon type="medicine-box" />服务说明</span>} key="3">
+                  Tab 2
+                </TabPane>
+              </Tabs>
             </div>
-          </Col>
-        </Row>
-        <Row className="cure-detail">
-          <div className="cure-detail-content">
-            <Tabs defaultActiveKey="2">
-              <TabPane tab={<span><Icon type="exception" />治疗说明</span>} key="1">
-                Tab 1
-              </TabPane>
-              <TabPane tab={<span><Icon type="solution" />套餐说明</span>} key="2">
-                Tab 2
-              </TabPane>
-              <TabPane tab={<span><Icon type="medicine-box" />服务说明</span>} key="3">
-                Tab 2
-              </TabPane>
-            </Tabs>
-          </div>
-        </Row>
+          </Row>
+        </div>
       </div>
     );
   }

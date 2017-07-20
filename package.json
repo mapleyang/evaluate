@@ -51,7 +51,7 @@
     "type": "git",
     "url": "git+https://github.com/bodyno/react-starter-kit.git"
   },
-  "author": "Nobody <az8321550@gmail.com> (https://bodyno.com)",
+  "author": "mapple",
   "license": "WTFPL",
   "dependencies": {
     "antd": "^2.7.4",

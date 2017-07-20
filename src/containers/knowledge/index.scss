@@ -91,6 +91,8 @@
     border: 1px #eee solid;
     .disease-title {
       font-size: 20px;
+      line-height: 50px;
+      padding-left: 20px;
     }
     .disease-desc {
       .disease-desc-title {
@@ -102,9 +104,13 @@
       .disease-desc-content {
         padding-left: 20px;
         margin-bottom: 20px;
+        float: left;
+        .desc-content-item {
+          line-height: 40px;
+        }
       }
       .disease-desc-img {
-        text-align: center;
+        text-align: right;
         img {
           width: 60%;
         }

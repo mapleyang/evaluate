@@ -49,7 +49,7 @@ class Analysis extends Component {
         type: 'bar'
     },
     title: {
-        text: '问卷健康分析'
+        text: '问卷健康分析&方案'
     },
     xAxis: {
         categories: ['吸烟史', '烟草使用', '家人和环境', '2手烟暴露', '健康状况', '肺癌风险', '慢性疾病']
@@ -247,7 +247,7 @@ class Analysis extends Component {
     item = array.map((el,index) => {
       let key = (index + 1).toString()
       return <TabPane tab="" key={key}>
-        <Card title={el.question} style={{ width: 350 }}>
+        <Card title={el.question} style={{ width: 550 }}>
           <RadioGroup onChange={this.radioChange.bind(this, index)}>
             {el.options.map((sel, sindex) => {
               return <Radio value={sel.value}>{sel.label}</Radio>
@@ -258,7 +258,7 @@ class Analysis extends Component {
     })
     if(item.length !== 0) {
       let finishCard = <TabPane tab="" key={item.length + 1}>
-        <Card title="恭喜你完成了你的健康分析，请查看右边你的健康图" style={{ width: 350 }}>
+        <Card title="恭喜你完成了你的健康分析，请查看右边你的健康图" style={{ width: 550 }}>
         </Card>
       </TabPane>
       item.push(finishCard)

@@ -14,24 +14,53 @@ class Login extends Component {
     super(props)
     this.state = {}
   }
-
+  // fetch("/chealth/background/ajaxBusiness/getMemberById?memberId=3")
+  //       .then(response => response.json())
+  //       .then(json => { 
+  //         if(json.success) {
+  //           json.user.forEach(el => {
+  //             if(el.userName === values.userName && el.password === values.password) {
+  //             }
+  //           })
+  //         }
+  //       })
   handleSubmit = (e) => {
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
       if (!err) {
-        sessionStorage.setItem("userInfo", values)
-        fetch("/login?userName=" + values.userName + "&password=" + values.password)
-        .then(response => response.json())
-        .then(json => { 
-          if(json.success) {
-            json.user.forEach(el => {
-              if(el.userName === values.userName && el.password === values.password) {
-                console.log("login success")
-                sessions.setItem("userInfo", values)
-              }
-            })
+        var body = {
+          userName: values.userName,
+          password: values.password,
+          memberId: 3
+        }
+        window.$.ajax({
+          type: 'post',
+          url: "/chealth/background/ajaxBusiness/saveMember",
+          data: body,
+          dataType:'html',
+          success:function(msg){
+            console.log('success')                     
+          },
+          error:function(){
+            console.log("error")
           }
-        })
+        });
+        // fetch("/chealth/background/ajaxBusiness/saveMember", {
+        //   method: "POST",
+        //   headers: {
+        //     'Content-Type': 'application/json'
+        //   },
+        //   body: JSON.stringify(body),
+        // })
+        // .then(response => response.json())
+        // .then(json => { 
+        //   if(json.success) {
+        //     json.user.forEach(el => {
+        //       if(el.userName === values.userName && el.password === values.password) {
+        //       }
+        //     })
+        //   }
+        // })
       }
     });
   }

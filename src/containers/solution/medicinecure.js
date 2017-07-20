@@ -218,39 +218,41 @@ class MedicineCure extends Component {
     const { getFieldDecorator } = this.props.form;
     return (
       <div className="solution selfcure medicine">
-        <Row className="cure-main">
-          <Col span={14} className="cure-image">
-            {this.getImage()}
-          </Col>
-          <Col span={10}>
-            <div className="cure-main-desc">
-              <div className="cure-main-name">药物戒烟</div>
-              {this.getDescript()}
-              {this.getPriceItem()}
-              <div className="cure-main-items">
-                <div className="cure-main-item">
-                  {this.getSelection()}
+         <div className="solution-content">
+            <Row className="cure-main">
+              <Col span={14} className="cure-image">
+                {this.getImage()}
+              </Col>
+              <Col span={10}>
+                <div className="cure-main-desc">
+                  <div className="cure-main-name">药物戒烟</div>
+                  {this.getDescript()}
+                  {this.getPriceItem()}
+                  <div className="cure-main-items">
+                    <div className="cure-main-item">
+                      {this.getSelection()}
+                    </div>
+                  </div>
+                  <Button className="cure-join" type="primary" onClick={this.startClick.bind(this)}>加入到我的戒烟计划</Button>
                 </div>
+              </Col>
+            </Row>
+            <Row className="cure-detail">
+              <div className="cure-detail-content">
+                <Tabs defaultActiveKey="2">
+                  <TabPane tab={<span><Icon type="exception" />治疗说明</span>} key="1">
+                    Tab 1
+                  </TabPane>
+                  <TabPane tab={<span><Icon type="solution" />套餐说明</span>} key="2">
+                    Tab 2
+                  </TabPane>
+                  <TabPane tab={<span><Icon type="medicine-box" />服务说明</span>} key="3">
+                    Tab 2
+                  </TabPane>
+                </Tabs>
               </div>
-              <Button className="cure-join" type="primary" onClick={this.startClick.bind(this)}>加入到我的戒烟计划</Button>
-            </div>
-          </Col>
-        </Row>
-        <Row className="cure-detail">
-          <div className="cure-detail-content">
-            <Tabs defaultActiveKey="2">
-              <TabPane tab={<span><Icon type="exception" />治疗说明</span>} key="1">
-                Tab 1
-              </TabPane>
-              <TabPane tab={<span><Icon type="solution" />套餐说明</span>} key="2">
-                Tab 2
-              </TabPane>
-              <TabPane tab={<span><Icon type="medicine-box" />服务说明</span>} key="3">
-                Tab 2
-              </TabPane>
-            </Tabs>
-          </div>
-        </Row>
+            </Row>
+         </div>
       </div>
     );
   }

@@ -1,10 +1,13 @@
 .analysis {
+  background: #f2f6f9;
 	.analysis-form-name {
 		text-align: center;
     padding-top: 3px;
     color: #333333;
-    font-size: 18px;
     fill: #333333;
+    background-color: #FFF2E8;
+    height: 40px;
+    line-height: 40px;
 	}
 	form {
 		height: 560px;
@@ -17,19 +20,25 @@
     left: 5%;
     border-radius: 5px;
     background: #eee;
+    margin-top: 40px;
+    .highcharts-container {
+      border-radius: 5px;
+    }
 	}
 	.analysis-project {
-		height: 200px;
+		height: 160px;
     width: 90%;
     position: relative;
     left: 5%;
     border-radius: 5px;
     text-align: center;
+    margin-top: 20px;
+    background: #fff;
     .analysis-project-items {
       height: 40px;
       text-align: center;
       .ant-radio-group {
-        margin-top: 20px;
+        margin-top: 40px;
       }
     }
     .analysis-project-create {
@@ -59,6 +68,7 @@
       text-align: center;
       i {
         font-size: 42px;
+        color: #999;
       }
     }
   }
@@ -70,6 +80,7 @@
       text-align: center;
       i {
         font-size: 42px;
+        color: #999;
       }
     }
   }
@@ -85,6 +96,7 @@
 }
 /*plan*/
 .plan {
+  background: #f2f6f9;
   .plan-title {
     height: 150px;
     text-align: center; 
@@ -222,6 +234,7 @@
           width: 80%;
           margin: 0 auto;
           color: #fff;
+          font-size: 16px;
         }
         .plan-step-share {
           width: 40%;
@@ -263,7 +276,7 @@
         .plan-step-daily-desc {
           font-size: 16px;
           color: #fff;
-          padding-left: 10px;
+          padding-left: 40px;
         }
         .plan-step-daily-operate {
           margin-top: 20px;

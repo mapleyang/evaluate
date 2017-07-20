@@ -34,8 +34,8 @@ webpackConfig.entry = {
 }
 
 webpackConfig.output = {
-  filename: `js/[name].[${config.compiler_hash_type}].js`,
-  chunkFilename: 'js/[name].[chunkhash].js',
+  filename: `js/[name].js`,
+  chunkFilename: 'js/[name].js',
   path: paths.dist(),
   publicPath: config.compiler_public_path
 }
@@ -182,7 +182,7 @@ if (!__DEV__) {
   })
 
   webpackConfig.plugins.push(
-    new ExtractTextPlugin('css/[contenthash].css', {
+    new ExtractTextPlugin('css/app.css', {
       allChunks: true
     })
   )

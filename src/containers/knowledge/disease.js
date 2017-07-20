@@ -27,7 +27,11 @@ class Disease extends Component {
     item = defaultZH_EN["knowledge.disease"].disease.describe.map(el => {
       return <div>
         <div className="disease-desc-title">{el.title}</div>
-        <div className="disease-desc-content">{el.desc}</div>
+        <div className="disease-desc-content">{
+          el.desc.map(sel => {
+            return <div className="desc-content-item"><Icon type="caret-right" />{sel.content}</div>
+          })
+        }</div>
         <div className="disease-desc-img">
           <img src={el.img} />
         </div>
