@@ -194,7 +194,7 @@ class SelfCure extends Component {
             <Col span={10}>
               <div className="cure-main-desc">
                 <div className="cure-main-name">自助戒烟</div>
-                <div className="cure-main-content medicine-main-content">xxxxxxxxxxx</div>
+                <div className="cure-main-content medicine-main-content">参与我们的活动，去戒烟成功。</div>
                 {this.getPriceItem()}
                 <div className="cure-main-items">
                   <div className="cure-main-item">

@@ -195,7 +195,7 @@ class MindCure extends Component {
             <Col span={10}>
               <div className="cure-main-desc">
                 <div className="cure-main-name">心理戒烟</div>
-                <div className="cure-main-content medicine-main-content">xxxxxxxxxxx</div>
+                <div className="cure-main-content medicine-main-content">专业的心理咨询团队，改变自己的习惯，达到戒烟的目的。</div>
                 {this.getPriceItem()}
                 <div className="cure-main-items">
                   <div className="cure-main-item">

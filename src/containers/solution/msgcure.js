@@ -194,8 +194,8 @@ class MsgCure extends Component {
             </Col>
             <Col span={10}>
               <div className="cure-main-desc">
-                <div className="cure-main-name">自助戒烟</div>
-                <div className="cure-main-content">xxxxxxxxxxx</div>
+                <div className="cure-main-name">短信戒烟</div>
+                <div className="cure-main-content">通过多种渠道的信息提示、激励，获得戒烟的效果。</div>
                 {this.getPriceItem()}
                 <div className="cure-main-items">
                   <div className="cure-main-item">
