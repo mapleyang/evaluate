@@ -23,10 +23,10 @@ export default class App extends Component {
     }
     return header;
   }
-	render() {
-		return (
-			<div className="main">
-				{this.getHeader()}
+				// {this.getHeader()}
+  render() {
+    return (
+      <div className="main">
 				<div className="main-content">{this.props.children}</div>
       </div>
     );
