@@ -13,6 +13,9 @@ const menuList = [{
   label: "技术快报",
   value: "skill"
 },{
+  label: "合作方式",
+  value: "cooperate"
+},{
   label: "我们",
   value: "about"
 }]
