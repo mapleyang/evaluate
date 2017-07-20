@@ -41,6 +41,7 @@ class CalendarTasks extends Component {
     if(value.listData.length !== 0) {
       Modal.info({
         title: '任务详情',
+        okText: "完成",
         content: (
           <div className="events">
             {
@@ -92,32 +93,32 @@ class CalendarTasks extends Component {
       switch (value.date()) {
         case 8:
           dateInfo.listData = [
-            { type: 'warning', content: 'This is warning event.' },
-            { type: 'normal', content: 'This is usual event.' },
+            { type: 'warning', content: '跑步' },
+            { type: 'normal', content: '学习' },
           ]; break;
         case 10:
           dateInfo.listData = [
-            { type: 'warning', content: 'This is warning event.' },
-            { type: 'normal', content: 'This is usual event.' },
-            { type: 'error', content: 'This is error event.' },
+            { type: 'warning', content: '跑步' },
+            { type: 'normal', content: '学习' },
+            { type: 'error', content: '做饭' },
           ]; break;
         case 15:
           dateInfo.listData = [
-            { type: 'warning', content: 'This is warning event' },
-            { type: 'normal', content: 'This is very long usual event。。....' },
-            { type: 'error', content: 'This is error event 1.' },
-            { type: 'error', content: 'This is error event 2.' },
-            { type: 'error', content: 'This is error event 3.' },
-            { type: 'error', content: 'This is error event 4.' },
+            { type: 'warning', content: '跑步' },
+            { type: 'normal', content: '学习' },
+            { type: 'error', content: '做饭' },
+            { type: 'error', content: '微笑' },
+            { type: 'error', content: '充实' },
+            { type: 'error', content: '休息' },
           ]; break;
         case 30:
         dateInfo.listData = [
-          { type: 'warning', content: 'This is warning event' },
-          { type: 'normal', content: 'This is very long usual event。。....' },
-          { type: 'error', content: 'This is error event 1.' },
-          { type: 'error', content: 'This is error event 2.' },
-          { type: 'error', content: 'This is error event 3.' },
-          { type: 'error', content: 'This is error event 4.' },
+          { type: 'warning', content: '跑步' },
+          { type: 'normal', content: '学习' },
+          { type: 'error', content: '旅游' },
+          { type: 'error', content: '画画' },
+          { type: 'error', content: '遛狗' },
+          { type: 'error', content: '休息' },
         ]; break;
         default:
       }
