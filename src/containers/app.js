@@ -1,6 +1,4 @@
 import React, { Component } from 'react'
-import Header from './header/index';
-import Footer from './Footer/index';
 import '../styles/index.scss'
 export default class App extends Component {
 
@@ -32,4 +30,3 @@ export default class App extends Component {
     );
   }
 }
-        // <div className="footer"><Footer /></div>
