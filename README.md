@@ -3,17 +3,15 @@
 主要技术栈：<br/>
 - react
 - react-router
-- redux
-- ant-design-mobile
 - nodejs
 - express
 
 ## 如何运行
 下载项目
 ```
- git clone https://github.com/canfoo/react-taopiaopiao.git
+ https://github.com/mapleyang/chuang
 ```
- 打开一个终端（称这个终端为A终端）进入到react-taopiaopiao目录安装依赖包（注意：如果`npm install` 不能正常安装完成，请使用`cnpm install`进行安装）
+ 打开一个终端（称这个终端为A终端）进入到项目目录安装依赖包（注意：如果`npm install` 不能正常安装完成，请使用`cnpm install`进行安装）
 ```
  npm install
 ```
@@ -25,11 +23,11 @@
 ```
  npm run start
 ```
-启动前端开发服务，在react-taopiaopiao目录（A终端）里执行以下命令，成功执行后，会自动打开浏览器访问前端开发环境，浏览地址是`http://localhost:3000`
+启动前端开发服务，在目录（A终端）里执行以下命令，成功执行后，会自动打开浏览器访问前端开发环境，浏览地址是`http://localhost:3000`
 ```
  npm run dev
 ```
-前端资源部署到server里，开发完成后，在react-taopiaopiao目录里执行以下命令，成功执行后，可以通过访问server提供的路径访问到页面了，访问路径为`http://localhost:9000/app`
+前端资源部署到server里，开发完成后，在目录里执行以下命令，成功执行后，可以通过访问server提供的路径访问到页面了，访问路径为`http://localhost:9000/app`
 ```
  npm run deploy
 ```

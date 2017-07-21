@@ -34,7 +34,7 @@
     }
   }
   .project {
-    height: 550px;
+    height: 400px;
     margin-top: -150px;
     .project-content {
       height: 280px;
@@ -46,6 +46,12 @@
         height: 330px;
         margin-top: -50px;
       }
+    }
+  }
+  .logo-area {
+    text-align: center;
+    img {
+      height: 250px;
     }
   }
 }

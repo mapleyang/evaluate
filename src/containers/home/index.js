@@ -24,8 +24,12 @@ class Home extends Component {
 	constructor(props, context) {
     super(props)
     this.state = {
-      currentPage: "home"
+      currentPage: "home",
     }
+  }
+
+  componentDidMout () {
+
   }
 
   menuChoose (value) {
@@ -33,7 +37,6 @@ class Home extends Component {
       currentPage: value
     })
   }
-
 
   render() {
     return (
@@ -58,8 +61,11 @@ class Home extends Component {
         </div>
         <div className="project">
           <div className="project-content">
-            <img src="project.png"/>
+            <img src="./project.png"/>
           </div>
+        </div>
+        <div className="logo-area">
+          <img src="./logo-show.png" />
         </div>
       </div>
     );
