@@ -64,11 +64,100 @@
         margin-bottom: 100px;
         .skill-img {
           text-align: center;
+          cursor: pointer;
           img {
             height: 200px;
           }
         }
+        .skill-name {
+          height: 30px;
+          line-height: 30px;
+          color: #149B9B;
+        }
       }
+    }
+  }
+  .about-us {
+    height: 300px;
+    margin-top: 100px;
+    .about-us-area {
+      height: inherit;
+      .about-us-content {
+        height: inherit;
+        .us-content-row {
+          height: inherit;
+          .us-content-img {
+            text-align: right;
+            margin-top: 80px;
+            img {
+              height: 150px;
+              width: 100px;
+            }
+          }
+          .us-content-introduce {
+            margin-top: 80px;
+            .us-content-detail {
+              margin: 0 auto;
+              width: 80%;
+              color: #fff;
+              .us-content-name {
+                font-size: 24px;
+                color: #149B9B;
+              }
+            }
+          }
+        }
+      }
+    }
+    .about-us-arrow {
+      height: inherit;
+      font-size: 50px;
+      line-height: 300px;
+      text-align: center;
+      i {
+        cursor: pointer;
+      }
+    }
+    .about-us-disable {
+      color: #999999;
+    }
+  }
+  .site-about {
+    margin-bottom: 50px;
+    .site-about-area {
+      width: 75%;
+      margin: 0 auto;
+      margin-top: 100px;
+      .stite-about-title {
+        height: 30px;
+        line-height: 30px;
+        font-size: 16px;
+        font-weight: bold;
+      }
+      .site-about-content {
+        height: 30px;
+        line-height: 30px;
+        color: #999999;
+        cursor: pointer;
+      }
+      .site-code {
+        text-align: right;
+        img {
+          height: 150px;
+        }
+      }
+    }
+  }
+  .site-copyright { 
+    width: 75%;
+    margin: 0 auto;
+    height: 40px;
+    border-top: 1px #999 solid;
+    .site-copyright-content {
+      text-align: center;
+      color: #999999;
+      height: inherit;
+      line-height: 40px;
     }
   }
 }
