@@ -14,6 +14,7 @@ import { hashHistory, browserHistory, Router, Route, IndexRoute, IndexRedirect  
 import 'antd/dist/antd.less'
 import App from "./containers/app"
 import Home from "./containers/home/index"
+import Project from "./containers/site/project"
 
 window.$ = $;
 
@@ -56,6 +57,8 @@ const ready = () => {
             <IndexRedirect to="/home" />
             <Route path="/home" component={Home}></Route>
             <Route path="/en/home" component={Home}></Route>
+            <Route path="/project" component={Project}></Route>
+            <Route path="/en/project" component={Project}></Route>
           </Route>
         </Router>
       </IntlProvider>

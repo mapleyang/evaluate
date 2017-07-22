@@ -1,0 +1,29 @@
+.header {
+  height: 60px;
+  .header-row {
+    height: 60px;
+    position: relative;
+    .header-row-logo {
+      height: inherit;
+      text-align: center;
+      img {
+        height: inherit;
+      }
+    }
+    .header-menu {
+      width: 50%;
+      position: relative;
+      float: right;
+      line-height: 60px;
+      font-size: 20px;
+      span {
+        padding-right: 40px;
+        color: #266E6B;
+        cursor: pointer;
+      }
+      .current-page {
+        color: #fff;
+      }
+    }
+  }
+}
