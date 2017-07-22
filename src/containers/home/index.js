@@ -67,6 +67,35 @@ class Home extends Component {
         <div className="logo-area">
           <img src="./logo-show.png" />
         </div>
+        <div className="skill-area">
+          <div className="skill-list">
+            <Row className="skill-row">
+              <Col className="skill-img" span="8">
+                <img src="./ec.png" />
+              </Col>
+              <Col className="skill-img" span="8">
+                <img src="./erp.png" />
+                </Col>
+              <Col className="skill-img" span="8">
+                <img src="./wechat.png" />
+              </Col>
+            </Row>
+            <Row className="skill-row">
+              <Col className="skill-img" span="8">
+                <img src="./data.png"/>
+              </Col>
+              <Col className="skill-img" span="8">
+                <img src="./mobile.png"/>
+              </Col>
+              <Col className="skill-img" span="8">
+                <img src="./operate.png"/>
+              </Col>
+            </Row>
+          </div>
+        </div>
+        <div className="about-us">
+
+        </div>
       </div>
     );
   }

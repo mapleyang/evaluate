@@ -54,4 +54,21 @@
       height: 250px;
     }
   }
+  .skill-area {
+    height: 600px;
+    .skill-list {
+      width: 80%;
+      margin: 0 auto;
+      margin-top: 50px;
+      .skill-row {
+        margin-bottom: 100px;
+        .skill-img {
+          text-align: center;
+          img {
+            height: 200px;
+          }
+        }
+      }
+    }
+  }
 }
