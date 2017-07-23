@@ -18,7 +18,6 @@ import Project from "./containers/site/project"
 
 window.$ = $;
 
-
 const param = location.hash.slice(2, 4) === "en" ? "en" : undefined;
 
 

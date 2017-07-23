@@ -1,13 +1,10 @@
 .home {
   height: 100%;
   .home-main {
-    height: 70%;
     .header {
-      height: 120px;
       .header-row {
-        height: 100px;
+        height: inherit;
         position: relative;
-        top: 20px;
         .header-row-logo {
           height: inherit;
           text-align: center;
@@ -16,10 +13,10 @@
           }
         }
         .header-menu {
-          width: 50%;
+          width: 100%;
+          text-align: right;
           position: relative;
           float: right;
-          line-height: 100px;
           font-size: 20px;
           span {
             padding-right: 40px;
@@ -34,40 +31,31 @@
     }
   }
   .project {
-    height: 400px;
-    margin-top: -150px;
+    margin-bottom: 2rem;
     .project-content {
-      height: 280px;
-      width: 60%;
-      position: relative;
-      left: 20%;
-      border: 7px #CDFFCC solid;
+      margin: 0 auto;
       img {
-        height: 330px;
-        margin-top: -50px;
+        width: 100%;
       }
     }
   }
   .logo-area {
     text-align: center;
     img {
-      height: 250px;
+      width: 20%;
     }
   }
   .skill-area {
-    height: 600px;
     .skill-list {
       width: 80%;
       margin: 0 auto;
-      margin-top: 50px;
+      margin-top: 2rem;
       .skill-row {
-        margin-bottom: 100px;
         .skill-img {
+          float: left;
           text-align: center;
           cursor: pointer;
-          img {
-            height: 200px;
-          }
+          margin-bottom: 40px;
         }
         .skill-name {
           height: 30px;
@@ -78,24 +66,25 @@
     }
   }
   .about-us {
-    height: 300px;
-    margin-top: 100px;
+    margin-top: 2rem;
     .about-us-area {
       height: inherit;
       .about-us-content {
-        height: inherit;
+        height: 300px;
         .us-content-row {
           height: inherit;
           .us-content-img {
+            position: relative;
+            top: 28%;
             text-align: right;
-            margin-top: 80px;
             img {
               height: 150px;
               width: 100px;
             }
           }
           .us-content-introduce {
-            margin-top: 80px;
+            position: relative;
+            top: 28%;
             .us-content-detail {
               margin: 0 auto;
               width: 80%;
@@ -145,6 +134,11 @@
         img {
           height: 150px;
         }
+        .site-code-area {
+          width: 60%;
+          text-align: center;
+          margin: 0 auto;
+        }
       }
     }
   }
@@ -157,7 +151,198 @@
       text-align: center;
       color: #999999;
       height: inherit;
-      line-height: 40px;
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .home-main {
+    height: 70%;
+    .header {
+      height: 120px;
+    }
+    .header-menu {
+      line-height: 100px;
+    }
+  } 
+  .project {
+    .project-content {
+      width: 60%;
+      img {
+        margin-top: -250px;
+      }
+    }
+  }
+  .skill-img { 
+    width: 33.3333%;
+    img {
+      width: 80%;
+    }
+  }
+  .skill-name {
+    font-size: 20px;
+  }
+  .about-us-mobile {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .home-main {
+    height: 50%;
+    .header {
+      height: 120px;
+    }
+    .header-menu {
+      line-height: 100px;
+    }
+  } 
+  .project {
+    .project-content {
+      width: 70%;
+      img {
+        margin-top: -150px;
+      }
+    }
+  }
+  .skill-img { 
+    width: 50%;
+    img {
+      width: 80%;
+    }
+  }
+  .skill-name {
+    font-size: 16px;
+  }
+  .about-us-mobile {
+    display: none;
+  }
+}
+@media screen and (max-width: 768px) {
+  .home-main {
+    height: 35%;
+    .header {
+      height: 60px;
+    }
+    .header-menu {
+      line-height: 60px;
+    }
+  } 
+  .project {
+    .project-content {
+      width: 80%
+      img {
+        margin-top: -100px;
+      }
+    }
+  }
+  .skill-img { 
+    width: 100%;
+    img {
+      width: 80%;
+    }
+  }
+  .skill-name {
+    font-size: 18px;
+  }
+  .about-us {
+    .about-us-arrow {
+      display: none;
+    }
+    .about-us-content {
+      width: 90%;
+      position: left;
+      left: 5%;
+    }
+    .about-us-mobile {
+      display: none;
+    }
+  }
+}
+@media screen and (max-width: 767px) {
+  .home-main {
+    height: 35%;
+    .header {
+      height: 60px;
+    }
+    .header-menu {
+      line-height: 60px;
+      .mobile-item {
+        display: none;  
+      }
+      span {
+        float: right;
+        font-size: 16px;
+      }
+    }
+  } 
+  .project {
+    .project-content {
+      width: 80%;
+      img {
+        margin-top: -50px;
+      }
+    }
+  }
+  .device-about {
+    display: none;
+  }
+  .site-code {
+    width: 100%;
+    text-align: center;
+  }
+  .skill-img { 
+    width: 100%;
+    img {
+      width: 80%;
+    }
+  }
+  .skill-name {
+    font-size: 14px;
+  }
+  .about-us {
+    .about-us-arrow {
+      display: none;
+    }
+    .about-us-content {
+      width: 90%;
+      height: 200px!important;
+      position: left;
+      left: 5%;
+      .us-content-introduce {
+        display: none;
+      }
+    }
+    .about-us-pc {
+      display: none;
+    }
+    .about-us-mobile {
+      display: block;
+      .ant-carousel {
+        width: 65%;
+        position: relative;
+        left: 26%;
+        margin-top: 20%;
+      }
+      .us-caousel-detail {
+        height: inherit;
+        .us-caousel-row {
+          width: 100%;
+          img {
+            width: 35%;
+            float: right;
+            margin-right: 2px;
+          }
+          .us-content-name {
+            color: #149B9B;
+            font-size: 18px;
+          }
+          .us-content-position {
+            color: #fff;
+            font-size: 14px;
+          }
+        }
+      }
     }
   }
 }
