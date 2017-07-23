@@ -99,7 +99,7 @@ class Home extends Component {
       {usList.map(el => {
         return <div className="us-caousel-row">
           <img src={"./" + el.img} />
-          <div>
+          <div style={{paddingLeft: "10px"}}>
             <div className="us-content-name">{el.name}</div>
             <div className="us-content-position">{el.position}</div>
           </div>
