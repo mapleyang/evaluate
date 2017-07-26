@@ -25,8 +25,15 @@ export default class App extends Component {
   constructor(props, context) {
     super(props)
     this.state = {
-      currentPage: "home",
+      currentPage: "",
     }
+  }
+
+  componentDidMount () {
+    let pathname = location.hash.substr(2, location.hash.indexOf("?") - 2)
+    this.setState({
+      currentPage: pathname
+    })
   }
 
   menuChoose (value) {

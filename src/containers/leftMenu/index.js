@@ -9,7 +9,8 @@ class LeftMenu extends Component {
     super(props)
     this.state = {
       horizontalFlag: this.props.type !== "vertical" ? this.props.menuList[0].value : "",
-      menuList: this.props.menuList
+      menuList: this.props.menuList,
+      selectedKeys: this.props.menuList[0].value
     }
   }
 
@@ -19,7 +20,8 @@ class LeftMenu extends Component {
   componentWillReceiveProps (nextProps) {
     if(nextProps.menuList[0].value !== this.state.menuList[0].value) {
       this.setState({
-        menuList: nextProps.menuList
+        menuList: nextProps.menuList,
+        selectedKeys: nextProps.menuList[0].value
       })
     }
   }
@@ -31,11 +33,18 @@ class LeftMenu extends Component {
     this.props.menuTypeFuc(value)
   }
 
+  menuSelect (value) {
+    this.setState({
+      selectedKeys: value.key
+    })
+  }
+
   getMenuItem () {
     let item = "";
     if(this.props.type === "vertical") {
       item = <Menu
-        selectedKeys={[this.state.menuList[0].value]}>
+        selectedKeys={[this.state.selectedKeys]}
+        onSelect={this.menuSelect.bind(this)}>
         {this.state.menuList.map(el => {
           return <Menu.Item key={el.value}>
             <Icon type="pie-chart" />
