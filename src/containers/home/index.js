@@ -3,23 +3,6 @@ import {  Row, Col, Icon, Carousel  } from 'antd'
 import './index.scss'
 import classnames from "classnames";
 
-const menuList = [{
-  label: "首页",
-  value: "home"
-},{
-  label: "项目介绍",
-  value: "project"
-},{
-  label: "技术快报",
-  value: "skill"
-},{
-  label: "合作方式",
-  value: "cooperate"
-},{
-  label: "我们",
-  value: "about"
-}]
-
 const usList = [{
   img: "shenlei.png",
   name: "申磊",
@@ -56,18 +39,11 @@ class Home extends Component {
 	constructor(props, context) {
     super(props)
     this.state = {
-      currentPage: "home",
       usIndex: 0
     }
   }
 
   componentDidMount () {
-  }
-
-  menuChoose (value) {
-    this.setState({
-      currentPage: value
-    })
   }
 
   getUsDetail () {
@@ -128,25 +104,6 @@ class Home extends Component {
   render() {
     return (
       <div className="home">
-        <div className="home-main" style={{background: "url('./main.png')", backgroundSize: "100% 100%"}}>
-          <div className="header">
-            <Row className="header-row">
-              <Col span={4} className="header-row-logo">
-                <img src="./logo.png"/>
-              </Col>
-              <Col span={20}>
-                <div className="header-menu">
-                  {menuList.map((el, index) => {
-                    return <span className={classnames({
-                      "current-page": this.state.currentPage === el.value,
-                      "mobile-item": index > 0
-                    })} onClick={this.menuChoose.bind(this, el.value)}>{el.label}</span>
-                  })}
-                </div>
-              </Col>
-            </Row>
-          </div>
-        </div>
         <div className="project">
           <div className="project-content">
             <img src="./project.png"/>

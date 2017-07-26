@@ -1,35 +1,5 @@
 .home {
   height: 100%;
-  .home-main {
-    .header {
-      .header-row {
-        height: inherit;
-        position: relative;
-        .header-row-logo {
-          height: inherit;
-          text-align: center;
-          img {
-            height: inherit;
-          }
-        }
-        .header-menu {
-          width: 100%;
-          text-align: right;
-          position: relative;
-          float: right;
-          font-size: 20px;
-          span {
-            padding-right: 40px;
-            color: #266E6B;
-            cursor: pointer;
-          }
-          .current-page {
-            color: #fff;
-          }
-        }
-      }
-    }
-  }
   .project {
     margin-bottom: 2rem;
     .project-content {

@@ -13,8 +13,11 @@ import ZH_EN from './zh-en';
 import { hashHistory, browserHistory, Router, Route, IndexRoute, IndexRedirect  } from 'react-router'
 import 'antd/dist/antd.less'
 import App from "./containers/app"
-import Home from "./containers/home/index"
-import Project from "./containers/site/project"
+import Home from "./containers/home/"
+import Projects from "./containers/projects/"
+import Blog from "./containers/blog/"
+import Service from "./containers/service/"
+import About from "./containers/about/"
 
 window.$ = $;
 
@@ -56,8 +59,14 @@ const ready = () => {
             <IndexRedirect to="/home" />
             <Route path="/home" component={Home}></Route>
             <Route path="/en/home" component={Home}></Route>
-            <Route path="/project" component={Project}></Route>
-            <Route path="/en/project" component={Project}></Route>
+            <Route path="/projects" component={Projects}></Route>
+            <Route path="/en/projects" component={Projects}></Route>
+            <Route path="/blog" component={Blog}></Route>
+            <Route path="/en/blog" component={Blog}></Route>
+            <Route path="/service" component={Service}></Route>
+            <Route path="/en/service" component={Service}></Route>
+            <Route path="/about" component={About}></Route>
+            <Route path="/en/about" component={About}></Route>
           </Route>
         </Router>
       </IntlProvider>
