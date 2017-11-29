@@ -31,5 +31,29 @@
         width: 100%;
       }
     }
+    .insurance-info {
+      border-bottom: 1px rgb(148, 148, 148) solid;
+    }
+    .insurance-intr {
+      padding: 1rem 1rem;
+      margin-left: 0px;
+      .insurance-title {
+        height: 2rem;
+        line-height: 2rem;
+        font-size: 1.4rem;
+      }
+      .insurance-item {
+        height: 2rem;
+        line-height: 2rem;
+        color: rgb(148, 148, 148);
+        .insurance-item-title {
+          width: 5rem;
+          display: inline-block;
+        }
+      }
+    }
+    .am-flexbox.am-flexbox-align-middle {
+      align-items: flex-start;
+    }
   }
 }
