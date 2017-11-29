@@ -18,7 +18,7 @@ class Home extends Component {
         title: "心安•怡住院医疗保险",
         age: "0至60周岁",
         time: "1年",
-        content: "产品升级，病种由原60中提升至88种、续保年龄延长至80周岁"
+        content: "病种由原60中提升至88种、续保年龄延长至80周岁"
       },{
         title: "少儿超能宝两全保险",
         age: "0-17周岁",
@@ -66,6 +66,10 @@ class Home extends Component {
                     <div className="insurance-item">
                       <span className="insurance-item-title">承保年龄</span>
                       <span>{el.age}</span>
+                    </div>
+                    <div className="insurance-item">
+                      <span className="insurance-item-title">保障期限</span>
+                      <span>{el.time}</span>
                     </div>
                     <div className="insurance-item">
                       <span className="insurance-item-title">主要保障</span>
