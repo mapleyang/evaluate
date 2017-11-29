@@ -2,6 +2,11 @@ import React, { Component } from 'react'
 import './index.scss'
 import classnames from "classnames";
 import { TabBar } from 'antd-mobile';
+import HomeComponent from '../component/home';
+import PolicyComponent from '../component/policy';
+import IntrComponent from '../component/intr';
+import MyComponent from '../component/my';
+
 
 
 class Home extends Component {
@@ -19,31 +24,25 @@ class Home extends Component {
 
 
   renderContent(pageText) {
-    return (
-      <div style={{ backgroundColor: 'white', height: '100%', textAlign: 'center' }}>
-        <div style={{ paddingTop: 60 }}>Clicked “{pageText}” tab， show “{pageText}” information</div>
-        <a style={{ display: 'block', marginTop: 40, marginBottom: 20, color: '#108ee9' }}
-          onClick={(e) => {
-            e.preventDefault();
-            this.setState({
-              hidden: !this.state.hidden,
-            });
-          }}
-        >
-          Click to show/hide tab-bar
-        </a>
-        <a style={{ display: 'block', marginBottom: 600, color: '#108ee9' }}
-          onClick={(e) => {
-            e.preventDefault();
-            this.setState({
-              fullScreen: !this.state.fullScreen,
-            });
-          }}
-        >
-          Click to switch fullscreen
-        </a>
-      </div>
-    );
+    let el;
+    switch(pageText) {
+      case "home":
+        el = <HomeComponent />
+        break;
+      case "policy":
+        el = <PolicyComponent />
+        break;
+      case "intr":
+        el = <IntrComponent />
+        break;
+      case "my":
+        el = <MyComponent />
+        break;
+      default:
+        el = <HomeComponent />
+        break
+    }
+    return el;
   }
 
 
@@ -59,18 +58,8 @@ class Home extends Component {
           <TabBar.Item
             title="主页"
             key="home"
-            icon={<div style={{
-              width: '22px',
-              height: '22px',
-              background: 'url(https://zos.alipayobjects.com/rmsportal/sifuoDUQdAFKAVcFGROC.svg) center center /  21px 21px no-repeat' }}
-            />
-            }
-            selectedIcon={<div style={{
-              width: '22px',
-              height: '22px',
-              background: 'url(https://zos.alipayobjects.com/rmsportal/iSrlOTqrKddqbOmlvUfq.svg) center center /  21px 21px no-repeat' }}
-            />
-            }
+            icon={{uri: './home.svg' }}
+            selectedIcon={{uri: './home-true.svg'}}
             selected={this.state.selectedTab === 'blueTab'}
             onPress={() => {
               this.setState({
@@ -79,23 +68,11 @@ class Home extends Component {
             }}
             data-seed="logId"
           >
-            {this.renderContent('Life')}
+            {this.renderContent('home')}
           </TabBar.Item>
           <TabBar.Item
-            icon={
-              <div style={{
-                width: '22px',
-                height: '22px',
-                background: 'url(https://gw.alipayobjects.com/zos/rmsportal/BTSsmHkPsQSPTktcXyTV.svg) center center /  21px 21px no-repeat' }}
-              />
-            }
-            selectedIcon={
-              <div style={{
-                width: '22px',
-                height: '22px',
-                background: 'url(https://gw.alipayobjects.com/zos/rmsportal/ekLecvKBnRazVLXbWOnE.svg) center center /  21px 21px no-repeat' }}
-              />
-            }
+            icon={{uri: './policy.svg'}}
+            selectedIcon={{uri: './policy-true.svg'}}
             title="保单"
             key="policy"
             badge="2"
@@ -110,20 +87,10 @@ class Home extends Component {
             {this.renderContent('policy')}
           </TabBar.Item>
           <TabBar.Item
-            icon={
-              <div style={{
-                width: '22px',
-                height: '22px',
-                background: 'url(https://zos.alipayobjects.com/rmsportal/psUFoAMjkCcjqtUCNPxB.svg) center center /  21px 21px no-repeat' }}
-              />
-            }
-            selectedIcon={
-              <div style={{
-                width: '22px',
-                height: '22px',
-                background: 'url(https://zos.alipayobjects.com/rmsportal/IIRLrXXrFAhXVdhMWgUI.svg) center center /  21px 21px no-repeat' }}
-              />
-            }
+            title="介绍"
+            key="intr"
+            icon={{uri: './intr.svg'}}
+            selectedIcon={{uri: './intr-true.svg'}}
             title="介绍"
             key="intro"
             dot
@@ -134,13 +101,13 @@ class Home extends Component {
               });
             }}
           >
-            {this.renderContent('intro')}
+            {this.renderContent('intr')}
           </TabBar.Item>
           <TabBar.Item
-            icon={{ uri: 'https://zos.alipayobjects.com/rmsportal/asJMfBrNqpMMlVpeInPQ.svg' }}
-            selectedIcon={{ uri: 'https://zos.alipayobjects.com/rmsportal/gjpzzcrPMkhfEqgbYvmN.svg' }}
             title="我的"
             key="my"
+            icon={{ uri: './my.svg' }}
+            selectedIcon={{ uri: './my-true.svg' }}
             selected={this.state.selectedTab === 'yellowTab'}
             onPress={() => {
               this.setState({

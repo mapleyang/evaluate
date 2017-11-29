@@ -1,9 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import ReactDOM from 'react-dom'
-
 import scriptjs from 'scriptjs';
-
-import { hashHistory, browserHistory, Router, Route, IndexRoute, IndexRedirect  } from 'react-router'
+import { hashHistory, Router, Route, IndexRoute, IndexRedirect  } from 'react-router'
 import App from "./containers/app"
 import Home from "./containers/home/"
 
@@ -18,7 +16,6 @@ const ready = () => {
         <IndexRoute component={Home}/>
         <IndexRedirect to="/home" />
         <Route path="/home" component={Home}></Route>
-        <Route path="/en/home" component={Home}></Route>
       </Route>
     </Router>,
     document.getElementById('root')
