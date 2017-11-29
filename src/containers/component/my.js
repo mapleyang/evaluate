@@ -42,7 +42,7 @@ class My extends Component {
             </Flex>
           </div>
           <div className="my-block">
-            <div className="my-block-item" style={{borderBottom: "1px #ddd solid" }}>
+            <div className="my-block-item" style={{borderBottom: "1px #eee solid" }}>
               <span className="my-block-item-name">我的区块密钥</span>
               <span className="my-block-item-value">4234Eafdaafg</span>
             </div>
@@ -52,10 +52,10 @@ class My extends Component {
             </div>
           </div>
           <div className="my-block">
-            <div className="my-block-item" style={{borderBottom: "1px #ddd solid" }}>
+            <div className="my-block-item" style={{borderBottom: "1px #eee solid" }}>
               <span className="my-block-item-name">我的保单</span>
             </div>
-            <div className="my-block-item" style={{borderBottom: "1px #ddd solid" }}>
+            <div className="my-block-item" style={{borderBottom: "1px #eee solid" }}>
               <span className="my-block-item-name">我的健康数据</span>
             </div>
             <div className="my-block-item">
