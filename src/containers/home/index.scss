@@ -8,3 +8,15 @@
 #tab-bar .demo-preview-item .am-tab-bar {
   background-color: white;
 }
+.am-tab-bar-bar {
+  height: 4rem;
+  .am-tab-bar-tab {
+    img {
+      height: 2rem;
+      white: 2rem;
+    }
+    .am-tab-bar-tab-title {
+      font-size: 1.2rem;
+    }
+  }
+}

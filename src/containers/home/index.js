@@ -13,7 +13,7 @@ class Home extends Component {
 	constructor(props, context) {
     super(props)
     this.state = {
-      selectedTab: 'redTab',
+      selectedTab: 'blueTab',
       hidden: false,
       fullScreen: false,
     }
@@ -48,7 +48,7 @@ class Home extends Component {
 
   render() {
     return (
-      <div className="home">
+      <div className="home" style={this.state.fullScreen ? { position: 'fixed', height: '100%', width: '100%', top: 0 } : { height: 400 }}>
         <TabBar
           unselectedTintColor="#949494"
           tintColor="#33A3F4"
@@ -75,7 +75,6 @@ class Home extends Component {
             selectedIcon={{uri: './policy-true.svg'}}
             title="保单"
             key="policy"
-            badge="2"
             selected={this.state.selectedTab === 'redTab'}
             onPress={() => {
               this.setState({
