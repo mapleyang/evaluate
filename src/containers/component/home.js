@@ -13,7 +13,7 @@ class Home extends Component {
         title: '太健康·百万全家桶',
         age: "90天至60周岁",
         time: "1年",
-        content: "住院医疗保险金 100万/人特许医疗 可选赔付比例 100%"
+        content: "住院医疗保险金，100万/人特许医疗"
       },{
         title: "心安•怡住院医疗保险",
         age: "0至60周岁",
@@ -40,19 +40,7 @@ class Home extends Component {
           保险产品
         </div>
         <div className="pro-list tab-content">
-          <Carousel
-            className="pro-carousel"
-            autoplay={false}
-            infinite
-            dots={false}
-            selectedIndex={1}>
-            {this.state.data.map(ii => (
-              <a key={ii}>
-                <img
-                  src="./beginning.jpg" alt=""/>
-              </a>
-            ))}
-          </Carousel>
+          <img style={{width: "100%", height: "15rem"}}src="./beginning.jpg"/>
           <div className="item-title">
             保险推荐
           </div>
