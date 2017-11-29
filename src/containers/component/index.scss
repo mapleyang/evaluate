@@ -15,15 +15,20 @@
   line-height: 3rem;
   padding-left: 1.2rem;
 }
+.tab-content {
+  height: 70rem;
+  background: #F8F8F9;
+  padding-top: 4rem;
+}
 .home {
   .pro-list {
-    height: 70rem;
-    background: #fff;
-    padding-top: 4rem;
     .pro-carousel {
       img {
         width: 100%;
       }
+    }
+    .insurance-list {
+      background: #FFFFFF;
     }
     .insurance-img {
       padding: 1rem 1rem;
@@ -54,6 +59,30 @@
     }
     .am-flexbox.am-flexbox-align-middle {
       align-items: flex-start;
+    }
+  }
+}
+
+.intr {
+  .intr-block {
+    background: #FFFFFF;
+    width: 85%;
+    position: relative;
+    top: 2rem;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    border: 1px #ddd solid;
+    border-radius: 1rem;
+    margin-bottom: 2rem;
+    box-shadow: 1px 1px 0px #888888;
+    .intr-key {
+      height: 2.4rem;
+      line-height: 2rem;
+      font-size: 1.5rem;
+    }
+    .intr-value {
+      line-height: 2rem;
+      color: #979797;
     }
   }
 }

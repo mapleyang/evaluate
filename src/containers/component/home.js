@@ -39,7 +39,7 @@ class Home extends Component {
         <div className="header">
           保险产品
         </div>
-        <div className="pro-list">
+        <div className="pro-list tab-content">
           <Carousel
             className="pro-carousel"
             autoplay={false}
