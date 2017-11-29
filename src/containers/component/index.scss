@@ -5,4 +5,31 @@
   text-align: center;
   font-size: 1.5rem;
   color: #fff;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+}
+.item-title {
+  height: 3rem;
+  background: #eeeeee;
+  line-height: 3rem;
+  padding-left: 1.2rem;
+}
+.home {
+  .pro-list {
+    height: 70rem;
+    background: #fff;
+    padding-top: 4rem;
+    .pro-carousel {
+      img {
+        width: 100%;
+      }
+    }
+    .insurance-img {
+      padding: 1rem 1rem;
+      img {
+        width: 100%;
+      }
+    }
+  }
 }
