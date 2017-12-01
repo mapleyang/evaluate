@@ -68,7 +68,7 @@ class PolicyInfo extends Component {
             <InputItem
             {...getFieldProps('benefitIdCard')}
             clear>
-              受益人身证件
+              受益人证件
             </InputItem>
           </List>
           <List renderHeader={() => '保险信息'}>
