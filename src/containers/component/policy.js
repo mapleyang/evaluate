@@ -44,7 +44,7 @@ class Policy extends Component {
                   <div className="order-title-name">{el.name}</div>
                   <div className="order-title-intr">
                     <span className="order-title-content">{el.content}</span>
-                    <span>未完成</span>
+                    <span style={{float: "right"}}>未完成</span>
                   </div>
                 </div>
                 <div className="order-content">
@@ -52,6 +52,7 @@ class Policy extends Component {
                   <div className="order-item"><span>保险单号：</span><span>{el.policyOrder}</span></div>
                   <div className="order-item"><span>投保人姓名：</span><span>{el.applyName}</span></div>
                   <div className="order-item"><span>受益人姓名：</span><span>{el.benefitName}</span></div>
+                  <div className="order-item"><span>保险时长：</span><span>{el.policyTime}</span></div>
                   <div className="order-item"><span>保险费用：</span><span>{el.expense}</span></div>
                   <div className="order-item"><span>意外保险费用：</span><span>{el.claimsExpenses}</span></div>
                 </div>

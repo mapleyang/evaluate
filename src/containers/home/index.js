@@ -15,7 +15,7 @@ class Home extends Component {
     this.state = {
       selectedTab: 'blueTab',
       hidden: false,
-      fullScreen: false,
+      fullScreen: true,
     }
   }
 

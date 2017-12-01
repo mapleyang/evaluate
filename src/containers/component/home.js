@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import './index.scss'
 import classnames from "classnames";
-import { Carousel, Flex } from 'antd-mobile';
+import { Flex } from 'antd-mobile';
 
 
 class Home extends Component {
@@ -31,6 +31,10 @@ class Home extends Component {
   componentDidMount () {
   }
 
+  insuranceSelect () {
+    location.hash = "/flow";
+  }
+
 
 
   render() {
@@ -46,7 +50,7 @@ class Home extends Component {
           </div>
           <div className="insurance-list">
             {this.state.insurance.map((el, index) => {
-              return <div>
+              return <div onClick={this.insuranceSelect.bind(this, el)}>
                 <Flex className="insurance-info">
                   <Flex.Item className="insurance-img"><img src={"./insurance" + index + ".jpg"} /></Flex.Item>
                   <Flex.Item className="insurance-intr">

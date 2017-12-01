@@ -9,6 +9,20 @@
   width: 100%;
   z-index: 1000;
 }
+.flow-header {
+  display: flex;
+  .header-back {
+    width: 15%;
+    z-index: 1000;
+    svg {
+      margin-top: .6rem;
+    }
+  }
+  .header-content {
+    width: 100%;
+    position: absolute;
+  }
+}
 .item-title {
   height: 3rem;
   background: #eeeeee;
@@ -47,11 +61,17 @@
         height: 2rem;
         line-height: 2rem;
         font-size: 1.4rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
       }
       .insurance-item {
         height: 1.8rem;
         line-height: 1.8rem;
         color: rgb(148, 148, 148);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
         .insurance-item-title {
           width: 5rem;
           display: inline-block;
@@ -131,6 +151,9 @@
             width: 80%;
             padding-left: 1rem;
             color: #949494;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
           }
         }
       }
@@ -151,7 +174,7 @@
     border-radius: 1rem;
     width: 85%;
     margin: 0 auto;
-    height: 10rem;
+    height: 12rem;
     padding: 1rem;
     background: #FFFFFF;
     margin-top: 2rem;
@@ -173,7 +196,8 @@
       height: 3rem;
       line-height: 2rem;
       img {
-        height: 2rem;
+        height: 1.5rem;
+        margin-top: 0.3rem; 
       }
       span {
         vertical-align: top;
@@ -188,12 +212,12 @@
     padding: 0rem 1rem;
     margin-top: 2rem;
     .my-block-item {
-      height: 2rem;
+      height: 4rem;
       padding: 1rem;
       line-height: 2rem;
       .my-block-item-name {
         display: inline-block;
-        width: 30%;
+        width: 40%;
       }
       .my-block-item-value {
         color: #FF9900;
