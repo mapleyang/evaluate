@@ -50,7 +50,7 @@ class Home extends Component {
           </div>
           <div className="insurance-list">
             {this.state.insurance.map((el, index) => {
-              return <div onClick={this.insuranceSelect.bind(this, el)}>
+              return <div onClick={this.insuranceSelect.bind(this, el)} key={index}>
                 <Flex className="insurance-info">
                   <Flex.Item className="insurance-img"><img src={"./insurance" + index + ".jpg"} /></Flex.Item>
                   <Flex.Item className="insurance-intr">

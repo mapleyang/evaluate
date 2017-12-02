@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import './index.scss'
 import classnames from "classnames";
-import { Icon, List  } from 'antd-mobile';
+import { Icon, List, InputItem, ImagePicker  } from 'antd-mobile';
+import { createForm } from 'rc-form';
 const Item = List.Item;
 
 
@@ -10,6 +11,7 @@ class UserHealthInfo extends Component {
     super(props)
     this.state = {
       data: ['', '', ''],
+      files: []
     }
   }
 
@@ -20,36 +22,43 @@ class UserHealthInfo extends Component {
     window.history.back()
   }
 
+  onChange = (files, type, index) => {
+    console.log(files, type, index);
+    this.setState({
+      files,
+    });
+  }
+
   render() {
+    const { getFieldProps } = this.props.form;
     return (
       <div className="flow">
         <div className="header flow-header">
           <div className="header-back" onClick={this.headerBackClick.bind(this)}>
             <Icon type="left" size="lg" />
           </div>
-          <div className="header-content">信息填写</div>
+          <div className="header-content">健康情况填写</div>
         </div>
         <div className="flow-content tab-content">
-          <List className="my-list">
-            <Item arrow="horizontal" multipleLine onClick={() => {}}>
-              投保信息
-            </Item>
-            <Item
-              arrow="horizontal"
-              multipleLine
-              onClick={() => {}}
-              platform="android"
-            >
-              健康告知
-            </Item>
-            <Item
-              arrow="horizontal"
-              multipleLine
-              onClick={() => {}}
-              platform="android"
-            >
-              健康数据上传
-            </Item>
+          <List renderHeader={() => '投保人个人情况'}>
+            <InputItem
+            {...getFieldProps('height')}
+            clear>
+              身高
+            </InputItem>
+            <InputItem
+            {...getFieldProps('weight')}
+            clear>
+              体重
+            </InputItem>
+          </List>
+          <List renderHeader={() => '个人健康资料'}>
+            <ImagePicker
+              onChange={this.onChange.bind(this)}
+              files={this.state.files}
+              onImageClick={(index, fs) => console.log(index, fs)}
+              selectable={this.state.files.length < 11}
+            />
           </List>
         </div>
       </div>
@@ -57,4 +66,4 @@ class UserHealthInfo extends Component {
   }
 }
 
-export default UserHealthInfo;
+export default UserHealthInfo = createForm()(UserHealthInfo);

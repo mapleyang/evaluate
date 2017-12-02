@@ -9,6 +9,16 @@
   width: 100%;
   z-index: 1000;
 }
+.login {
+  .login-button-disabel {
+    background: #DCDCDC;
+    width: 92%;
+    margin: 2rem auto;
+    span {
+      color: #fff;
+    }
+  }
+}
 .flow-header {
   display: flex;
   .header-back {
@@ -21,6 +31,23 @@
   .header-content {
     width: 100%;
     position: absolute;
+  }
+  .register-content {
+    width: 100%;
+    text-align: right;
+    padding-right: 2rem;
+    z-index: 1000;
+    span {
+      display: inline-block;
+      height: 100%;
+    }
+  }
+}
+.flow {
+  .agree-content {
+    label {
+      color: rgb(51, 163, 244);
+    }
   }
 }
 .item-title {
