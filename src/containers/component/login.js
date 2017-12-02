@@ -23,7 +23,6 @@ class Login extends Component {
   }
 
   registerClick () {
-    console.log("aef")
     location.hash = "/register"
   }
 
