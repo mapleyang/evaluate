@@ -12,7 +12,7 @@ export default class App extends Component {
 
   componentDidMount () {
     if(!sessionStorage.getItem("user")) {
-      location.hash = "/login"
+      // location.hash = "/login"
     }
   }
 
