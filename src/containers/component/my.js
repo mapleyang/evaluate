@@ -11,9 +11,8 @@ class My extends Component {
   }
 
   componentDidMount () {
+
   }
-
-
 
   render() {
     return (

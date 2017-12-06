@@ -28,30 +28,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.get('/__webpack_hmr', function(res, res) {
   res.send('')
 })
-
-app.get(/\/movie\/hot\//, routes.hot);
-app.get(/\/movie\/cinema\//, routes.cinema);
-app.get(/\/movie\/info\//, routes.info);
-app.get(/\/movie\/evaluation\//, routes.evaluation);
-app.get(/\/movie\/coming\//, routes.coming);
-app.get(/\/movie\/coming\/[\w\W]*/, routes.comingLimit);
-
-app.get('/movie/swiper', routes.swiper);
-app.get('/movie/city', routes.city);
-app.get('/movie/cinema_detail', routes.cinema_detail);
-
-
 app.get('/app', routes.index); 
 app.get('/', (req, res) => {
     res.redirect('app');
 }); 
-app.get(/\/movie\/detail\//, routes.index);  
-app.get(/\/cinema/, routes.index);  
-
-app.get('/register', routes.register);
-app.get('/login', routes.login);
-app.get('/createPlan', routes.createPlan);
-app.get('/readPlan', routes.readPlan);
+app.get('/api/products', routes.products);
+app.post('/api/common/login', routes.login);
+app.put('/api/common/register', routes.register);
 
 app.use(function(req, res, next) {
   var err = new Error('Not Found');

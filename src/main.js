@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import ReactDOM from 'react-dom'
 import scriptjs from 'scriptjs';
+import $ from "jquery"
 import { hashHistory, Router, Route, IndexRoute, IndexRedirect  } from 'react-router'
 import App from "./containers/app"
 import Home from "./containers/home/"
@@ -10,6 +11,7 @@ import UserHealthInfo from "./containers/component/userHealthInfo"
 import PolicyInfo from "./containers/component/policyInfo"
 import Login from "./containers/component/login"
 import Register from "./containers/component/register"
+
 
 
 const scripts = [];

@@ -10,6 +10,10 @@
   z-index: 1000;
 }
 .login {
+  .login-button {
+    width: 92%;
+    margin: 2rem auto;
+  }
   .login-button-disabel {
     background: #DCDCDC;
     width: 92%;
@@ -47,6 +51,7 @@
   .agree-content {
     label {
       color: rgb(51, 163, 244);
+      padding-right: 1rem;
     }
   }
 }
