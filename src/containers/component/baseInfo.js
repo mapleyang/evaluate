@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import './index.scss'
 import classnames from "classnames";
+import AjaxJson from "../../utils/ajaxJson"
 import { Icon, List, InputItem, Button  } from 'antd-mobile';
 import { createForm } from 'rc-form';
 const Item = List.Item;

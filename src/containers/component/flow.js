@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import './index.scss'
 import classnames from "classnames";
 import { createForm } from 'rc-form';
+import AjaxJson from "../../utils/ajaxJson"
 import { Icon, List, Button, Picker, InputItem } from 'antd-mobile';
 const Item = List.Item;
 
