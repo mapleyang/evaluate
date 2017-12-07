@@ -1,0 +1,19 @@
+[{
+  "order": "132413515",
+  "policyOrder": "143567646",
+  "name": "太健康·百万全家桶",
+  "content": "住院医疗保险金，100万/人特许医疗",
+  "applyName": "mapple",
+  "benefitName": "mapple",
+  "expense": "1万元",
+  "claimsExpenses": "100万元"
+},{
+  "order": "132415343",
+  "policyOrder": "143567646",
+  "name": "test02",
+  "content": "住院医疗保险金，100万/人特许医疗",
+  "applyName": "lhk",
+  "benefitName": "lhk",
+  "expense": "1万元",
+  "claimsExpenses": "100万元"
+}]

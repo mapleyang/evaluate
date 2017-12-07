@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import './index.scss'
 import AjaxJson from "../../utils/ajaxJson"
-import classnames from "classnames";
 import { Icon, List, Modal  } from 'antd-mobile';
+import md5 from "md5";
 const Item = List.Item;
 const alert = Modal.alert;
 
@@ -27,6 +27,17 @@ class Logout extends Component {
       { text: '取消', onPress: () => console.log('cancel') },
       { text: '确认', onPress: () => {
         //退出账号处理
+        let url = "/api/common/logout";
+        let data = {};
+        data.token = "";
+        data.timestamp = Date.now();
+        data.sig = md5(data.token + data.timestamp);
+        AjaxJson.getResponse(url, data, "PUT").then((value) => {
+          if(value.status = 2000) {
+            sessionStorage.remove("user");
+            location.hash = "/"
+          }
+        }, (value) => {})
       }},
     ])
   }

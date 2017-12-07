@@ -38,3 +38,8 @@ exports.products = (req, res) => {
    sendDataFn(req, res, 'products.json');
 }
 
+exports.policies = (req, res) => {
+   sendDataFn(req, res, 'policies.json');
+}
+
+

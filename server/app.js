@@ -35,6 +35,7 @@ app.get('/', (req, res) => {
 app.get('/api/products', routes.products);
 app.post('/api/common/login', routes.login);
 app.put('/api/common/register', routes.register);
+app.get('/api/policies', routes.policies);
 
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
