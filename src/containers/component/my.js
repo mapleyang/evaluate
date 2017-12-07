@@ -34,42 +34,46 @@ class My extends Component {
               </Flex.Item>
             </Flex>
           </div>
-          <List renderHeader={() => ''}>
+          <List className="my-list-certificate" renderHeader={() => ''}>
             <Item
-              thumb="https://zos.alipayobjects.com/rmsportal/dNuvNrtqUztHCwM.png"
-              arrow="horizontal"
+              thumb="./key.svg"
+              extra="adscadf1313241"
               onClick={() => {}}
-            >My wallet</Item>
+              className="list-item-font"
+            >我的区块密钥</Item>
             <Item
-              thumb="https://zos.alipayobjects.com/rmsportal/UmbJMbWOejVOpxe.png"
+              thumb="./address.svg"
               onClick={() => {}}
-              arrow="horizontal"
-            >
-              My Cost Ratio
+              className="list-item-font"
+              extra="casdagsadsga">
+              我的区块地址
             </Item>
           </List>
-          <div className="my-block">
-            <div className="my-block-item" style={{borderBottom: "1px #eee solid" }}>
-
-              <span className="my-block-item-name">我的区块密钥</span>
-              <span className="my-block-item-value">4234Eafdaafg</span>
-            </div>
-            <div className="my-block-item">
-              <span className="my-block-item-name">我的区块地址</span>
-              <span className="my-block-item-value">qefqq1314vasd</span>
-            </div>
-          </div>
-          <div className="my-block">
-            <div className="my-block-item" style={{borderBottom: "1px #eee solid" }}>
-              <span className="my-block-item-name">我的保单</span>
-            </div>
-            <div className="my-block-item" style={{borderBottom: "1px #eee solid" }}>
-              <span className="my-block-item-name">我的健康数据</span>
-            </div>
-            <div className="my-block-item">
-              <span className="my-block-item-name">数据授权</span>
-            </div>
-          </div>
+          <List className="my-list-certificate" renderHeader={() => ''}>
+            <Item
+              thumb="./order.svg"
+              onClick={() => {}}
+              arrow="horizontal"
+            >我的保单</Item>
+            <Item
+              thumb="./data.svg"
+              onClick={() => {}}
+              arrow="horizontal">
+              我的健康数据
+            </Item>
+            <Item
+              thumb="./authorize.svg"
+              onClick={() => {}}
+              arrow="horizontal"
+            >数据授权</Item>
+          </List>
+          <List className="my-list-certificate" renderHeader={() => ''}>
+            <Item
+              thumb="./setting.svg"
+              onClick={() => {}}
+              arrow="horizontal"
+            >设置</Item>
+          </List>
         </div>
       </div>
     );

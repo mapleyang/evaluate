@@ -11,6 +11,7 @@ import UserHealthInfo from "./containers/component/userHealthInfo"
 import PolicyInfo from "./containers/component/policyInfo"
 import Login from "./containers/component/login"
 import Register from "./containers/component/register"
+import Logout from "./containers/component/logout"
 
 
 
@@ -26,7 +27,8 @@ const ready = () => {
         <IndexRedirect to="/home" />
         <Route path="/home" component={Home}></Route>
         <Route path="/login" component={Login}></Route>
-        <Route path="/register" component={Register}></Route>
+        <Route path="/login" component={Login}></Route>
+        <Route path="/logout" component={Logout}></Route>
         <Route path="/flow" component={Flow}></Route>
         <Route path="/healthinfo" component={HealthInfo}></Route>
         <Route path="/userhealthinfo" component={UserHealthInfo}></Route>
