@@ -18,8 +18,8 @@ const AjaxJson = {
         resolve(data)
       },
       error:function(res){
-        let data = JSON.parse(res)
-        resolve(data)
+        // let data = JSON.parse(res)
+        // resolve(data)
       }
     });
   },
