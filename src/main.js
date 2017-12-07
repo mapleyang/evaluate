@@ -8,7 +8,7 @@ import Home from "./containers/home/"
 import Flow from "./containers/component/flow"
 import HealthInfo from "./containers/component/healthInfo"
 import UserHealthInfo from "./containers/component/userHealthInfo"
-import PolicyInfo from "./containers/component/policyInfo"
+import BaseInfo from "./containers/component/baseInfo"
 import Login from "./containers/component/login"
 import Register from "./containers/component/register"
 import Logout from "./containers/component/logout"
@@ -32,7 +32,7 @@ const ready = () => {
         <Route path="/flow" component={Flow}></Route>
         <Route path="/healthinfo" component={HealthInfo}></Route>
         <Route path="/userhealthinfo" component={UserHealthInfo}></Route>
-        <Route path="/policyinfo" component={PolicyInfo}></Route>
+        <Route path="/baseinfo" component={BaseInfo}></Route>
       </Route>
     </Router>,
     document.getElementById('root')

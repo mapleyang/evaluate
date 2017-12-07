@@ -1,17 +1,16 @@
 import React, { Component } from 'react'
 import './index.scss'
 import classnames from "classnames";
-import { Icon, List, InputItem, ImagePicker, Button  } from 'antd-mobile';
+import { Icon, List, InputItem, Button  } from 'antd-mobile';
 import { createForm } from 'rc-form';
 const Item = List.Item;
 
 
-class UserHealthInfo extends Component {
+class BaseInfo extends Component {
   constructor(props, context) {
     super(props)
     this.state = {
       data: ['', '', ''],
-      files: []
     }
   }
 
@@ -20,13 +19,6 @@ class UserHealthInfo extends Component {
 
   headerBackClick () {
     window.history.back()
-  }
-
-  onChange = (files, type, index) => {
-    console.log(files, type, index);
-    this.setState({
-      files,
-    });
   }
 
   saveClick () {
@@ -55,44 +47,36 @@ class UserHealthInfo extends Component {
           <div className="header-back" onClick={this.headerBackClick.bind(this)}>
             <Icon type="left" size="lg" />
           </div>
-          <div className="header-content">健康情况填写</div>
+          <div className="header-content">信息填写</div>
         </div>
         <div className="flow-content tab-content">
-          <List renderHeader={() => '个人健康情况'}>
+          <List>
             <InputItem
-            {...getFieldProps('weightExponent')}
+            {...getFieldProps('policyHolderName')}
             clear>
-              体重指数
+              投保人姓名
             </InputItem>
             <InputItem
-            {...getFieldProps('bloodpressureExponent')}
+            {...getFieldProps('policyHolderID')}
             clear>
-              血压
+              投保人证件
             </InputItem>
             <InputItem
-            {...getFieldProps('pulsepressureExponent')}
+            type="phone"
+            {...getFieldProps('policyHolderMobile')}
             clear>
-              脉压
+              投保人电话
             </InputItem>
             <InputItem
-            {...getFieldProps('plateletCount')}
+            {...getFieldProps('favoreeName')}
             clear>
-              血小板数
+              受益人姓名
             </InputItem>
             <InputItem
-            {...getFieldProps('serum')}
+            {...getFieldProps('favoreeID')}
             clear>
-              甘油三酯
+              受益人证件
             </InputItem>
-          </List>
-          <List renderHeader={() => '个人健康资料'}>
-            <ImagePicker
-              className="img-picker"
-              onChange={this.onChange.bind(this)}
-              files={this.state.files}
-              onImageClick={(index, fs) => console.log(index, fs)}
-              selectable={this.state.files.length < 11}
-            />
           </List>
           <Button style={{margin: "2rem"}} type="ghost" onClick={this.saveClick.bind(this)}>保存</Button>
         </div>
@@ -101,4 +85,4 @@ class UserHealthInfo extends Component {
   }
 }
 
-export default UserHealthInfo = createForm()(UserHealthInfo);
+export default BaseInfo = createForm()(BaseInfo);

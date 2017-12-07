@@ -10,7 +10,19 @@ class Home extends Component {
     super(props)
     this.state = {
       data: ['', '', ''],
-      insurance: []
+      insurance: [{
+        "id": "1000001",
+        "title": "太健康·百万全家桶",
+        "age": "90天至60周岁",
+        "time": "1年",
+        "content": "住院医疗保险金，100万/人特许医疗"
+      },{
+        "id": "1000002",
+        "title": "心安•怡住院医疗保险",
+        "age": "0至60周岁",
+        "time": "1年",
+        "content": "病种由原60中提升至88种、续保年龄延长至80周岁"
+      }]
     }
   }
 

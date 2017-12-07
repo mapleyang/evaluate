@@ -115,7 +115,6 @@
     }
   }
 }
-
 .intr {
   .intr-block {
     background: #FFFFFF;
@@ -263,5 +262,10 @@
         color: #FF9900;
       }
     }
+  }
+}
+.img-picker {
+  .am-image-picker-list {
+    padding: 8px;
   }
 }
