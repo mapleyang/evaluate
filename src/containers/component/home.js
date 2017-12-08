@@ -37,7 +37,7 @@ class Home extends Component {
   }
 
   insuranceSelect () {
-    location.hash = "/flow";
+    location.hash = "/policydetail";
   }
 
   //获取产品列表

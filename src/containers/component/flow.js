@@ -97,7 +97,7 @@ class Flow extends Component {
             </Picker>
             <Item extra={this.state.price + "元"}>保险费用</Item>
           </List>
-          <Button style={{margin: "2rem"}} type="ghost" onClick={this.saveClick.bind(this)}>立即投保</Button>
+          <Button style={{margin: "2rem"}} type="ghost" onClick={this.saveClick.bind(this)}>提交</Button>
         </div>
       </div>
     );

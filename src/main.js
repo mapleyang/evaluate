@@ -12,6 +12,7 @@ import BaseInfo from "./containers/component/baseInfo"
 import Login from "./containers/component/login"
 import Register from "./containers/component/register"
 import Logout from "./containers/component/logout"
+import PolicyDetail from "./containers/component/policyDetail"
 
 
 
@@ -31,6 +32,7 @@ const ready = () => {
         <Route path="/logout" component={Logout}></Route>
         <Route path="/flow" component={Flow}></Route>
         <Route path="/healthinfo" component={HealthInfo}></Route>
+        <Route path="/policydetail" component={PolicyDetail}></Route>
         <Route path="/userhealthinfo" component={UserHealthInfo}></Route>
         <Route path="/baseinfo" component={BaseInfo}></Route>
       </Route>
