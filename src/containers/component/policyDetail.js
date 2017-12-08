@@ -62,9 +62,7 @@ class PolicyDetail extends Component {
             </Card.Body>
             <Card.Footer extra={<div>保险条款详情</div>} />
           </Card>
-          <div className="flow-content tab-content">
-            <Button style={{margin: "2rem"}} type="ghost" onClick={this.saveClick.bind(this)}>立即投保</Button>
-          </div>
+          <Button style={{margin: "2rem"}} type="ghost" onClick={this.saveClick.bind(this)}>立即投保</Button>
         </div>
       </div>
     );
