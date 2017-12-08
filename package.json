@@ -1,7 +1,7 @@
 {
-  "name": "react-starter-kit",
+  "name": "amy-chain",
   "version": "0.2.0",
-  "description": "Get started with React, Redux, and React-Router!",
+  "description": "blockchain-test-app",
   "main": "index.js",
   "engines": {
     "node": ">=4.5.0",
@@ -49,7 +49,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bodyno/react-starter-kit.git"
+    "url": "git+https://github.com/mapleyang/amyapp"
   },
   "author": "mapple",
   "license": "WTFPL",
