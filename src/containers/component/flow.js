@@ -84,7 +84,7 @@ class Flow extends Component {
             <Item
               arrow="horizontal"
               onClick={this.infoFillClick.bind(this, "userhealthinfo")}>
-              健康数据上传
+              健康数据
             </Item>
           </List>
           <List renderHeader={() => '保险信息'}>

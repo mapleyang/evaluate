@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import './index.scss'
 import classnames from "classnames";
 import AjaxJson from "../../utils/ajaxJson"
-import { Icon, List, InputItem, ImagePicker, Button  } from 'antd-mobile';
+import { Icon, List, InputItem, Picker, ImagePicker, Button, DatePicker} from 'antd-mobile';
 import { createForm } from 'rc-form';
 const Item = List.Item;
 
@@ -12,11 +12,33 @@ class UserHealthInfo extends Component {
     super(props)
     this.state = {
       data: ['', '', ''],
-      files: []
+      files: [],
+      orgData: [{
+        label: "北京知春路分店",
+        value: "1",
+      },{
+        label: "北京上地分店",
+        value: "2",
+      },{
+        label: "北京中关村分店",
+        value: "3",
+      }],
     }
   }
 
-  componentDidMount () {
+  componentWillMount () {
+    this.getOrgs();
+  }
+
+  //获取体检机构列表
+  getOrgs () {
+    const _this = this;
+    let url = "";
+    let data = {};
+    AjaxJson.getResponse(url, data, "GET").then((value) => {
+      if(value.status = 2000) {
+      }
+    }, (value) => {})
   }
 
   headerBackClick () {
@@ -59,6 +81,20 @@ class UserHealthInfo extends Component {
           <div className="header-content">健康情况填写</div>
         </div>
         <div className="flow-content tab-content">
+          <List renderHeader={() => '体检服务(若无健康数据请参与体检)'}>
+            <Picker 
+              data={this.state.orgData} 
+              cols={1} 
+              {...getFieldProps('orgName')}>
+              <List.Item arrow="horizontal">体检机构</List.Item>
+            </Picker>
+            <DatePicker
+              mode="date"
+              title="选择日期"
+              {...getFieldProps('orgTime')}>
+              <List.Item arrow="horizontal">体检日期</List.Item>
+            </DatePicker>
+          </List>
           <List renderHeader={() => '个人健康情况'}>
             <InputItem
             {...getFieldProps('weightExponent')}

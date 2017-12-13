@@ -60,7 +60,7 @@ class PolicyDetail extends Component {
                 </Item>
               </List>
             </Card.Body>
-            <Card.Footer extra={<div>保险条款详情</div>} />
+            <Card.Footer extra={<div style={{color: "#199ed8"}}>保险条款详情</div>} />
           </Card>
           <Button style={{margin: "2rem"}} type="ghost" onClick={this.saveClick.bind(this)}>立即投保</Button>
         </div>
