@@ -98,9 +98,7 @@ class Flow extends Component {
     let list = [];
     let item = "";
     let page1 = [<List className="my-list" renderHeader={() => '1、请填写您的出生日期_____？'}>
-      <Item arrow="horizontal">
-        投保信息
-      </Item>
+      <Item key="0">2000年11月10日</Item>
     </List>,  <List className="my-list" renderHeader={() => '2、您的性别？'}>
        <RadioItem key="0">男</RadioItem>
        <RadioItem key="1">女</RadioItem>
