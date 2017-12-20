@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import '../styles/index.scss'
-import classnames from "classnames";
 
 export default class App extends Component {
 
@@ -11,9 +10,6 @@ export default class App extends Component {
   }
 
   componentDidMount () {
-    if(!sessionStorage.getItem("user")) {
-      // location.hash = "/login"
-    }
   }
 
 

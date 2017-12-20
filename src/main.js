@@ -6,13 +6,6 @@ import { hashHistory, Router, Route, IndexRoute, IndexRedirect  } from 'react-ro
 import App from "./containers/app"
 import Home from "./containers/home/"
 import Flow from "./containers/component/flow"
-import HealthInfo from "./containers/component/healthInfo"
-import UserHealthInfo from "./containers/component/userHealthInfo"
-import BaseInfo from "./containers/component/baseInfo"
-import Login from "./containers/component/login"
-import Register from "./containers/component/register"
-import Logout from "./containers/component/logout"
-import PolicyDetail from "./containers/component/policyDetail"
 
 
 
@@ -27,14 +20,7 @@ const ready = () => {
         <IndexRoute component={Home}/>
         <IndexRedirect to="/home" />
         <Route path="/home" component={Home}></Route>
-        <Route path="/login" component={Login}></Route>
-        <Route path="/login" component={Login}></Route>
-        <Route path="/logout" component={Logout}></Route>
         <Route path="/flow" component={Flow}></Route>
-        <Route path="/healthinfo" component={HealthInfo}></Route>
-        <Route path="/policydetail" component={PolicyDetail}></Route>
-        <Route path="/userhealthinfo" component={UserHealthInfo}></Route>
-        <Route path="/baseinfo" component={BaseInfo}></Route>
       </Route>
     </Router>,
     document.getElementById('root')
