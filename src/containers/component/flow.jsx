@@ -30,6 +30,8 @@ const district = [{
   price: 300000
 }]
 
+const title = ["行为和生活方式", "体检数据", "慢性疾病和家族史"]
+
 const item = [<List className="my-list" renderHeader={() => '请填写您的出生日期_____？'}>
             <Item arrow="horizontal">
               投保信息
@@ -49,7 +51,7 @@ class Flow extends Component {
       price: "",
       curreentPage: 1,
       module: false,
-      percent: 1
+      percent: 1  
     }
   }
 
@@ -223,7 +225,7 @@ class Flow extends Component {
           <div className="header-back" onClick={this.headerBackClick.bind(this)}>
             <Icon type="left" size="lg" />
           </div>
-          <div className="header-content">问卷内容</div>
+          <div className="header-content">{title[this.state.curreentPage - 1]}</div>
         </div>
         <div className="flow-content">
           <Progress className="flow-process" percent={this.state.percent} />  
