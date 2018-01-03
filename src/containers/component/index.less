@@ -60,6 +60,193 @@
   .risk {
     background: #E0DCD0;
     opacity: 0.7;
+    .am-flexbox .am-flexbox-item {
+      line-height: 1.7rem;
+      color: #474648;
+    }
+    .am-flexbox {
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+    .result-content {
+      .table-title {
+        font-size: 1.5rem;
+      }
+      .table-item {
+        opacity: 0.8;
+        font-size: 1.2rem;
+      }
+      .table-item-order {
+        text-decoration: underline;
+        color: #EC3160!important;
+      }
+    }
+  }
+  .physical {
+    background: #E9DBD7;
+    opacity: 0.7;
+    .body-data {
+      margin-bottom: 2rem;
+      height: 20rem;
+      .line-area {
+        height: inherit;
+        .line-list {
+          height: 2rem;
+          text-align: right;
+          span {
+            display: inline-block;
+            border-bottom: 1px #797979 solid;
+          }
+        }
+      }
+      .line-content {
+        height: inherit;
+        .line-content-list {
+          height: 2rem;
+          line-height: 2rem;
+        }
+      }
+    }
+    .descript {
+      .descript-title {
+        width: 90%;
+        margin: 0 auto;
+        height: 2rem;
+        line-height: 2rem;
+        font-size: 1.4rem;
+        color: #EC3160;
+        margin-bottom: 2rem;
+      }
+      .descript-tip {
+        width: 90%;
+        margin: 0 auto;
+        font-size: 1.4rem;
+        padding-bottom: 2rem;
+        .target-list {
+          color: #474648;
+          margin-bottom: 1rem;
+          .target-flag {
+            width: 6rem;
+            height: 1rem;
+            margin-top: 1rem;
+            background: #E82A43;
+          }
+        }
+        .target-content {
+          color: #474648;
+        }
+      }
+      img {
+        width: 1.5rem;
+        position: relative;
+        top: 0.2rem;
+      }
+    }
+  }
+  .predict {
+    background: #E9E7DE;
+    .predict-list {
+      width: 90%;
+      margin: 0 auto;
+      padding-bottom: 2rem;
+      .predict-list-title {
+        font-size: 1.4rem;
+      }
+      .predict-list-rule {
+        margin-top: 1rem;
+        .rule-position {
+          display: inline-block;
+        }
+        .rule-flag {
+          span {
+            width: 3.5rem;
+            height: 1rem;
+            display: inline-block;
+          }
+        }
+        .rule-flag-name {
+          .flag-scale {
+            width: 3.5rem;
+            display: inline-block;
+            color: #6B6B6B;
+          }
+        }
+        .predict-active {
+          margin-top: 2rem;
+          span {
+            text-decoration: underline;
+            padding-right: 1rem;
+            color: #FE5A78;
+          }
+        }
+      }
+      .predict-content {
+        color: #FE5A78;
+        line-height: 2rem;
+      }
+    }
+  }
+  .disease {
+    background: #E9DBD7;
+    opacity: 0.7;
+    .disease-area {
+      width: 90%;
+      margin: 0 auto;
+      .disease-list {
+        height: 6rem;
+        background: #C0595C;
+        .disease-name {
+          width: 0;
+          height: 0;
+          border-top: 6rem solid #D0D1C3;
+          border-right: 6rem solid transparent;
+          span {
+            margin-top: -4rem;
+            position: absolute;
+            padding-left: 0.8rem;
+            font-size: 1.4rem;
+            font-weight: bold;
+          }
+        }
+        .disease-descript {
+          line-height: 2rem;
+          padding-right: 1rem;
+        }
+      }
+      .disease-active {
+        height: 6rem;
+        background: #EBCFCB;
+        .active-list {
+          text-align: center;
+        }
+      }
+    }
+  }
+  .warning {
+    background: #E0DCD0;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    .warning-area {
+      border-top-left-radius: 2rem;
+      border-bottom-right-radius: 2rem;
+      width: 90%;
+      background: #E7D5C9;
+      margin: 0 auto;
+      height: 6rem;
+      .warning-img {
+        text-align: center;
+        margin-top: 1rem;
+      }
+      img {
+        line-height: 6rem;
+        width: 4rem;
+      }
+      .warning-content {
+        color: #fff;
+        margin-top: 1rem;
+        padding-right: 1rem;
+      }
+    }
   }
   .title-area {
     margin-bottom: 2rem;
@@ -76,23 +263,5 @@
         border-bottom: 0.3rem #EC3160 solid;
       }
     }
-  }
-  .result-content {
-    .table-title {
-      font-size: 1.5rem;
-    }
-    .am-flexbox {
-      padding-bottom: 1rem;
-    }
-    .table-item {
-      font-size: 1.2rem;
-    }
-    .table-item-order {
-      text-decoration: underline;
-    }
-  }
-  .am-flexbox .am-flexbox-item {
-    line-height: 1.7rem;
-    color: #474648;
   }
 }
