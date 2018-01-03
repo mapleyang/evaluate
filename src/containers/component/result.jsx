@@ -197,13 +197,13 @@ class Result extends Component {
         <div className="disease-active">
          <Flex style={{height: "inherit"}}>
             <Flex.Item className="active-list">
-              <span style={{textDecoration: "underline", color: "#fff"}}>专家预约</span>
+              <span style={{textDecoration: "underline"}}>专家预约</span>
             </Flex.Item>
             <Flex.Item className="active-list">
-              <span style={{textDecoration: "underline", color: "#fff"}}>就医推荐</span>
+              <span style={{textDecoration: "underline"}}>就医推荐</span>
             </Flex.Item>
-            <Flex.Item className="active-list">
-              <span style={{textDecoration: "underline", color: "#fff"}}>订阅GH活动资讯</span>
+            <Flex.Item className="active-list" style={{flex: 2}}>
+              <span style={{textDecoration: "underline"}}>订阅GH活动资讯</span>
             </Flex.Item>
           </Flex>
         </div>
