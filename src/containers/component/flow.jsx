@@ -77,7 +77,7 @@ class Flow extends Component {
   }
 
   nextClick () {
-    window.scrollBy(0, 0);
+    window.scrollTo(0, 0);
     if(this.state.curreentPage < 3) {
       this.setState({
         curreentPage: this.state.curreentPage + 1,
@@ -228,7 +228,7 @@ class Flow extends Component {
           </div>
           <div className="header-content">{title[this.state.curreentPage - 1]}</div>
         </div>
-        <div className="flow-content">
+        <div className="flow-content" ref="scroller">
           <Progress className="flow-process" percent={this.state.percent} />  
           {this.getList(this.state.curreentPage)}
           <Button  className="flow-button" style={{margin: "2rem"}} type="ghost" onClick={this.nextClick.bind(this, this.state.curreentPage)}>下一步</Button>
