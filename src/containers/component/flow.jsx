@@ -77,6 +77,7 @@ class Flow extends Component {
   }
 
   nextClick () {
+    window.scrollBy(0, 0);
     if(this.state.curreentPage < 3) {
       this.setState({
         curreentPage: this.state.curreentPage + 1,

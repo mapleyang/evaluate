@@ -73,7 +73,7 @@ const predicts = [{
 },{
   name: "缺血性心血管发病风险评估",
   rule: ["> 40", "20 -", "10 -", "5 -", "< 5"],
-  ruleFlag: "(%)",
+  ruleFlag: "%",
   active: [{
     name: "就医推荐",
     target: ""
@@ -220,7 +220,7 @@ class Result extends Component {
           <div className="header-back" onClick={this.headerBackClick.bind(this)}>
             <Icon type="left" size="lg" />
           </div>
-          <div className="header-content">张三健康风险评估报告</div>
+          <div className="header-content">健康风险评估报告</div>
         </div>
         <div className="result-list">
           <div className="risk">
