@@ -9,7 +9,7 @@
 }
 .header {
   height: 4rem;
-  background: #CB1647;
+  background: #EC3160;
   line-height: 4rem;
   text-align: center;
   font-size: 1.5rem;
@@ -39,11 +39,11 @@
 }
 .flow-button {
   span {
-    color: #cb1647;
+    color: #EC3160;
   }
 }
 .flow-button:before {
-  border: 2px solid #cb1647!important;
+  border: 2px solid #EC3160!important;
 }
 .img-picker {
   .am-image-picker-list {
@@ -51,17 +51,48 @@
   }
 }
 .module-button {
-  background: #cb1647;
+  background: #EC3160;
 }
 .result {
-  background: #fff;
-  position: fixed;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  .logo-area {
-    img {
-      width: 8rem;
+  .result-list {
+    padding-top: 4rem;
+  }
+  .risk {
+    background: #E0DCD0;
+    opacity: 0.7;
+  }
+  .title-area {
+    margin-bottom: 2rem;
+    .title-area-content {
+      width: 90%;
+      margin: 0 auto;
+      span {
+        display: inline-block;
+        font-size: 1.5rem;
+        padding-top: 1.2rem;
+        padding-bottom: 1.2rem;
+        color: #EC3160;
+        font-weight: bold;
+        border-bottom: 0.3rem #EC3160 solid;
+      }
     }
+  }
+  .result-content {
+    .table-title {
+      font-size: 1.5rem;
+    }
+    .am-flexbox {
+      padding-bottom: 1rem;
+    }
+    .table-item {
+      font-size: 1.2rem;
+    }
+    .table-item-order {
+      text-decoration: underline;
+    }
+  }
+  .am-flexbox .am-flexbox-item {
+    line-height: 1.7rem;
+    color: #474648;
   }
 }
