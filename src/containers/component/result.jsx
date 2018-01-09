@@ -311,7 +311,7 @@ class Result extends Component {
                 <Flex.Item>
                   <span>指标</span><img src="./static/target.svg"/>
                 </Flex.Item>
-                <Flex.Item>
+                <Flex.Item style={{flex: 1.5}}>
                   <span>结果分析</span><img src="./static/analysis.svg" /> 
                 </Flex.Item>
               </Flex>
