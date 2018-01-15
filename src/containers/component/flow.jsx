@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import './index.less'
+import $ from "jquery"
 import classnames from "classnames";
 import { createForm } from 'rc-form';
 import AjaxJson from "../../utils/ajaxJson"
@@ -183,13 +184,13 @@ class Flow extends Component {
           let BMI = value.weight/((value.height/100)*(value.height/100));
           let bodyData = [{
             label: "身高",
-            value: value.height
+            value: value.height + "cm"
           },{
             label: "体重",
-            value: value.weight
+            value: value.weight + "kg"
           },{
             label: "腰围",
-            value: value.beltline
+            value: value.beltline + "cm"
           },{
             label: "BMI(体质指数)",
             value: BMI.toString().slice(0,5)
@@ -770,10 +771,10 @@ class Flow extends Component {
        <RadioItem key="1" checked={"1" === this.state.weak} onChange={this.onRadioChange.bind(this, "weak", "1")}>否</RadioItem>
     </List>];
     let page2 = [<List className="my-list" renderHeader={() => '15、您的身高？'}>
-      <InputItem extra="cm" onChange={height => this.setState({ height })}/>
-      <InputItem extra="kg" onChange={weight => this.setState({ weight })}/>
+      <InputItem type="money"  moneyKeyboardAlign="left" extra="cm" onChange={height => this.setState({ height })}/>
+      <InputItem type="money"  moneyKeyboardAlign="left" extra="kg" onChange={weight => this.setState({ weight })}/>
     </List>, <List className="my-list" renderHeader={() => '16、您的腰围？'}>
-      <InputItem extra="cm" onChange={beltline => this.setState({ beltline })}/>
+      <InputItem type="money"  moneyKeyboardAlign="left" extra="cm" onChange={beltline => this.setState({ beltline })}/>
     </List>, <List className="my-list" renderHeader={() => '17、您的收缩压（血压高的那个值）？'}>
        <RadioItem key="0" checked={"0" === this.state.pressure} onChange={this.onRadioChange.bind(this, "pressure", "0")}>&lt;120 mm Hg</RadioItem>
        <RadioItem key="1" checked={"1" === this.state.pressure} onChange={this.onRadioChange.bind(this, "pressure", "1")}>120-129 mm Hg</RadioItem>
@@ -899,10 +900,10 @@ class Flow extends Component {
                 {i}
               </CheckboxItem>
             ))}
-            <List.Item>
-              <Button className="module-button" type="primary" onClick={this.onClose.bind(this)}>确定</Button>
-            </List.Item>
           </List>
+          <List.Item>
+            <Button className="module-button" type="primary" onClick={this.onClose.bind(this)}>确定</Button>
+          </List.Item>
         </Modal>
       </div>
     );
