@@ -53,16 +53,30 @@ class Result extends Component {
           }
           diseases.push(item)
         }
+        else if(el === "慢性阻塞性肺病") {
+          let item = {
+            name: "肺病",
+            content: el + "是重要的常见慢性病。希望您能定期就医，让疾病得到良好控制。"
+          }
+          diseases.push(item)
+        }
+        else if(el === "慢性关节炎") {
+          let item = {
+            name: "关节炎",
+            content: el + "是重要的常见慢性病。希望您能定期就医，让疾病得到良好控制。"
+          }
+          diseases.push(item)
+        }
         else if(el === "中风（包括短暂性脑缺血发作）") {
           let item = {
-            name: el,
+            name: "中风",
             content: "预防再次中风至关重要。希望您能定期就医，降低复发风险。"
           }
           diseases.push(item)
         }
         else if(el === "其他慢性疾病") {
           let item = {
-            name: el,
+            name: "其他慢病",
             content: "希望您能定期就医，让疾病得到良好控制。"
           }
           diseases.push(item)
