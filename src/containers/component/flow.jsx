@@ -887,6 +887,7 @@ class Flow extends Component {
           <Button  className="flow-button" style={{margin: "2rem"}} type="ghost" onClick={this.nextClick.bind(this, this.state.curreentPage)}>下一步</Button>
         </div>
          <Modal
+          className="modal-select-button"
           popup
           visible={this.state.module}
           maskClosable={false}
