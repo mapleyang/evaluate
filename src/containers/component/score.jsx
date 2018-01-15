@@ -62,14 +62,17 @@ const Score = {
       key: "0",
       value: "3",
       diabetes: "2",
+      disorder: "0"
     },{
       key: "1",
       value: "1",
       diabetes: "2",
+      disorder: "0"
     },{
       key: "2",
       value: "0",
       diabetes: "0",
+      disorder: "1"
     }]
   },
   workThew: {

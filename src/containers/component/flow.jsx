@@ -4,10 +4,11 @@ import classnames from "classnames";
 import { createForm } from 'rc-form';
 import AjaxJson from "../../utils/ajaxJson"
 import Score from "./score";
-import { Icon, List, Button, DatePicker, Picker, InputItem, Progress, Radio, Modal, Checkbox } from 'antd-mobile';
+import { Icon, List, Button, DatePicker, Picker, InputItem, Progress, Radio, Modal, Checkbox  } from 'antd-mobile';
 const Item = List.Item;
 const RadioItem = Radio.RadioItem;
 const CheckboxItem = Checkbox.CheckboxItem;
+const alert = Modal.alert;
 
 const district = [{
   label: "一年",
@@ -47,6 +48,9 @@ class Flow extends Component {
       type: "",
       //
       sex: "0",
+      height: "",
+      weight: "",
+      beltline: "",
       fruit: "",
       solt: "",
       fry: "",
@@ -56,6 +60,7 @@ class Flow extends Component {
       drink: "",
       sleep: "",
       secure: "",
+      stress: "",
       turndown: "",
       weak: "",
       pressure: "",
@@ -63,9 +68,9 @@ class Flow extends Component {
       bloodSugar: "",
       TC: "",
       LDL: "",
-      HDL: "",
-      owerList: [],
-      familyList: [],
+      LDL: "",
+      owerList: "",
+      familyList: "",
     }
   }
 
@@ -90,9 +95,69 @@ class Flow extends Component {
     })
   }
 
+  getFormFlag () {
+    let flag = true;
+    if(this.state.curreentPage === 1) {
+      let nullList = [];
+      let flagList = ["fruit","solt","fry","thew","workThew","smoking", "drink", "sleep", "secure", "stress","turndown", "weak"];
+      flagList.forEach((el, index) => {
+        if(!this.state[el]) {
+          nullList.push(index + 3)
+        }
+      })
+      if(nullList.length !== 0) {
+        alert('请完善', "第" + nullList.toString() + "题。", [
+          { text: '取消', onPress: () => console.log('cancel')},
+          { text: '确定', onPress: () => console.log('ok') },
+        ]);
+        flag = false;
+      }
+    }
+    else if(this.state.curreentPage === 2) {
+      let nullList = [];
+      let flagList = ["height","weight","beltline","pressure","diastolic","bloodSugar", "TC", "LDL", "LDL"];
+      flagList.forEach((el, index) => {
+        if(index < 2 && nullList.length === 0) {
+          if(!this.state[el]) {
+            nullList.push(index + 15)
+          }
+        }
+        if(index >= 2) {
+          if(!this.state[el]) {
+            nullList.push(index + 14)
+          }
+        }
+      })
+      if(nullList.length !== 0) {
+        alert('请完善', "第" + nullList.toString() + "题。", [
+          { text: 'Cancel', onPress: () => console.log('cancel')},
+          { text: 'OK', onPress: () => console.log('ok') },
+        ]);
+        flag = false;
+      }
+    }
+    else {
+      let nullList = [];
+      let flagList = ["owerList","familyList"];
+      flagList.forEach((el, index) => {
+        if(!this.state[el]) {
+          nullList.push(index + 23)
+        }
+      })
+      if(nullList.length !== 0) {
+        alert('请完善', "第" + nullList.toString() + "题。", [
+          { text: 'Cancel', onPress: () => console.log('cancel')},
+          { text: 'OK', onPress: () => console.log('ok') },
+        ]);
+        flag = false;
+      }
+    }
+    return flag
+  }
+
   nextClick () {
-    this.props.form.validateFields((error, value) => {
-      if(true) {
+    this.props.form.validateFields((error, val) => {
+      if(this.getFormFlag()) {
         window.scrollTo(0, 0);
         if(this.state.curreentPage < 3) {
           this.setState({
@@ -101,6 +166,12 @@ class Flow extends Component {
           })
         }
         else {
+          let value = {
+            height: this.state.height,
+            weight: this.state.weight,
+            beltline: this.state.beltline,
+            date: this.state.date
+          }
           //风险因素
           let factor = this.getRules(value);
           //糖尿病
@@ -109,13 +180,156 @@ class Flow extends Component {
           let angiocarpy = this.getAngiocarpyRules(value);
           //脑卒中
           let disorder = this.getDisorderRules(value);
+          let BMI = value.weight/((value.height/100)*(value.height/100));
+          let bodyData = [{
+            label: "身高",
+            value: value.height
+          },{
+            label: "体重",
+            value: value.weight
+          },{
+            label: "腰围",
+            value: value.beltline
+          },{
+            label: "BMI(体质指数)",
+            value: BMI.toString().slice(0,5)
+          },{
+            label: "收缩压",
+            value: this.getPressure()
+          },{
+            label: "舒张压",
+            value: this.getDiastolic()
+          },{
+            label: "总胆固醇",
+            value: this.getTC()
+          },{
+            label: "空腹血糖",
+            value: this.getBloodSugar()
+          },{
+            label: "低密度脂蛋白",
+            value: this.getLDL()
+          },{
+            label: "高密度脂蛋白",
+            value: this.getHDL()
+          }]
+          let result = {
+            factor: factor,
+            diabetes: diabetes,
+            angiocarpy: angiocarpy,
+            disorder: disorder,
+            bodyData: bodyData,
+            owerList: this.state.owerList,
+            familyList: this.state.familyList
+          }
+          sessionStorage.setItem("result", JSON.stringify(result));
           location.hash = "/result";
         }
       }
       else {
-        console.log(error)
+        //提示
       }
     });
+  }
+
+  getPressure () {
+    let val;
+    if(this.state.pressure === "0") {
+      val = "X<120mmHg";
+    }
+    else if(this.state.pressure === "1") {
+      val = "120<=X<130mmHg"
+    }
+    else if(this.state.pressure === "2") {
+      val = "130<=X<140mmHg"
+    } 
+    else {
+      val = "X>=140mmHg"
+    }
+    return val
+  }
+  getDiastolic () {
+    let val;
+    if(this.state.diastolic === "0") {
+      val = "X<80mmHg";
+    }
+    else if(this.state.diastolic === "1") {
+      val = "80<=X<90mmHg"
+    }
+    else if(this.state.diastolic === "2") {
+      val = "X<=90mmHg"
+    } 
+    else {
+      val = "未测或不记得"
+    }
+    return val
+  }
+  getTC () {
+    let val;
+    if(this.state.TC === "0") {
+      val = "X<5.2mmol/L";
+    }
+    else if(this.state.TC === "1") {
+      val = "X>=5.2mmol/L"
+    }
+    else {
+      val = "未测或不记得"
+    }
+    return val
+  }
+  getBloodSugar () {
+    let val;
+    if(this.state.bloodSugar === "0") {
+      val = "X<5.6mmol/L";
+    }
+    else if(this.state.bloodSugar === "1") {
+      val = "5.6<=X<7mmol/L"
+    }
+    else if(this.state.bloodSugar === "2") {
+      val = "X>=7mmol/L"
+    }
+    else {
+      val = "未测或不记得"
+    }
+    return val
+  }
+  getLDL () {
+    let val;
+    if(this.state.LDL === "0") {
+      val = "X<=3.1mmol/L";
+    }
+    else if(this.state.LDL === "1") {
+      val = "X>3.1mmol/L"
+    }
+    else {
+      val = "未测或不记得"
+    }
+    return val
+  }
+  getHDL () {
+    let val;
+    if (this.state.sex === "0") {
+      if(this.state.HDL === "0") {
+        val = "X<1.16mmol/L";
+      }
+      else if(this.state.HDL === "1") {
+        val = "X>=1.16mmol/L"
+      }
+      else {
+        val = "未测或不记得"
+      }
+    }
+    else {
+      if(this.state.HDL === "0") {
+        val = "X<1.29mmol/L";
+      }
+      else if(this.state.HDL === "1") {
+        val = "X>=1.29mmol/L"
+      }
+      else {
+        val = "未测或不记得"
+      }
+    }
+    return val
   }
 
   //规则模型
@@ -161,6 +375,8 @@ class Flow extends Component {
     let dyslipidemia = TC + LDL + HDL;
     let factor = {
       fat: fat,
+      BMI: BMI,
+      beltline: beltline,
       sport: sport,
       food: food,
       smoking: smoking,
@@ -208,21 +424,45 @@ class Flow extends Component {
       let pressure = parseInt(Score.pressure.data[parseInt(this.state.pressure)].angiocarpy.male);
       let TC = parseInt(Score.TC.data[parseInt(this.state.TC)].angiocarpy.male);
       angiocarpy += TC + smoking + pressure + this.getAge("angiocarpy");
+      let BMI = this.getBMI("angiocarpy", value.height, value.weight);
+      angiocarpy += BMI;
+      this.state.owerList.map(el => {
+        if(el === "糖尿病") {
+          angiocarpy += 1;
+        }
+      })
+      let result = [0.3, 0.5, 0.6, 0.8, 1.1, 1.5, 2.1,2.9,3.9,5.4,7.3,9.7,12.8,16.8,21.7,27.7,35.3,52.6];
+      result.forEach((el, index) => {
+        if(angiocarpy === index) {
+          angiocarpy = el;
+        }
+        else if(angiocarpy >= 17 && index === result.length - 1) {
+          angiocarpy = el;
+        }
+      })
     }
     else {
       let smoking = parseInt(Score.smoking.data[parseInt(this.state.smoking)].angiocarpy.female);
       let pressure = parseInt(Score.pressure.data[parseInt(this.state.pressure)].angiocarpy.female);
       let TC = parseInt(Score.TC.data[parseInt(this.state.TC)].angiocarpy.female);
       angiocarpy += TC + smoking + pressure + this.getAge("angiocarpy");
+      let BMI = this.getBMI("angiocarpy", value.height, value.weight);
+      angiocarpy += BMI;
+      this.state.owerList.map(el => {
+        if(el === "糖尿病") {
+          angiocarpy += 1;
+        }
+      })
+      let result = [0.2, 0.3, 0.5, 0.8, 1.2, 1.8, 2.8,4.4,6.8,10.3,15.6,23,32.7,43.1];
+      result.forEach((el, index) => {
+        if(angiocarpy === index) {
+          angiocarpy = el;
+        }
+        else if(angiocarpy >= 13 && index === result.length - 1) {
+          angiocarpy = el;
+        }
+      })
     }
-    this.state.owerList.map(el => {
-      if(el === "糖尿病") {
-        angiocarpy += 1;
-      }
-    })
-    //BMI
-    let BMI = this.getBMI("angiocarpy", value.height, value.weight);
-    angiocarpy += BMI;
     return angiocarpy
   }
   //脑卒中
@@ -325,7 +565,7 @@ class Flow extends Component {
 
   //BMI 
   getBMI (flag, height, weight) {
-    let bmi = (weight / height) * height;
+    let bmi = weight/((height/100)*(height/100))
     let score = 0;
     if(flag === "factor") {
       if(bmi < 18.5) {
@@ -383,7 +623,7 @@ class Flow extends Component {
         score = 1;
       }
     }
-    return scores
+    return score
   }
 
   //腰围
@@ -471,11 +711,7 @@ class Flow extends Component {
           mode="date"
           minDate={new Date('1920-1-1')}
           value={this.state.date}
-          onChange={date => this.setState({ date })}
-          {...getFieldProps('date', {
-            rules: [{required: true, message: '请填写您的出生日期'}],
-          })}
-        >
+          onChange={date => this.setState({ date })}>
         <Item></Item>
         </DatePicker>
     </List>,  <List className="my-list" renderHeader={() => '2、您的性别？'}>
@@ -534,16 +770,10 @@ class Flow extends Component {
        <RadioItem key="1" checked={"1" === this.state.weak} onChange={this.onRadioChange.bind(this, "weak", "1")}>否</RadioItem>
     </List>];
     let page2 = [<List className="my-list" renderHeader={() => '15、您的身高？'}>
-      <InputItem extra="cm" {...getFieldProps('height', {
-        rules: [{required: true, message: '请填写您的身高'}],
-      })}/>
-      <InputItem extra="kg" {...getFieldProps('weight', {
-        rules: [{required: true, message: '请填写您的体重'}],
-      })}/>
+      <InputItem extra="cm" onChange={height => this.setState({ height })}/>
+      <InputItem extra="kg" onChange={weight => this.setState({ weight })}/>
     </List>, <List className="my-list" renderHeader={() => '16、您的腰围？'}>
-      <InputItem extra="cm" {...getFieldProps('beltline', {
-        rules: [{required: true, message: '请填写您的腰围'}],
-      })}/>
+      <InputItem extra="cm" onChange={beltline => this.setState({ beltline })}/>
     </List>, <List className="my-list" renderHeader={() => '17、您的收缩压（血压高的那个值）？'}>
        <RadioItem key="0" checked={"0" === this.state.pressure} onChange={this.onRadioChange.bind(this, "pressure", "0")}>&lt;120 mm Hg</RadioItem>
        <RadioItem key="1" checked={"1" === this.state.pressure} onChange={this.onRadioChange.bind(this, "pressure", "1")}>120-129 mm Hg</RadioItem>
@@ -568,11 +798,9 @@ class Flow extends Component {
        <RadioItem key="1" checked={"1" === this.state.LDL} onChange={this.onRadioChange.bind(this, "LDL", "1")}>&gt;3.1 mmol/L</RadioItem>
        <RadioItem key="2" checked={"2" === this.state.LDL} onChange={this.onRadioChange.bind(this, "LDL", "2")}>未测过或忘记</RadioItem>
     </List>, <List className="my-list" renderHeader={() => '22、您的高密度脂蛋白（HDL-C）值？'}>
-       <RadioItem key="0" checked={"0" === this.state.HDL} onChange={this.onRadioChange.bind(this, "HDL", "0")}>男性: &gt; 1.16 mmol/L</RadioItem>
-       <RadioItem key="1" checked={"1" === this.state.HDL} onChange={this.onRadioChange.bind(this, "HDL", "1")}>女性: &gt; 1.29 mmol/L</RadioItem>
-       <RadioItem key="2" checked={"2" === this.state.HDL} onChange={this.onRadioChange.bind(this, "HDL", "2")}>男性: &ge; 1.16 mmol/L</RadioItem>
-       <RadioItem key="3" checked={"3" === this.state.HDL} onChange={this.onRadioChange.bind(this, "HDL", "3")}>女性: &ge; 1.29 mmol/L</RadioItem>
-       <RadioItem key="4" checked={"4" === this.state.HDL} onChange={this.onRadioChange.bind(this, "HDL", "4")}>未测过或忘记</RadioItem>
+       <RadioItem key="0" checked={"0" === this.state.HDL} onChange={this.onRadioChange.bind(this, "HDL", "0")}>男性: &gt; 1.16 mmol/L；女性: &gt; 1.29 mmol/L</RadioItem>
+       <RadioItem key="1" checked={"1" === this.state.HDL} onChange={this.onRadioChange.bind(this, "HDL", "1")}>男性: &ge; 1.16 mmol/L；女性: &ge; 1.29 mmol/L</RadioItem>
+       <RadioItem key="2" checked={"2" === this.state.HDL} onChange={this.onRadioChange.bind(this, "HDL", "2")}>未测过或忘记</RadioItem>
     </List>];
     let page3 = [<List className="my-list" renderHeader={() => '23、您是否已被诊断患有下列一种或多种慢性疾病 (可多选)？'}>
        <Item onClick={this.selectClick.bind(this, "ower")}>{this.state.owerList.length > 0 ? "已选择：" + this.state.owerList.toString() : "请选择："}</Item>

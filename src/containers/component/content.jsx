@@ -177,69 +177,129 @@ const Content = {
   diabetes: [{
     score: 7,
     content: "10年内得2型糖尿病风险： ≤1%",
-    activty: ["订阅GH活动资讯"]
+    activty: [{
+      name: "订阅GH活动资讯",
+      target: ""
+    }]
   },{
     score: 11,
     content: "10年内得2型糖尿病风险： 4%",
-    activty: ["订阅GH活动资讯"]
+    activty: [{
+      name: "订阅GH活动资讯",
+      target: ""
+    }]
   },{
     score: 14,
     content: "10年内得2型糖尿病风险： 17%",
-    activty: ["订阅GH活动资讯"]
+    activty: [{
+      name: "订阅GH活动资讯",
+      target: ""
+    }]
   },{
     score: 20,
     content: "10年内得2型糖尿病风险： 33%",
-    activty: ["订阅GH活动资讯"]
+    activty: [{
+      name: "订阅GH活动资讯",
+      target: ""
+    }]
   },{
     score: 100,
     content: "10年内得2型糖尿病风险： 50%",
-    activty: ["订阅GH活动资讯"]
+    activty: [{
+      name: "订阅GH活动资讯",
+      target: ""
+    }]
   },{
     score: 101,
-    content: "10年内得2型糖尿病风险： 4%",
-    activty: ["就医推荐"]
+    content: "患有糖尿病",
+    activty: [{
+      name: "就医推荐",
+      target: ""
+    }]
   }],
   angiocarpy: [{
     score: 4,
-    content: "10年内缺血性心血管病事件发病风险：（X）%",
-    activty: ["订阅GH活动资讯"]
+    content: "10年内缺血性心血管病事件发病风险：",
+    activty: [{
+      name: "订阅GH活动资讯",
+      target: ""
+    }]
   },{
     score: 5,
-    content: "10年内缺血性心血管病事件发病风险：（X）%",
-    activty: ["订阅GH活动资讯"]
+    content: "10年内缺血性心血管病事件发病风险：",
+    activty: [{
+      name: "订阅GH活动资讯",
+      target: ""
+    }]
   },{
     score: 10,
-    content: "10年内缺血性心血管病事件发病风险：（X）%",
-    activty: ["订阅GH活动资讯"]
+    content: "10年内缺血性心血管病事件发病风险：",
+    activty: [{
+      name: "订阅GH活动资讯",
+      target: ""
+    }]
   },{
     score: 20,
-    content: "10年内缺血性心血管病事件发病风险：（X）%",
-    activty: ["就医推荐", "专家预约"]
+    content: "10年内缺血性心血管病事件发病风险：",
+    activty: [{
+      name: "就医推荐",
+      target: ""
+    },{
+      name: "专家预约",
+      target: ""
+    }]
   },{
     score: 40,
-    content: "10年内缺血性心血管病事件发病风险：（X）%",
-    activty: ["就医推荐", "专家预约"]
+    content: "10年内缺血性心血管病事件发病风险：",
+    activty: [{
+      name: "就医推荐",
+      target: ""
+    },{
+      name: "专家预约",
+      target: ""
+    }]
   }],
   disorder: [{
     score: 0,
     content: "脑卒中(中风)风险极低",
-    activty: ["订阅GH活动资讯"]
+    activty: [{
+      name: "订阅GH活动资讯",
+      target: ""
+    }]
   },{
     score: 10,
     content: "脑卒中(中风)风险低",
-    activty: ["订阅GH活动资讯"]
+    activty: [{
+      name: "订阅GH活动资讯",
+      target: ""
+    }]
   },{
     score: 30,
     content: "脑卒中(中风)风险中危",
-    activty: ["订阅GH活动资讯"]
+    activty: [{
+      name: "订阅GH活动资讯",
+      target: ""
+    }]
   },{
     score: 100,
     content: "脑卒中(中风)风险高",
-    activty: ["就医推荐", "专家预约"]
+    activty: [{
+      name: "就医推荐",
+      target: ""
+    },{
+      name: "专家预约",
+      target: ""
+    }]
   },{
     score: 101,
     content: "脑卒中(中风)风险很高",
-    activty: ["就医推荐", "专家预约"]
+    activty: [{
+      name: "就医推荐",
+      target: ""
+    },{
+      name: "专家预约",
+      target: ""
+    }]
   }]
 }
 
