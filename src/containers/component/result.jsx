@@ -3,9 +3,9 @@ import './index.less'
 import classnames from "classnames"
 import AjaxJson from "../../utils/ajaxJson"
 import ResultCont from "./content"
-import { Icon, List, Button, Flex } from 'antd-mobile';
+import { Icon, List, Button, Flex, Modal } from 'antd-mobile';
 const Item = List.Item;
-
+const alert = Modal.alert;
 
 const diseases = [{
   title: "哮喘",
@@ -492,7 +492,7 @@ class Result extends Component {
             </div>
             <div className="predict-active">行动：
               {el.activty.map(item => {
-                return <span>{item.name}</span>
+                return <span onClick={this.targetClick.bind(this, item.name)}>{item.name}</span>
               })}
             </div>
           </Flex.Item>
@@ -529,13 +529,13 @@ class Result extends Component {
         <div className="disease-active">
          <Flex style={{height: "inherit"}}>
             <Flex.Item className="active-list">
-              <span style={{textDecoration: "underline"}}>专家预约</span>
+              <span onClick={this.targetClick.bind(this, "专家预约")} style={{textDecoration: "underline"}}>专家预约</span>
             </Flex.Item>
             <Flex.Item className="active-list">
-              <span style={{textDecoration: "underline"}}>就医推荐</span>
+              <span onClick={this.targetClick.bind(this, "就医推荐")} style={{textDecoration: "underline"}}>就医推荐</span>
             </Flex.Item>
             <Flex.Item className="active-list" style={{flex: 2}}>
-              <span style={{textDecoration: "underline"}}>订阅GH活动资讯</span>
+              <span onClick={this.targetClick.bind(this, "订阅GH活动资讯")} style={{textDecoration: "underline"}}>订阅GH活动资讯</span>
             </Flex.Item>
           </Flex>
         </div>
@@ -552,6 +552,26 @@ class Result extends Component {
       {element}
     </div>
     return item;
+  }
+
+  //链接事件
+
+  targetClick (value) {
+    console.log(value)
+    let subscribe = new RegExp("订阅");
+    console.log(subscribe.test(value));
+    if(subscribe.test(value)) {
+      alert('', "您已成功" + value + "！！！", [
+        { text: '取消', onPress: () => console.log('cancel')},
+        { text: '确定', onPress: () => console.log('ok') },
+      ]);
+    }
+    else {
+      alert('', "您已成功订制GH" + value + "服务！！！", [
+        { text: '取消', onPress: () => console.log('cancel')},
+        { text: '确定', onPress: () => console.log('ok') },
+      ]);
+    }
   }
 
 
@@ -585,7 +605,7 @@ class Result extends Component {
                     <div>{el.theme}</div>
                   </Flex.Item>
                   <Flex.Item style={{flex: 2}}>{el.feedback}</Flex.Item>
-                  <Flex.Item className="table-item-order">{el.order.toString()}</Flex.Item>
+                  <Flex.Item className="table-item-order" onClick={this.targetClick.bind(this, el.order[0])}>{el.order.toString()}</Flex.Item>
                 </Flex>
               })}
             </div>
